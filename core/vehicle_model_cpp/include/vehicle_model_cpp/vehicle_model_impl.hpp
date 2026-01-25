@@ -39,8 +39,6 @@ void VEHICLE_T::step()
   // Init local variables
   double h = param_manager_->get_value("integration_step_size_s").as_double();
 
-  auto x_dot_ = ode(0, x);
-
   // Log some stuff
   debug_container_->log("integration_step_size_s", h);
 
