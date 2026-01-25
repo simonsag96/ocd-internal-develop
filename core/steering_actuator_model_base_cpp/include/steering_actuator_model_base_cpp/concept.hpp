@@ -1,0 +1,16 @@
+// Copyright 2026 Simon Sagmeister
+#pragma once
+
+#include <concepts>
+
+#include "steering_actuator_model_base_cpp/base_class.hpp"
+namespace tam::interfaces::concepts
+{
+/// @brief Concept for steering actuator model types
+template <typename T>
+concept SteeringActuatorModel = std::derived_from<
+  T, tam::interfaces::SteeringActuatorModelBase<
+       typename T::DriverInputType, typename T::FeedbackType, T::k_state_vector_length,
+       typename T::StateNamesTrait, typename T::AuxiliaryInputType>>;
+
+}  // namespace tam::interfaces::concepts

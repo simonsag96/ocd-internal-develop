@@ -1,0 +1,16 @@
+// Copyright 2026 Simon Sagmeister
+#pragma once
+
+#include <concepts>
+
+#include "drivetrain_model_base_cpp/base_class.hpp"
+namespace tam::interfaces::concepts
+{
+/// @brief Concept for drivetrain model types
+template <typename T>
+concept DrivetrainModel = std::derived_from<
+  T, tam::interfaces::DrivetrainModelBase<
+       typename T::DriverInputType, typename T::FeedbackType, T::k_state_vector_length,
+       typename T::StateNamesTrait, typename T::AuxiliaryInputType>>;
+
+}  // namespace tam::interfaces::concepts
