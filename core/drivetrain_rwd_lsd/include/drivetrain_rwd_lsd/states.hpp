@@ -34,4 +34,5 @@ struct StateNamesRWDLSD
 #undef X
   };
 };
+#undef STATE_LIST
 }  // namespace tam::sim::drivetrain

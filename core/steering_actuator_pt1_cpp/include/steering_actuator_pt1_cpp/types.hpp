@@ -37,4 +37,5 @@ struct StateNamesTrait
 #undef X
   };
 };
+#undef STATE_LIST
 }  // namespace tam::sim::steering_actuator_pt1

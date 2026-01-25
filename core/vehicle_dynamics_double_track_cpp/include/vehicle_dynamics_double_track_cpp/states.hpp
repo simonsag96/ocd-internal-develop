@@ -90,4 +90,5 @@ struct StateNamesTraitDTM
 #undef X
   };
 };
+#undef STATE_LIST
 }  // namespace tam::sim::vd_double_track
