@@ -7,7 +7,7 @@ find_package(Eigen3 3.4 REQUIRED)
 
 
 # ------------------------------------------------------------------------------
-# Core library
+# library
 # ------------------------------------------------------------------------------
 add_library(${PROJECT_NAME} SHARED)
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
@@ -17,21 +17,21 @@ add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 # Can be obtained with colcon list -p --packages-up-to <your_package>
 # ------------------------------------------------------------------------------
 set(PKG_DIRS
-    core/aerodynamics_model_base_cpp
-    core/aerodynamics_models_cpp
-    core/drivetrain_model_base_cpp
-    core/drivetrain_rwd_lsd
-    core/drivetrain_wheel_torque_cpp
-    core/steering_actuator_model_base_cpp
-    core/steering_actuator_pt1_cpp
-    core/tire_model_base_cpp
-    core/tire_models_cpp
-    core/tum_sim_types_cpp
-    core/vehicle_dynamics_double_track_cpp
-    core/vehicle_dynamics_model_base_cpp
-    core/vehicle_model_base_cpp
-    core/vehicle_model_cpp
-    core/vehicle_models_cpp
+    lib/aerodynamics_model_base_cpp
+    lib/aerodynamics_models_cpp
+    lib/drivetrain_model_base_cpp
+    lib/drivetrain_rwd_lsd
+    lib/drivetrain_wheel_torque_cpp
+    lib/steering_actuator_model_base_cpp
+    lib/steering_actuator_pt1_cpp
+    lib/tire_model_base_cpp
+    lib/tire_models_cpp
+    lib/tum_sim_types_cpp
+    lib/vehicle_dynamics_double_track_cpp
+    lib/vehicle_dynamics_model_base_cpp
+    lib/vehicle_model_base_cpp
+    lib/vehicle_model_cpp
+    lib/vehicle_models_cpp
     dependencies/iac_common/submodules/parameter_management/param_management_cpp
     dependencies/iac_common/submodules/time_series_logging/tsl_logger_cpp
     dependencies/iac_common/submodules/time_series_logging/tsl_msgs
