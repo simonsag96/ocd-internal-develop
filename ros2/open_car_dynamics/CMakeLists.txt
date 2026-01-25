@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-set(PROJECT_NAME vehicle_model_nodes)
+set(PROJECT_NAME open_car_dynamics)
 project(${PROJECT_NAME})
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -22,7 +22,9 @@ set(NODE_DEPENDENCIES
   tire_models_cpp
   aerodynamics_models_cpp
 )
-set(VEHICLE_MODELS direct_torque
+# Generate those automatically
+set(VEHICLE_MODELS 
+  WheelTorque__PT1__DoubleTrack__MF52__DefaultAerodynamics
 )
 
 foreach(pkg_name ${NODE_DEPENDENCIES})
@@ -30,41 +32,34 @@ foreach(pkg_name ${NODE_DEPENDENCIES})
 endforeach()
 
 set(COMPONENT_NAMES)
-set(COMPONENT_PATHS)
 set(EXECUTABLE_NAMES)
 
 foreach(vehicle_model_name ${VEHICLE_MODELS})
-  list(APPEND EXECUTABLE_NAMES ${vehicle_model_name}_node)
-  list(APPEND COMPONENT_PATHS components/${vehicle_model_name}_node.cpp)
-  list(APPEND COMPONENT_NAMES ${vehicle_model_name}Node)
+  list(APPEND EXECUTABLE_NAMES ${vehicle_model_name})
+  list(APPEND COMPONENT_NAMES ${vehicle_model_name})
 endforeach()
 
-add_library(${PROJECT_NAME}_components SHARED ${COMPONENT_PATHS})
+add_library(${PROJECT_NAME} SHARED components/components.cpp)
 find_package(rclcpp_components)
 
-# target_include_directories(
-#   ${PROJECT_NAME}_components
-#   PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#   $<INSTALL_INTERFACE:include>)
-
-target_compile_options(${PROJECT_NAME}_components PRIVATE -fopenmp)
+target_compile_options(${PROJECT_NAME} PRIVATE -fopenmp)
 
 
-ament_target_dependencies(${PROJECT_NAME}_components rclcpp_components ${NODE_DEPENDENCIES})
+ament_target_dependencies(${PROJECT_NAME} ${NODE_DEPENDENCIES})
 
 foreach(vehicle_model_name ${VEHICLE_MODELS})
   rclcpp_components_register_node(
-    ${PROJECT_NAME}_components
-    PLUGIN ${vehicle_model_name}Node
-    EXECUTABLE ${vehicle_model_name}_node
+    ${PROJECT_NAME}
+    PLUGIN  ${PROJECT_NAME}::${vehicle_model_name}
+    EXECUTABLE ${vehicle_model_name}
   )
 endforeach()
 
-ament_export_targets(export_${PROJECT_NAME}_components)
+ament_export_targets(export_${PROJECT_NAME})
 
     
-install(TARGETS ${PROJECT_NAME}_components
-        EXPORT export_${PROJECT_NAME}_components
+install(TARGETS ${PROJECT_NAME}
+        EXPORT export_${PROJECT_NAME}
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
