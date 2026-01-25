@@ -19,8 +19,8 @@ namespace tam::sim::communication_handlers
 {
 class SteeringActuatorPT1CommunicationHandler
 : public tam::interfaces::CommunicationHandlerBase<
-    tam::sim::steering_actuator_pt1::PT1SteeringActuator::DriverInputType,
-    tam::sim::steering_actuator_pt1::PT1SteeringActuator::FeedbackType>
+    tam::sim::steering_actuator::PT1SteeringActuatorModel::DriverInputType,
+    tam::sim::steering_actuator::PT1SteeringActuatorModel::FeedbackType>
 {
 public:
   explicit SteeringActuatorPT1CommunicationHandler(rclcpp::Node * node);

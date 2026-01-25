@@ -15,15 +15,15 @@
 #include "steering_actuator_pt1_cpp/types.hpp"
 #include "tsl_logger_cpp/reference_logger.hpp"
 #include "tum_types_cpp/common.hpp"
-namespace tam::sim::steering_actuator_pt1
+namespace tam::sim::steering_actuator
 {
-class PT1SteeringActuator : public tam::interfaces::SteeringActuatorModelBase<
+class PT1SteeringActuatorModel : public tam::interfaces::SteeringActuatorModelBase<
                               DriverInput, Feedback, x::CNT_LENGTH_STATE_VECTOR, StateNamesTrait>
 {
   using DoublePerWheelType = tam::types::common::DataPerWheel<double>;
 
 public:
-  PT1SteeringActuator();
+  PT1SteeringActuatorModel();
   // setters
   void set_x_vec(const StateVectorType & x_vec) override;
   void set_driver_input(const DriverInputType & input) override;
@@ -58,4 +58,4 @@ private:
   void declare_parameters();
   void register_log_signals();
 };
-}  // namespace tam::sim::steering_actuator_pt1
+}  // namespace tam::sim::steering_actuator

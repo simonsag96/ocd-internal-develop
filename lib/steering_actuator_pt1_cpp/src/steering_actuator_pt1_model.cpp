@@ -1,14 +1,14 @@
 // Copyright 2023 Simon Sagmeister
 
 #include "steering_actuator_pt1_cpp/steering_actuator_pt1_model.hpp"
-namespace tam::sim::steering_actuator_pt1
+namespace tam::sim::steering_actuator
 {
-PT1SteeringActuator::PT1SteeringActuator()
+PT1SteeringActuatorModel::PT1SteeringActuatorModel()
 {
   declare_parameters();
   register_log_signals();
 }
-void PT1SteeringActuator::evaluate()
+void PT1SteeringActuatorModel::evaluate()
 {
   double max_angle = p_.angle_max_rad;
   double max_rate = p_.angle_rate_max_radps;
@@ -23,29 +23,29 @@ void PT1SteeringActuator::evaluate()
   measured_steering_angle_rad_ = x_vec_[x::position_rad];
   actual_steering_angle_rad_ = measured_steering_angle_rad_ + p_.static_offset_rad;
 }
-void PT1SteeringActuator::set_x_vec(const StateVectorType & x_vec) { x_vec_ = x_vec; }
-void PT1SteeringActuator::set_driver_input(const DriverInputType & input)
+void PT1SteeringActuatorModel::set_x_vec(const StateVectorType & x_vec) { x_vec_ = x_vec; }
+void PT1SteeringActuatorModel::set_driver_input(const DriverInputType & input)
 {
   requested_steering_angle_rad_ = input.steering_angle_rad;
 }
-void PT1SteeringActuator::set_load(const DoublePerWheelType & steering_load_torque_per_wheel_Nm)
+void PT1SteeringActuatorModel::set_load(const DoublePerWheelType & steering_load_torque_per_wheel_Nm)
 {
   steering_load_torque_per_wheel_Nm_ = steering_load_torque_per_wheel_Nm;
 }
-PT1SteeringActuator::StateVectorType PT1SteeringActuator::get_x_vec() const { return x_vec_; }
-PT1SteeringActuator::StateVectorType PT1SteeringActuator::get_x_dot_vec() const
+PT1SteeringActuatorModel::StateVectorType PT1SteeringActuatorModel::get_x_vec() const { return x_vec_; }
+PT1SteeringActuatorModel::StateVectorType PT1SteeringActuatorModel::get_x_dot_vec() const
 {
   return x_dot_vec_;
 }
-tam::tsl::LoggerAccessInterface::SharedPtr PT1SteeringActuator::get_logger() const
+tam::tsl::LoggerAccessInterface::SharedPtr PT1SteeringActuatorModel::get_logger() const
 {
   return logger_;
 }
-tam::pmg::MgmtInterface::SharedPtr PT1SteeringActuator::get_param_manager() const
+tam::pmg::MgmtInterface::SharedPtr PT1SteeringActuatorModel::get_param_manager() const
 {
   return param_manager_;
 }
-PT1SteeringActuator::DoublePerWheelType PT1SteeringActuator::get_steering_angles() const
+PT1SteeringActuatorModel::DoublePerWheelType PT1SteeringActuatorModel::get_steering_angles() const
 {
   DoublePerWheelType out;
   // Assume parallel steering for front wheels and zero for rear wheels
@@ -55,13 +55,13 @@ PT1SteeringActuator::DoublePerWheelType PT1SteeringActuator::get_steering_angles
   out.rear_right = 0;
   return out;
 }
-PT1SteeringActuator::FeedbackType PT1SteeringActuator::get_feedback() const
+PT1SteeringActuatorModel::FeedbackType PT1SteeringActuatorModel::get_feedback() const
 {
   FeedbackType out;
   out.steering_angle_rad = measured_steering_angle_rad_;
   return out;
 }
-void PT1SteeringActuator::declare_parameters()
+void PT1SteeringActuatorModel::declare_parameters()
 {
   using pt = tam::pmg::ParameterType;
   param_manager_->declare_parameter("steering_actuator.T_PT1", &p_.T_PT1, 0.06, pt::DOUBLE, "");
@@ -73,11 +73,11 @@ void PT1SteeringActuator::declare_parameters()
     "steering_actuator.static_offset_rad", &p_.static_offset_rad, 0.0, pt::DOUBLE,
     "'Oval steering'");
 }
-void PT1SteeringActuator::register_log_signals()
+void PT1SteeringActuatorModel::register_log_signals()
 {
   logger_->log("target_steering_angle_rad", &requested_steering_angle_rad_);
   logger_->log("measured_steering_angle_rad", &measured_steering_angle_rad_);
   logger_->log("actual_steering_angle_rad", &actual_steering_angle_rad_);
   logger_->log("steering_angle_rate_radps", &x_dot_vec_[x::position_rad]);
 }
-}  // namespace tam::sim::steering_actuator_pt1
+}  // namespace tam::sim::steering_actuator

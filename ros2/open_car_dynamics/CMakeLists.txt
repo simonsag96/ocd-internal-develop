@@ -22,9 +22,16 @@ set(NODE_DEPENDENCIES
   tire_models_cpp
   aerodynamics_models_cpp
 )
-# Generate those automatically
+# Generate those automatically using the script in tools/create_combinations.py
 set(VEHICLE_MODELS 
   WheelTorque__PT1__DoubleTrack__MF52__DefaultAerodynamics
+  WheelTorque__PT1__DoubleTrack__Linear__DefaultAerodynamics
+  WheelTorque__PT1__DoubleTrack__MF_Simple__DefaultAerodynamics
+  WheelTorque__PT1__DoubleTrack__MF_Simple_Extended__DefaultAerodynamics
+  WheelTorque__PT1__DoubleTrack__MF52__RideHeightAerodynamics
+  WheelTorque__PT1__DoubleTrack__Linear__RideHeightAerodynamics
+  WheelTorque__PT1__DoubleTrack__MF_Simple__RideHeightAerodynamics
+  WheelTorque__PT1__DoubleTrack__MF_Simple_Extended__RideHeightAerodynamics
 )
 
 foreach(pkg_name ${NODE_DEPENDENCIES})
@@ -40,10 +47,14 @@ foreach(vehicle_model_name ${VEHICLE_MODELS})
 endforeach()
 
 add_library(${PROJECT_NAME} SHARED components/components.cpp)
-find_package(rclcpp_components)
+find_package(rclcpp_components REQUIRED)
 
 target_compile_options(${PROJECT_NAME} PRIVATE -fopenmp)
 
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
 
 ament_target_dependencies(${PROJECT_NAME} ${NODE_DEPENDENCIES})
 
@@ -64,6 +75,7 @@ install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
 )
+
 
 ament_export_dependencies(rclcpp_components ${NODE_DEPENDENCIES}) # other dependencies so client does not need to call find_package on them
 

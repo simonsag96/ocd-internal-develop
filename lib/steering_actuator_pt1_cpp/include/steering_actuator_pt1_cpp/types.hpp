@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <stdexcept>
 #include <string>
-namespace tam::sim::steering_actuator_pt1
+namespace tam::sim::steering_actuator
 {
 // Input to the steering actuator model
 struct DriverInput
@@ -38,4 +38,4 @@ struct StateNamesTrait
   };
 };
 #undef STATE_LIST
-}  // namespace tam::sim::steering_actuator_pt1
+}  // namespace tam::sim::steering_actuator
