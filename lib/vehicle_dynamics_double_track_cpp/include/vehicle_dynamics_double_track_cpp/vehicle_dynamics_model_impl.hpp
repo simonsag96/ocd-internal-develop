@@ -131,6 +131,7 @@ void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::register_log_signa
   logger_->log("external_influences/lambda_mue", &eqns_.external_influences_.lambda_mue);
   logger_->log("external_influences/z_height_road_m", &eqns_.external_influences_.z_height_road_m);
   logger_->log("imr/dynamic_tire_radius", &eqns_.imr_.dynamic_tire_radius_m);
+  logger_->log("imr/effective_steering_angle_per_wheel_rad", &eqns_.imr_.effective_steering_angle_per_wheel_rad); // NOLINT
   logger_->log("imr/tire_spring_initial_compression_m", &eqns_.imr_.tire_spring_initial_compression_m); // NOLINT
   logger_->log("imr/tire_spring_force_N", &eqns_.imr_.tire_spring_force_N);
   logger_->log("imr/vertical_tire_force_N", &eqns_.imr_.vertical_tire_force_N);
