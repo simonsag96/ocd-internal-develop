@@ -26,10 +26,10 @@ template <
   tam::interfaces::concepts::AerodynamicsModel AeroModelT>
 class VehicleDynamicsDoubleTrackModel
 : public tam::interfaces::VehicleDynamicsModelBase<
-    vd_double_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
-    vd_double_track::States::StateNames>
+    double_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
+    double_track::States::StateNames>
 {
-  using x = tam::sim::vehicle_dynamics::vd_double_track::States::StateEnum;
+  using x = tam::sim::vehicle_dynamics::double_track::States::StateEnum;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
 
 public:

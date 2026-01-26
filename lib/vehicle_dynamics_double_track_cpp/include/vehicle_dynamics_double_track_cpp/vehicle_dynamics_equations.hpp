@@ -33,7 +33,7 @@ class VehicleDynamicsDoubleTrackEqns
 {
   friend class VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>;
   // Types
-  using x = tam::sim::vehicle_dynamics::vd_double_track::States::StateEnum;
+  using x = tam::sim::vehicle_dynamics::double_track::States::StateEnum;
   using StateVectorType = Eigen::Matrix<double, x::CNT_LENGTH_STATE_VECTOR, 1>;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
   using vector2d_per_wheel_t = tam::types::common::DataPerWheel<Eigen::Vector2d>;
