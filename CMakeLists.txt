@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 project(open_car_dynamics LANGUAGES CXX)
 
 
-find_package(Boost REQUIRED)
-find_package(Eigen3 3.4 REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 
 # ------------------------------------------------------------------------------
@@ -66,7 +65,7 @@ target_sources(${PROJECT_NAME} PRIVATE ${SRC_FILES})
 # Link dependencies
 # ------------------------------------------------------------------------------
 
-target_link_libraries(${PROJECT_NAME} Boost::boost Eigen3::Eigen)
+target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
 
 # ------------------------------------------------------------------------------
 # Compiler settings
