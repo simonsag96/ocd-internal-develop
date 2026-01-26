@@ -29,7 +29,7 @@ public:
     base_model_.param_manager_->declare_parameter(
       "drivetrain.wheel_radius_m", &p_.wheel_radius_m, 0.3, tam::pmg::ParameterType::DOUBLE, "");
     base_model_.param_manager_->declare_parameter(
-      "drivetrain.intertia_kgm2", &p_.intertia_kgm2, 1.5, tam::pmg::ParameterType::DOUBLE, "");
+      "drivetrain.intertia_kgm2", &p_.intertia_kgm2, 0.0, tam::pmg::ParameterType::DOUBLE, "");
   };
   // setters
   void set_x_vec(const StateVectorType & x_vec) override { base_model_.set_x_vec(x_vec); }
@@ -45,8 +45,8 @@ public:
       // Brake input
       driver_input.transmission_output_torque_Nm = 0.0;
       // Distribute brake torque according to brake bias
-      double fx_front = p_.brake_bias_front * input;
-      double fx_rear = (1.0 - p_.brake_bias_front) * input;
+      double fx_front = -p_.brake_bias_front * input;
+      double fx_rear = -(1.0 - p_.brake_bias_front) * input;
       driver_input.brake_torque_per_wheel_Nm = double_per_wheel_t::from_front_and_rear(
         fx_front * p_.wheel_radius_m / 2, fx_rear * p_.wheel_radius_m / 2);
     }
