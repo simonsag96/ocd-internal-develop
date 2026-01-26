@@ -19,6 +19,7 @@ class DrivetrainEquationsDirectTorque
 {
   friend class DrivetrainWheelTorqueModel;
   //
+  using x = tam::sim::drivetrain::wheel_torque::States::StateEnum;
   using state_vector_t = Eigen::Matrix<double, x::CNT_LENGTH_STATE_VECTOR, 1>;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
   //

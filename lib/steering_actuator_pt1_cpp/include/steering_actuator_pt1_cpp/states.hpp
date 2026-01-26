@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <stdexcept>
 #include <string>
-namespace tam::sim::steering_actuator
+namespace tam::sim::steering_actuator::PT1
 {
 // Input to the steering actuator model
 struct DriverInput
@@ -17,20 +17,19 @@ struct Feedback
 {
   double steering_angle_rad{0.0};
 };
-#define STATE_LIST(X) X(position_rad)
-namespace x
+namespace States
 {
-enum States {
+#define STATE_LIST(X) X(position_rad)
+enum StateEnum {
 #define X(name) name,
   STATE_LIST(X)
 #undef X
     CNT_LENGTH_STATE_VECTOR
 };
-};  // namespace x
-struct StateNamesTrait
+struct StateNames
 {
   static constexpr std::array<
-    std::string_view, static_cast<std::size_t>(x::States::CNT_LENGTH_STATE_VECTOR)>
+    std::string_view, static_cast<std::size_t>(StateEnum::CNT_LENGTH_STATE_VECTOR)>
     value = {
 #define X(name) #name,
       STATE_LIST(X)
@@ -38,4 +37,5 @@ struct StateNamesTrait
   };
 };
 #undef STATE_LIST
-}  // namespace tam::sim::steering_actuator
+}  // namespace States
+}  // namespace tam::sim::steering_actuator::PT1

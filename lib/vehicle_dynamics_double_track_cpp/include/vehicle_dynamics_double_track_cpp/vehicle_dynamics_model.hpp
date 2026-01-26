@@ -19,14 +19,17 @@
 #include "tum_sim_types_cpp/types.hpp"
 #include "vehicle_dynamics_double_track_cpp/logging.hpp"
 #include "vehicle_dynamics_double_track_cpp/vehicle_dynamics_equations.hpp"
-namespace tam::sim::vd_double_track
+namespace tam::sim::vehicle_dynamics
 {
 template <
   tam::interfaces::concepts::TireModel TireModelT,
   tam::interfaces::concepts::AerodynamicsModel AeroModelT>
 class VehicleDynamicsDoubleTrackModel
-: public tam::interfaces::VehicleDynamicsModelBase<x::CNT_LENGTH_STATE_VECTOR, StateNamesTraitDTM>
+: public tam::interfaces::VehicleDynamicsModelBase<
+    vd_double_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
+    vd_double_track::States::StateNames>
 {
+  using x = tam::sim::vehicle_dynamics::vd_double_track::States::StateEnum;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
 
 public:
@@ -59,5 +62,5 @@ private:
   void declare_parameters();
   void register_log_signals();
 };
-}  // namespace tam::sim::vd_double_track
+}  // namespace tam::sim::vehicle_dynamics
 #include "vehicle_dynamics_double_track_cpp/vehicle_dynamics_model_impl.hpp"

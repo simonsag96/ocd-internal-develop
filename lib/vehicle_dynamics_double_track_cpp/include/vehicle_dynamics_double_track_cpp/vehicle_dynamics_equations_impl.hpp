@@ -10,7 +10,7 @@
   x(front_right);               \
   x(rear_left);                 \
   x(rear_right)
-namespace tam::sim::vd_double_track
+namespace tam::sim::vehicle_dynamics
 {
 template <
   tam::interfaces::concepts::TireModel TireModelT,
@@ -264,9 +264,9 @@ template <
   tam::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forces_N()
 {
-  // Tire Forces @ x - y axis of the vehicle
-  // Rotate the tire frame forces into the vehicle frame (passive rotation, i.e., reverse rotation)
-  // clang-format off
+// Tire Forces @ x - y axis of the vehicle
+// Rotate the tire frame forces into the vehicle frame (passive rotation, i.e., reverse rotation)
+// clang-format off
   #define EVAL_WHEEL_TIRE_FORCES(wheel) do {\
     Eigen::Matrix2d rot_matrix;\
     double angle = -steering_angle_per_wheel_rad_.wheel;\
@@ -411,7 +411,7 @@ template <
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_resulting_suspension_force_N()
 {
-// clang-format off
+  // clang-format off
   #define VERTICAL_FORCES_SUSPENSION(tire_in)                                        \
     imr_.resulting_suspension_force_N.tire_in = \
     (  imr_.suspension_spring_force_N.tire_in \
@@ -430,8 +430,8 @@ template <
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_resulting_vertical_force_on_wheel_N()
 {
-// Heave of Tire
-// clang-format off
+  // Heave of Tire
+  // clang-format off
   #define CALC_HEAVE_TIRE(tire_name, tire_mass) \
   imr_.resulting_vertical_force_on_wheel_N.tire_name = \
     + imr_.resulting_suspension_force_N.tire_name \
@@ -684,5 +684,5 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::evaluate()
     x_dot_vec_[x::v_y_mps] + x_vec_[x::psi_dot_radps] * x_vec_[x::v_x_mps];
   vd_output_.acceleration_mps2.z = tam::constants::g_earth;
 };
-}  // namespace tam::sim::vd_double_track
-// #undef EVAL_MACRO_PER_WHEEL
+}  // namespace tam::sim::vehicle_dynamics
+#undef EVAL_MACRO_PER_WHEEL

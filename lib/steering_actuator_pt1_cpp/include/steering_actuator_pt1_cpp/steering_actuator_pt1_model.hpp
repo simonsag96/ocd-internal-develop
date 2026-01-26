@@ -12,14 +12,17 @@
 #include "param_management_cpp/base.hpp"
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "steering_actuator_model_base_cpp/base_class.hpp"
-#include "steering_actuator_pt1_cpp/types.hpp"
+#include "steering_actuator_pt1_cpp/states.hpp"
 #include "tsl_logger_cpp/reference_logger.hpp"
 #include "tum_types_cpp/common.hpp"
 namespace tam::sim::steering_actuator
 {
-class PT1SteeringActuatorModel : public tam::interfaces::SteeringActuatorModelBase<
-                              DriverInput, Feedback, x::CNT_LENGTH_STATE_VECTOR, StateNamesTrait>
+class PT1SteeringActuatorModel
+: public tam::interfaces::SteeringActuatorModelBase<
+    PT1::DriverInput, PT1::Feedback, PT1::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
+    PT1::States::StateNames>
 {
+  using x = tam::sim::steering_actuator::PT1::States::StateEnum;
   using DoublePerWheelType = tam::types::common::DataPerWheel<double>;
 
 public:

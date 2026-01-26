@@ -20,6 +20,7 @@ namespace tam::sim::drivetrain
 class DrivetrainEquations_RWD_LSD
 {
   friend class DrivetrainModel_RWD_LSD;
+  using x = tam::sim::drivetrain::rwd_lsd::States::StateEnum;
   //
   using state_vector_t = Eigen::Matrix<double, x::CNT_LENGTH_STATE_VECTOR, 1>;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;

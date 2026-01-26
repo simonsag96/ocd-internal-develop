@@ -16,6 +16,8 @@ set(NODE_DEPENDENCIES
   vehicle_model_cpp
   drivetrain_wheel_torque_cpp
   drivetrain_wheel_torque_communication_handler_cpp
+  drivetrain_fx_cpp
+  drivetrain_fx_communication_handler_cpp
   steering_actuator_pt1_cpp
   steering_actuator_pt1_communication_handler_cpp
   vehicle_dynamics_double_track_cpp
@@ -32,6 +34,14 @@ set(VEHICLE_MODELS
   WheelTorque__PT1__DoubleTrack__Linear__RideHeightAerodynamics
   WheelTorque__PT1__DoubleTrack__MF_Simple__RideHeightAerodynamics
   WheelTorque__PT1__DoubleTrack__MF_Simple_Extended__RideHeightAerodynamics
+  Fx__PT1__DoubleTrack__MF52__DefaultAerodynamics
+  Fx__PT1__DoubleTrack__Linear__DefaultAerodynamics
+  Fx__PT1__DoubleTrack__MF_Simple__DefaultAerodynamics
+  Fx__PT1__DoubleTrack__MF_Simple_Extended__DefaultAerodynamics
+  Fx__PT1__DoubleTrack__MF52__RideHeightAerodynamics
+  Fx__PT1__DoubleTrack__Linear__RideHeightAerodynamics
+  Fx__PT1__DoubleTrack__MF_Simple__RideHeightAerodynamics
+  Fx__PT1__DoubleTrack__MF_Simple_Extended__RideHeightAerodynamics
 )
 
 foreach(pkg_name ${NODE_DEPENDENCIES})

@@ -23,9 +23,11 @@ namespace tam::sim::drivetrain
 class DrivetrainWheelTorqueModel
 : public tam::interfaces::DrivetrainModelBase<
     drivetrain::DrivetrainEquationsDirectTorque::DriverInput,
-    drivetrain::DrivetrainEquationsDirectTorque::Feedback, drivetrain::x::CNT_LENGTH_STATE_VECTOR,
-    drivetrain::StateNamesTorque>
+    drivetrain::DrivetrainEquationsDirectTorque::Feedback,
+    drivetrain::wheel_torque::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
+    drivetrain::wheel_torque::States::StateNames>
 {
+  using x = tam::sim::drivetrain::wheel_torque::States::StateEnum;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
 
 public:

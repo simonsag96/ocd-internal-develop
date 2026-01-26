@@ -23,10 +23,13 @@ namespace tam::sim::drivetrain
 class DrivetrainModel_RWD_LSD
 : public tam::interfaces::DrivetrainModelBase<
     drivetrain::DrivetrainEquations_RWD_LSD::DriverInput,
-    drivetrain::DrivetrainEquations_RWD_LSD::Feedback, drivetrain::x::CNT_LENGTH_STATE_VECTOR,
-    drivetrain::StateNamesRWDLSD>
+    drivetrain::DrivetrainEquations_RWD_LSD::Feedback,
+    drivetrain::rwd_lsd::States::CNT_LENGTH_STATE_VECTOR, drivetrain::rwd_lsd::States::StateNames>
 {
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
+  using x = tam::sim::drivetrain::rwd_lsd::States::StateEnum;
+
+  friend class DrivetrainFxModel;  // allow access to private members
 
 public:
   DrivetrainModel_RWD_LSD();

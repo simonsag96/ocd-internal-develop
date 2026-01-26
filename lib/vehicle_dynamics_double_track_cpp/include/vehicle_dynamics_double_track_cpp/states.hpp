@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <stdexcept>
 #include <string>
-namespace tam::sim::vd_double_track
+namespace tam::sim::vehicle_dynamics::vd_double_track::States
 {
 // clang-format off
 #define STATE_LIST(X) \
@@ -71,19 +71,17 @@ namespace tam::sim::vd_double_track
 */
 
 
-namespace x
-{
-  enum States {
+// Generate enum and names array
+enum StateEnum {
 #define X(name) name,
-    STATE_LIST(X)
+  STATE_LIST(X)
 #undef X
-      CNT_LENGTH_STATE_VECTOR
-  };
-};  // namespace x
-struct StateNamesTraitDTM
+    CNT_LENGTH_STATE_VECTOR
+};
+struct StateNames
 {
   static constexpr std::array<
-    std::string_view, static_cast<std::size_t>(x::States::CNT_LENGTH_STATE_VECTOR)>
+    std::string_view, static_cast<std::size_t>(StateEnum::CNT_LENGTH_STATE_VECTOR)>
     value = {
 #define X(name) #name,
       STATE_LIST(X)

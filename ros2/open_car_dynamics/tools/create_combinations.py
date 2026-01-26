@@ -9,6 +9,7 @@ WORKSPACE_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../
 # Define your model class names as strings
 drivetrains = [
     ("DrivetrainWheelTorqueModel", "DrivetrainWheelTorqueCommunicationHandler"),
+    ("DrivetrainFxModel", "DrivetrainFxCommunicationHandler"),
     # Add more (Drivetrain, DrivetrainCommHandler) pairs here if needed
 ]
 

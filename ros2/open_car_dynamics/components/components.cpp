@@ -8,7 +8,7 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::MF52)
 
 OCD_NODE_COMPONENT(
@@ -17,7 +17,7 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::Linear)
 
 OCD_NODE_COMPONENT(
@@ -26,7 +26,7 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::MF_Simple)
 
 OCD_NODE_COMPONENT(
@@ -35,7 +35,7 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::MF_Simple_Extended)
 
 OCD_NODE_COMPONENT(
@@ -44,7 +44,7 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::MF52)
 
 OCD_NODE_COMPONENT(
@@ -53,7 +53,7 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::Linear)
 
 OCD_NODE_COMPONENT(
@@ -62,7 +62,7 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::MF_Simple)
 
 OCD_NODE_COMPONENT(
@@ -71,6 +71,78 @@ OCD_NODE_COMPONENT(
   tam::sim::communication_handlers::DrivetrainWheelTorqueCommunicationHandler,
   tam::sim::steering_actuator::PT1SteeringActuatorModel,
   tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
-  tam::sim::vd_double_track::VehicleDynamicsDoubleTrackModel,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::MF_Simple_Extended)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__MF52__DefaultAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::MF52)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__Linear__DefaultAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::Linear)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__MF_Simple__DefaultAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::MF_Simple)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__MF_Simple_Extended__DefaultAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::DefaultAerodynamicsModel, tam::sim::tire_models::MF_Simple_Extended)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__MF52__RideHeightAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::MF52)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__Linear__RideHeightAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::Linear)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__MF_Simple__RideHeightAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
+  tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::MF_Simple)
+
+OCD_NODE_COMPONENT(
+  Fx__PT1__DoubleTrack__MF_Simple_Extended__RideHeightAerodynamics,
+  tam::sim::drivetrain::DrivetrainFxModel,
+  tam::sim::communication_handlers::DrivetrainFxCommunicationHandler,
+  tam::sim::steering_actuator::PT1SteeringActuatorModel,
+  tam::sim::communication_handlers::SteeringActuatorPT1CommunicationHandler,
+  tam::sim::vehicle_dynamics::VehicleDynamicsDoubleTrackModel,
   tam::sim::aerodynamics::RideHeightAerodynamicsModel, tam::sim::tire_models::MF_Simple_Extended)
 

@@ -1,0 +1,6 @@
+// Copyright 2026 Simon Sagmeister
+
+#include "drivetrain_fx_cpp/drivetrain_fx_model.hpp"
+namespace tam::sim::drivetrain
+{
+}  // namespace tam::sim::drivetrain

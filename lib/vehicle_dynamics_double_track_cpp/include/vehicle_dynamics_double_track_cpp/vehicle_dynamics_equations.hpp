@@ -19,7 +19,7 @@
 #include "tum_types_cpp/common.hpp"
 #include "vehicle_dynamics_double_track_cpp/states.hpp"
 #include "vehicle_dynamics_model_base_cpp/base_class.hpp"
-namespace tam::sim::vd_double_track
+namespace tam::sim::vehicle_dynamics
 {
 // Forward declaration of the friend class
 template <
@@ -33,6 +33,7 @@ class VehicleDynamicsDoubleTrackEqns
 {
   friend class VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>;
   // Types
+  using x = tam::sim::vehicle_dynamics::vd_double_track::States::StateEnum;
   using StateVectorType = Eigen::Matrix<double, x::CNT_LENGTH_STATE_VECTOR, 1>;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
   using vector2d_per_wheel_t = tam::types::common::DataPerWheel<Eigen::Vector2d>;
@@ -221,5 +222,5 @@ public:
   // Evaluate the ODE
   void evaluate();
 };
-}  // namespace tam::sim::vd_double_track
+}  // namespace tam::sim::vehicle_dynamics
 #include "vehicle_dynamics_double_track_cpp/vehicle_dynamics_equations_impl.hpp"

@@ -6,7 +6,7 @@
 
 #include "tsl_logger_cpp/type_support.hpp"
 #include "vehicle_dynamics_double_track_cpp/vehicle_dynamics_model.hpp"
-namespace tam::sim::vd_double_track
+namespace tam::sim::vehicle_dynamics
 {
 template <
   tam::interfaces::concepts::TireModel TireModelT,
@@ -269,4 +269,4 @@ void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::declare_parameters
   eqns_.aero_model_.declare_parameters(
     param_manager_.get(), "vehicle_dynamics_double_track.aerodynamics.");
 }
-}  // namespace tam::sim::vd_double_track
+}  // namespace tam::sim::vehicle_dynamics
