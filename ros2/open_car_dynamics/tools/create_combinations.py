@@ -82,7 +82,7 @@ def main():
                             print(
                                 f"  tam::sim::communication_handlers::{steering_comm},"
                             )
-                            print(f"  tam::sim::vd_double_track::{vdm},")
+                            print(f"  tam::sim::vehicle_dynamics::{vdm},")
                             print(
                                 f"  tam::sim::aerodynamics::{aero}, tam::sim::tire_models::{tire})\n"
                             )
