@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>open_car_dynamics</name>
+  <name>open_car_dynamics_ros2</name>
   <version>1.0.0</version>
   <description>Different vehicle models served as ROS2 nodes</description>
   <maintainer email="simon.sagmeister@tum.de">simon</maintainer>
