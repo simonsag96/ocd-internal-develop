@@ -103,17 +103,6 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_vertical_
 template <
   tam::interfaces::concepts::TireModel TireModelT,
   tam::interfaces::concepts::AerodynamicsModel AeroModelT>
-void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_antiroll_bar_force_N()
-{
-  // Anti-Roll bar forces
-  imr_.antiroll_bar_force_N.front_left = p_.c_ar_f * (x_vec_[x::z_w_FR_m] - x_vec_[x::z_w_FL_m]);
-  imr_.antiroll_bar_force_N.rear_left = p_.c_ar_r * (x_vec_[x::z_w_RR_m] - x_vec_[x::z_w_RL_m]);
-  imr_.antiroll_bar_force_N.front_right = -imr_.antiroll_bar_force_N.front_left;
-  imr_.antiroll_bar_force_N.rear_right = -imr_.antiroll_bar_force_N.rear_left;
-}
-template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_velocity_wheel_over_ground_mps()
 {  // Tire Velocity Vector @ x - y axis
@@ -385,6 +374,21 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_suspensio
 template <
   tam::interfaces::concepts::TireModel TireModelT,
   tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_antiroll_bar_force_N()
+{
+  // Anti-Roll bar forces
+  imr_.antiroll_bar_force_N.front_left =
+    0.5 * p_.c_ar_f * (imr_.suspension_spring_compression_m.front_left -
+                 imr_.suspension_spring_compression_m.front_right);
+  imr_.antiroll_bar_force_N.rear_left =
+    0.5 * p_.c_ar_r * (imr_.suspension_spring_compression_m.rear_left -
+                 imr_.suspension_spring_compression_m.rear_right);
+  imr_.antiroll_bar_force_N.front_right = -imr_.antiroll_bar_force_N.front_left;
+  imr_.antiroll_bar_force_N.rear_right = -imr_.antiroll_bar_force_N.rear_left;
+}
+template <
+  tam::interfaces::concepts::TireModel TireModelT,
+  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_rolling_resistance_N()
 {
 // Always positive since always going forward
@@ -589,7 +593,6 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_intermedi
   calculate_tire_spring_initial_compression_m();
   calculate_tire_spring_force_N();
   calculate_vertical_tire_force_N();
-  calculate_antiroll_bar_force_N();
   calculate_velocity_wheel_over_ground_mps();
   calculate_velocity_wheel_over_ground_tire_frame_mps();
   calculate_velocity_tire_rotation_mps();
@@ -602,6 +605,7 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_intermedi
   calculate_suspension_damper_compression_speed_mps();
   calculate_suspension_spring_force_N();
   calculate_suspension_damper_force_N();
+  calculate_antiroll_bar_force_N();
   calculate_tire_rolling_resistance_N();
   calculate_axle_vertical_force_N();
   calculate_resulting_suspension_force_N();

@@ -184,7 +184,6 @@ class VehicleDynamicsDoubleTrackEqns
   void calculate_tire_spring_initial_compression_m();
   void calculate_tire_spring_force_N();
   void calculate_vertical_tire_force_N();
-  void calculate_antiroll_bar_force_N();
   void calculate_velocity_wheel_over_ground_mps();
   void calculate_velocity_wheel_over_ground_tire_frame_mps();
   void calculate_velocity_tire_rotation_mps();
@@ -197,6 +196,7 @@ class VehicleDynamicsDoubleTrackEqns
   void calculate_suspension_damper_compression_speed_mps();
   void calculate_suspension_spring_force_N();
   void calculate_suspension_damper_force_N();
+  void calculate_antiroll_bar_force_N();
   void calculate_tire_rolling_resistance_N();
   void calculate_axle_vertical_force_N();
   void calculate_resulting_suspension_force_N();
