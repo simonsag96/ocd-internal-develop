@@ -105,6 +105,8 @@ class VehicleDynamicsDoubleTrackEqns
   };
   struct IntermediateResults
   {
+    // Sums up all effective steering angles including toe
+    double_per_wheel_t effective_steering_angle_per_wheel_rad;
     // Tire spring compression at standstill
     double_per_wheel_t tire_spring_initial_compression_m;
     double_per_wheel_t tire_spring_force_N;  // Tire spring forces
@@ -177,6 +179,7 @@ class VehicleDynamicsDoubleTrackEqns
   void calculate_intermediate_results();
   // Function to calculate pars of the intermediate results.
   void calc_dynamic_tire_radius();
+  void calculate_effective_steering_angle();
   void calculate_dependent_parameters();
   void calculate_tire_spring_initial_compression_m();
   void calculate_tire_spring_force_N();

@@ -1,6 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 #pragma once
 
+#include <algorithm>
 #include <limits>
 
 #include "vehicle_dynamics_double_track_cpp/vehicle_dynamics_equations.hpp"
@@ -30,6 +31,19 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_dependent
   p_dep_.sadf_acceleration = (p_.h_pc_accel / (p_.l_f));
   p_dep_.sadr_acceleration = (p_.h_pc_accel / (p_dep_.l_r));
 }
+
+template <
+  tam::interfaces::concepts::TireModel TireModelT,
+  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_effective_steering_angle(){
+    double_per_wheel_t toe_addition = p_.toe_out_rad;
+    // Toe out means steering to right on the right side -> Therefore negate the sign.
+    toe_addition.front_right *= -1;
+    toe_addition.rear_right *= -1;
+
+    imr_.effective_steering_angle_per_wheel_rad = steering_angle_per_wheel_rad_ + toe_addition;
+}
+
 template <
   tam::interfaces::concepts::TireModel TireModelT,
   tam::interfaces::concepts::AerodynamicsModel AeroModelT>
@@ -136,7 +150,7 @@ void VehicleDynamicsDoubleTrackEqns<
 
 #define EVAL_VELOCITY_WHEEL_OVER_GROUND_TIRE_FRAME(wheel)           \
                                                                     \
-  angle = steering_angle_per_wheel_rad_.wheel + toe_addition.wheel; \
+  angle = imr_.effective_steering_angle_per_wheel_rad.wheel; \
   rot_matrix << cos(angle), sin(angle), -sin(angle), cos(angle);    \
   imr_.velocity_wheel_over_ground_tire_frame_mps.wheel =            \
     rot_matrix * imr_.velocity_wheel_over_ground_mps.wheel;
@@ -264,12 +278,12 @@ template <
   tam::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forces_N()
 {
-// Tire Forces @ x - y axis of the vehicle
-// Rotate the tire frame forces into the vehicle frame (passive rotation, i.e., reverse rotation)
-// clang-format off
+  // Tire Forces @ x - y axis of the vehicle
+  // Rotate the tire frame forces into the vehicle frame (passive rotation, i.e., reverse rotation)
+  // clang-format off
   #define EVAL_WHEEL_TIRE_FORCES(wheel) do {\
     Eigen::Matrix2d rot_matrix;\
-    double angle = -steering_angle_per_wheel_rad_.wheel;\
+    double angle = -imr_.effective_steering_angle_per_wheel_rad.wheel;\
     rot_matrix << cos(angle), sin(angle), \
                   -sin(angle), cos(angle); \
     imr_.tire_forces_N.wheel = rot_matrix * imr_.tire_forces_tire_frame_N.wheel;\
@@ -430,8 +444,8 @@ template <
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_resulting_vertical_force_on_wheel_N()
 {
-  // Heave of Tire
-  // clang-format off
+// Heave of Tire
+// clang-format off
   #define CALC_HEAVE_TIRE(tire_name, tire_mass) \
   imr_.resulting_vertical_force_on_wheel_N.tire_name = \
     + imr_.resulting_suspension_force_N.tire_name \
@@ -557,9 +571,9 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_steering_
   // clang-format off
   #define CALC_SA_LOAD_TRQ(in_tire)\
     steering_load_torque_per_wheel_Nm_.in_tire = 0
-    // TODO: Some fancy equation or model for torque steer
+    // Some fancy equation or model for torque steer
     // possibly from here: https://link.springer.com/content/pdf/10.1007/978-3-8348-9026-9_4
-  
+
   EVAL_MACRO_PER_WHEEL(CALC_SA_LOAD_TRQ);
   #undef CALC_SA_LOAD_TRQ
   // clang-format on
@@ -570,6 +584,7 @@ template <
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_intermediate_results()
 {
   calculate_dependent_parameters();
+  calculate_effective_steering_angle();
   calc_dynamic_tire_radius();
   calculate_tire_spring_initial_compression_m();
   calculate_tire_spring_force_N();
