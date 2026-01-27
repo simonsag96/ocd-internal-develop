@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "aerodynamics_model_base_cpp/base_class.hpp"
+#include "aerodynamics_model_base_cpp/concept.hpp"
 #include "param_management_cpp/param_reference_manager.hpp"
 namespace tam::sim::aerodynamics
 {
@@ -42,4 +43,10 @@ public:
   {
   }
 };
+
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::AerodynamicsModel<DefaultAerodynamicsModel>,
+  "DefaultAerodynamicsModel does not fulfill the AerodynamicsModel concept");
 }  // namespace tam::sim::aerodynamics

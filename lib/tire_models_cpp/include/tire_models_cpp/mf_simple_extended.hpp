@@ -7,6 +7,7 @@
 
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "tire_model_base_cpp/base_class.hpp"
+#include "tire_model_base_cpp/concept.hpp"
 #include "tire_models_cpp/mf_simple.hpp"
 namespace tam::sim::tire_models
 {
@@ -30,4 +31,9 @@ public:
 private:
   MF_Simple mf_simple_;
 };
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::TireModel<MF_Simple_Extended>,
+  "MF_Simple_Extended does not fulfill the TireModel concept");
 }  // namespace tam::sim::tire_models

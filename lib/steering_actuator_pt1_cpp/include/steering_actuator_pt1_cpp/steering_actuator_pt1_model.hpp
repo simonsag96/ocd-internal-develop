@@ -12,6 +12,7 @@
 #include "param_management_cpp/base.hpp"
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "steering_actuator_model_base_cpp/base_class.hpp"
+#include "steering_actuator_model_base_cpp/concept.hpp"
 #include "steering_actuator_pt1_cpp/states.hpp"
 #include "tsl_logger_cpp/reference_logger.hpp"
 #include "tum_types_cpp/common.hpp"
@@ -61,4 +62,10 @@ private:
   void declare_parameters();
   void register_log_signals();
 };
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::SteeringActuatorModel<PT1SteeringActuatorModel>,
+  "PT1SteeringActuatorModel does not fulfill the SteeringActuatorModel concept");
+
 }  // namespace tam::sim::steering_actuator

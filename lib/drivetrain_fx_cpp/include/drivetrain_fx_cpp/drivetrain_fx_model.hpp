@@ -4,6 +4,7 @@
 #include <math.h>
 
 #include "drivetrain_model_base_cpp/base_class.hpp"
+#include "drivetrain_model_base_cpp/concept.hpp"
 #include "drivetrain_rwd_lsd/drivetrain_rwd_lsd_model.hpp"
 namespace tam::sim::drivetrain
 {
@@ -75,4 +76,9 @@ public:
 private:
   DrivetrainModel_RWD_LSD base_model_;
 };
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::DrivetrainModel<DrivetrainFxModel>,
+  "DrivetrainFxModel does not fulfill the DrivetrainModel concept");
 }  // namespace tam::sim::drivetrain

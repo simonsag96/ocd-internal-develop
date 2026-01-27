@@ -7,6 +7,7 @@
 
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "tire_model_base_cpp/base_class.hpp"
+#include "tire_model_base_cpp/concept.hpp"
 namespace tam::sim::tire_models
 {
 class MF52 : public tam::interfaces::TireModelBase
@@ -41,6 +42,9 @@ private:
   double lat_force_combined_slip(
     double F_z, double kappa_long, double alpha, double lat_force_pure_slip, double gamma) const;
 };
-// Overall integration functions
-// =========================================================
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::TireModel<MF52>,
+  "MF52 does not fulfill the TireModel concept");
 }  // namespace tam::sim::tire_models

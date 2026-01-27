@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "aerodynamics_model_base_cpp/base_class.hpp"
+#include "aerodynamics_model_base_cpp/concept.hpp"
 #include "param_management_cpp/param_reference_manager.hpp"
 namespace tam::sim::aerodynamics
 {
@@ -64,10 +65,13 @@ public:
   void register_log_signals(
     tam::tsl::ReferenceLogger * logger, std::string name_prefix = "aerodynamics") const override
   {
-    logger->log(
-      name_prefix + "ride_height_front_m", &imr_.ride_height_front_m);
-    logger->log(
-      name_prefix + "ride_height_rear_m", &imr_.ride_height_rear_m);
+    logger->log(name_prefix + "ride_height_front_m", &imr_.ride_height_front_m);
+    logger->log(name_prefix + "ride_height_rear_m", &imr_.ride_height_rear_m);
   }
 };
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::AerodynamicsModel<RideHeightAerodynamicsModel>,
+  "RideHeightAerodynamicsModel does not fulfill the AerodynamicsModel concept");
 }  // namespace tam::sim::aerodynamics

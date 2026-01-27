@@ -1,4 +1,4 @@
-// Copyright 2023 Simon Sagmeister
+// Copyright 2026 Simon Sagmeister
 
 #include "steering_actuator_pt1_cpp/steering_actuator_pt1_model.hpp"
 namespace tam::sim::steering_actuator

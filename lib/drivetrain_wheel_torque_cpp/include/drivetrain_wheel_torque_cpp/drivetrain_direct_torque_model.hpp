@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "drivetrain_model_base_cpp/base_class.hpp"
+#include "drivetrain_model_base_cpp/concept.hpp"
 #include "drivetrain_wheel_torque_cpp/drivetrain_direct_torque_eqns.hpp"
 #include "drivetrain_wheel_torque_cpp/states.hpp"
 #include "param_management_cpp/base.hpp"
@@ -55,4 +56,9 @@ private:
   void declare_parameters();
   void register_log_signals();
 };
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::DrivetrainModel<DrivetrainWheelTorqueModel>,
+  "DrivetrainWheelTorqueModel does not fulfill the DrivetrainModel concept");
 }  // namespace tam::sim::drivetrain

@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "drivetrain_model_base_cpp/base_class.hpp"
+#include "drivetrain_model_base_cpp/concept.hpp"
 #include "drivetrain_rwd_lsd/drivetrain_rwd_lsd_eqns.hpp"
 #include "param_management_cpp/base.hpp"
 #include "param_management_cpp/param_reference_manager.hpp"
@@ -56,4 +57,9 @@ private:
   void declare_parameters();
   void register_log_signals();
 };
+// Check that the class fulfills the concept
+// This checks if the base class was properly implemented without having to create an instance
+static_assert(
+  tam::interfaces::concepts::DrivetrainModel<DrivetrainModel_RWD_LSD>,
+  "DrivetrainModel_RWD_LSD does not fulfill the DrivetrainModel concept");
 }  // namespace tam::sim::drivetrain
