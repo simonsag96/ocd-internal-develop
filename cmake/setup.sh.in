@@ -4,17 +4,8 @@
 [ -n "$_OPEN_CAR_DYNAMICS_CPP_SETUP" ] && return
 export _OPEN_CAR_DYNAMICS_CPP_SETUP=1
 
-# Resolve install prefix
-SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do
-    DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
-    SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-done
-INSTALL_PREFIX="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+# Hardcoded install prefix (configured by CMake)
+INSTALL_PREFIX="@CMAKE_INSTALL_PREFIX@"
 
-# Runtime shared libraries
-export LD_LIBRARY_PATH="$INSTALL_PREFIX/lib:${LD_LIBRARY_PATH:-}"
-
-# CMake package discovery
-export CMAKE_PREFIX_PATH="$INSTALL_PREFIX:${CMAKE_PREFIX_PATH:-}"
+export LD_LIBRARY_PATH="$INSTALL_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export CMAKE_PREFIX_PATH="$INSTALL_PREFIX${CMAKE_PREFIX_PATH:+:$CMAKE_PREFIX_PATH}"

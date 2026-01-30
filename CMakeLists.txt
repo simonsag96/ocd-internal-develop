@@ -134,7 +134,7 @@ write_basic_package_version_file(
 
 # Config file template (create cmake/Config.cmake.in)
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in"
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
     INSTALL_DESTINATION lib/cmake/${PROJECT_NAME}
 )
@@ -150,10 +150,19 @@ install(FILES
 # Install the setup.sh
 # ------------------------------------------------------------------------------
 
-install(FILES cmake/setup.sh.in
-        DESTINATION .
-        RENAME setup.sh
-        PERMISSIONS
-            OWNER_READ OWNER_WRITE OWNER_EXECUTE
-            GROUP_READ GROUP_EXECUTE
-            WORLD_READ WORLD_EXECUTE)
+# Configure setup.sh with the absolute install prefix
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/setup.sh.in
+    ${CMAKE_CURRENT_BINARY_DIR}/setup.sh
+    @ONLY
+)
+
+# Install the configured script
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/setup.sh
+    DESTINATION .
+    PERMISSIONS
+        OWNER_READ OWNER_WRITE OWNER_EXECUTE
+        GROUP_READ GROUP_EXECUTE
+        WORLD_READ WORLD_EXECUTE
+)
