@@ -9,12 +9,12 @@
 #include "ocd_tire_model_base_cpp/base_class.hpp"
 #include "ocd_tire_model_base_cpp/concept.hpp"
 #include "ocd_tire_models_cpp/mf_simple.hpp"
-namespace tam::sim::tire_models
+namespace tam::ocd::tire_models
 {
 //
 // MF Simple Extended
 // =========================================================
-class MF_Simple_Extended : public tam::interfaces::TireModelBase
+class MF_Simple_Extended : public tam::ocd::interfaces::TireModelBase
 {
   struct Parameters
   {
@@ -34,6 +34,6 @@ private:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::interfaces::concepts::TireModel<MF_Simple_Extended>,
+  tam::ocd::interfaces::concepts::TireModel<MF_Simple_Extended>,
   "MF_Simple_Extended does not fulfill the TireModel concept");
-}  // namespace tam::sim::tire_models
+}  // namespace tam::ocd::tire_models

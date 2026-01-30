@@ -15,12 +15,12 @@
 #include "tum_ros_helpers_cpp/qos.hpp"
 #include "tum_type_conversions_ros_cpp/tum_type_conversions.hpp"
 #include "ocd_vehicle_model_node_cpp/helpers.hpp"
-namespace tam::sim::communication_handlers
+namespace tam::ocd::communication_handlers
 {
 class SteeringActuatorPT1CommunicationHandler
-: public tam::interfaces::CommunicationHandlerBase<
-    tam::sim::steering_actuator::PT1SteeringActuatorModel::DriverInputType,
-    tam::sim::steering_actuator::PT1SteeringActuatorModel::FeedbackType>
+: public tam::ocd::interfaces::CommunicationHandlerBase<
+    tam::ocd::steering_actuator::PT1SteeringActuatorModel::DriverInputType,
+    tam::ocd::steering_actuator::PT1SteeringActuatorModel::FeedbackType>
 {
 public:
   explicit SteeringActuatorPT1CommunicationHandler(rclcpp::Node * node);
@@ -50,7 +50,7 @@ private:
   // Delay handling
   uint64_t internal_time_us_{0};
   DriverInputType sa_delayed_input_;
-  tam::sim::helpers::time_delay::TimeDelay<double> steering_angle_delay_;
+  tam::ocd::helpers::time_delay::TimeDelay<double> steering_angle_delay_;
   tam::pmg::ParamValueManager::SharedPtr param_manager_ =
     std::make_shared<tam::pmg::ParamValueManager>();
   void declare_delay_parameters();
@@ -70,4 +70,4 @@ public:
   tam::pmg::MgmtInterface::SharedPtr get_param_manager() { return param_manager_; }
   tam::tsl::LoggerAccessInterface::SharedPtr get_logger() { return debug_container_; }
 };
-}  // namespace tam::sim::communication_handlers
+}  // namespace tam::ocd::communication_handlers

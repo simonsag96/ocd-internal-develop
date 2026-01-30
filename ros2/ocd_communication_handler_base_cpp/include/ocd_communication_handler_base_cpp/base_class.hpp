@@ -9,7 +9,7 @@
 #include "param_management_cpp/base.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "tsl_logger_cpp/base.hpp"
-namespace tam::interfaces
+namespace tam::ocd::interfaces
 {
 template <typename DriverInputT, typename FeedbackT, typename AuxiliaryInputT = void>
 class CommunicationHandlerBase
@@ -49,4 +49,4 @@ public:
   virtual tam::pmg::MgmtInterface::SharedPtr get_param_manager() = 0;
   virtual tam::tsl::LoggerAccessInterface::SharedPtr get_logger() = 0;
 };
-}  // namespace tam::interfaces
+}  // namespace tam::ocd::interfaces

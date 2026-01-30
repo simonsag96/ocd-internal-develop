@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_tire_models_cpp/mf_simple_extended.hpp"
-namespace tam::sim::tire_models
+namespace tam::ocd::tire_models
 {
 types::TireModelOutput MF_Simple_Extended::evaluate(types::TireModelInput const & input)
 {
@@ -43,4 +43,4 @@ void MF_Simple_Extended::declare_parameters(
   param_manager->declare_parameter(name_prefix + "PDY2", &(p_.PDY2), -0.1, tam::pmg::ParameterType::DOUBLE, ""); // NOLINT
   // clang-format on
 }
-}  // namespace tam::sim::tire_models
+}  // namespace tam::ocd::tire_models

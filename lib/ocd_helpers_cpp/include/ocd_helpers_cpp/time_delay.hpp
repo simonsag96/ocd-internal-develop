@@ -2,7 +2,7 @@
 #pragma once
 #include <chrono>
 #include <queue>
-namespace tam::sim::helpers::time_delay
+namespace tam::ocd::helpers::time_delay
 {
 template <typename T>
 class TimeDelay
@@ -63,4 +63,4 @@ private:
     }
   }
 };
-}  // namespace tam::sim::helpers::time_delay
+}  // namespace tam::ocd::helpers::time_delay

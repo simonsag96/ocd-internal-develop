@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_drivetrain_rwd_lsd_cpp/drivetrain_rwd_lsd_model.hpp"
-namespace tam::sim::drivetrain
+namespace tam::ocd::drivetrain
 {
 void DrivetrainModel_RWD_LSD::set_x_vec(const StateVectorType & x_vec) { eqns_.set_x_vec(x_vec); }
 void DrivetrainModel_RWD_LSD::set_driver_input(const DriverInputType & input)
@@ -84,4 +84,4 @@ void DrivetrainModel_RWD_LSD::register_log_signals()
   }
 }
 void DrivetrainModel_RWD_LSD::evaluate() { eqns_.evaluate(); }
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

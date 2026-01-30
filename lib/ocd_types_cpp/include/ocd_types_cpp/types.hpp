@@ -3,37 +3,38 @@
 #include <vector>
 
 #include "tum_types_cpp/common.hpp"
-namespace tam::types
+namespace tam::ocd::types
 {
 struct ExternalInfluences
 {
-  common::Vector3D<double> external_force_N = {0, 0, 0};    // On the vehicle body
-  common::Vector3D<double> external_torque_Nm = {0, 0, 0};  // On the vehicle body
-  common::DataPerWheel<double> z_height_road_m = {0, 0, 0, 0};
-  common::DataPerWheel<double> lambda_mue = {1, 1, 1, 1};
+  tam::types::common::Vector3D<double> external_force_N = {0, 0, 0};    // On the vehicle body
+  tam::types::common::Vector3D<double> external_torque_Nm = {0, 0, 0};  // On the vehicle body
+  tam::types::common::DataPerWheel<double> z_height_road_m = {0, 0, 0, 0};
+  tam::types::common::DataPerWheel<double> lambda_mue = {1, 1, 1, 1};
 };
 struct VehicleDynamicsModelOutput
 {
   // Odometry
-  common::Vector3D<double> position_m = {0, 0, 0};
-  common::Vector3D<double> velocity_mps = {0, 0, 0};
-  common::Vector3D<double> acceleration_mps2 = {0, 0, 0};
-  common::Vector3D<double> orientation_rad = {0, 0, 0};
-  common::Vector3D<double> angular_velocity_radps = {0, 0, 0};
-  common::Vector3D<double> angular_acceleration_radps2 = {0, 0, 0};
-  common::DataPerWheel<double> tire_longitudinal_slip_per_wheel = {0, 0, 0, 0};
-  common::DataPerWheel<double> tire_slip_angle_per_wheel_rad = {0, 0, 0, 0};
-  common::DataPerWheel<double> longitudinal_tire_force_tire_frame_per_wheel_N = {0, 0, 0, 0};
-  common::DataPerWheel<double> lateral_tire_force_tire_frame_per_wheel_N = {0, 0, 0, 0};
-  common::DataPerWheel<double> vertical_tire_force_per_wheel_N = {0, 0, 0, 0};
+  tam::types::common::Vector3D<double> position_m = {0, 0, 0};
+  tam::types::common::Vector3D<double> velocity_mps = {0, 0, 0};
+  tam::types::common::Vector3D<double> acceleration_mps2 = {0, 0, 0};
+  tam::types::common::Vector3D<double> orientation_rad = {0, 0, 0};
+  tam::types::common::Vector3D<double> angular_velocity_radps = {0, 0, 0};
+  tam::types::common::Vector3D<double> angular_acceleration_radps2 = {0, 0, 0};
+  tam::types::common::DataPerWheel<double> tire_longitudinal_slip_per_wheel = {0, 0, 0, 0};
+  tam::types::common::DataPerWheel<double> tire_slip_angle_per_wheel_rad = {0, 0, 0, 0};
+  tam::types::common::DataPerWheel<double> longitudinal_tire_force_tire_frame_per_wheel_N = {
+    0, 0, 0, 0};
+  tam::types::common::DataPerWheel<double> lateral_tire_force_tire_frame_per_wheel_N = {0, 0, 0, 0};
+  tam::types::common::DataPerWheel<double> vertical_tire_force_per_wheel_N = {0, 0, 0, 0};
 };
 struct VehicleModelOutput
 {
   VehicleDynamicsModelOutput vehicle_dynamics_output;
-  common::DataPerWheel<double> wheel_speeds_radps;
-  common::DataPerWheel<double> drivetrain_load_torque_per_wheel_Nm;
-  common::DataPerWheel<double> steering_angle_per_wheel_rad;
-  common::DataPerWheel<double> steering_load_torque_per_wheel_Nm;
+  tam::types::common::DataPerWheel<double> wheel_speeds_radps;
+  tam::types::common::DataPerWheel<double> drivetrain_load_torque_per_wheel_Nm;
+  tam::types::common::DataPerWheel<double> steering_angle_per_wheel_rad;
+  tam::types::common::DataPerWheel<double> steering_load_torque_per_wheel_Nm;
 };
 struct AeroModelOutput
 {
@@ -60,4 +61,4 @@ struct TireModelInput
   double F_z_N;              // Normal force in the tire road contact patch
   double gamma_rad;  // Positive angle means clockwise rotation locking from the rear of the car.
 };
-}  // namespace tam::types
+}  // namespace tam::ocd::types

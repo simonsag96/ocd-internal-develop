@@ -26,7 +26,7 @@ struct DtHelperVehicleModel;
 // 2. Define the template overload for the void case
 template <typename DT_MODEL_T, typename SA_MODEL_T>
 struct DtHelperVehicleModel<DT_MODEL_T, SA_MODEL_T, void>
-: public tam::interfaces::VehicleModelBase<
+: public tam::ocd::interfaces::VehicleModelBase<
     typename DT_MODEL_T::DriverInputType, typename DT_MODEL_T::FeedbackType,
     typename SA_MODEL_T::DriverInputType, typename SA_MODEL_T::FeedbackType,
     typename DT_MODEL_T::AuxiliaryInputType, typename SA_MODEL_T::AuxiliaryInputType>
@@ -38,7 +38,7 @@ protected:
 // 3. Define the template overload for the non-void case
 template <typename DT_MODEL_T, typename SA_MODEL_T, typename DT_AUX_INPUT_T>
 struct DtHelperVehicleModel
-: public tam::interfaces::VehicleModelBase<
+: public tam::ocd::interfaces::VehicleModelBase<
     typename DT_MODEL_T::DriverInputType, typename DT_MODEL_T::FeedbackType,
     typename SA_MODEL_T::DriverInputType, typename SA_MODEL_T::FeedbackType,
     typename DT_MODEL_T::AuxiliaryInputType, typename SA_MODEL_T::AuxiliaryInputType>

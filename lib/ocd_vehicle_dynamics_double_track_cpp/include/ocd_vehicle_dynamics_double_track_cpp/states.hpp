@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <stdexcept>
 #include <string>
-namespace tam::sim::vehicle_dynamics::double_track::States
+namespace tam::ocd::vehicle_dynamics::double_track::States
 {
 // clang-format off
 #define STATE_LIST(X) \
@@ -89,4 +89,4 @@ struct StateNames
   };
 };
 #undef STATE_LIST
-}  // namespace tam::sim::vehicle_dynamics::double_track::States
+}  // namespace tam::ocd::vehicle_dynamics::double_track::States

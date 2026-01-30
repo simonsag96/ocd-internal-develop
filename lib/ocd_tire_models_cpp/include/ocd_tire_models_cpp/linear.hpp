@@ -8,11 +8,11 @@
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "ocd_tire_model_base_cpp/base_class.hpp"
 #include "ocd_tire_model_base_cpp/concept.hpp"
-namespace tam::sim::tire_models
+namespace tam::ocd::tire_models
 {
 // Linear
 // =========================================================
-class Linear : public tam::interfaces::TireModelBase
+class Linear : public tam::ocd::interfaces::TireModelBase
 {
   struct Parameters
   {
@@ -29,6 +29,6 @@ public:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::interfaces::concepts::TireModel<Linear>,
+  tam::ocd::interfaces::concepts::TireModel<Linear>,
   "Linear does not fulfill the TireModel concept");
-}  // namespace tam::sim::tire_models
+}  // namespace tam::ocd::tire_models

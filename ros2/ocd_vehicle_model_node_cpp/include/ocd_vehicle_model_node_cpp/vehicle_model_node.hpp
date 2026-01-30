@@ -22,7 +22,7 @@
 #include "tum_msgs/msg/tum_float64_per_wheel_stamped.hpp"
 #include "ocd_vehicle_model_base_cpp/concept.hpp"
 /// @brief VehicleModelNode class implementing a vehicle model node
-namespace tam::sim
+namespace tam::ocd
 {
 template <
   interfaces::concepts::VehicleModel VEHICLE_T,
@@ -71,7 +71,7 @@ private:
   tam::pmg::ParamManagerComposer::SharedPtr param_manager_composer_{};
   tam::tsl::ValueLogger::SharedPtr logger_{};
   tam::tsl::LoggerComposer::SharedPtr logger_composer_{};
-  tam::types::ExternalInfluences external_input_{};
+  types::ExternalInfluences external_input_{};
   std::chrono::duration<double> timer_period_s_{};
   bool has_new_input_{true};
   bool has_new_external_influence_{true};
@@ -110,6 +110,6 @@ private:
   void update_model_inputs();
   void update_external_influences();
 };
-}  // namespace tam::sim
+}  // namespace tam::ocd
 // Include the implementation file
 #include "ocd_vehicle_model_node_cpp/vehicle_model_node_impl.hpp"

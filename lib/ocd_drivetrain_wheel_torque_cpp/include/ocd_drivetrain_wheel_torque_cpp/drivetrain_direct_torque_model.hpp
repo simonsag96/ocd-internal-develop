@@ -18,17 +18,17 @@
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "tsl_logger_cpp/reference_logger.hpp"
 #include "tum_types_cpp/common.hpp"
-namespace tam::sim::drivetrain
+namespace tam::ocd::drivetrain
 {
 // Wrapping class around the equations
 class DrivetrainWheelTorqueModel
-: public tam::interfaces::DrivetrainModelBase<
+: public tam::ocd::interfaces::DrivetrainModelBase<
     drivetrain::DrivetrainEquationsDirectTorque::DriverInput,
     drivetrain::DrivetrainEquationsDirectTorque::Feedback,
     drivetrain::wheel_torque::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
     drivetrain::wheel_torque::States::StateNames>
 {
-  using x = tam::sim::drivetrain::wheel_torque::States::StateEnum;
+  using x = tam::ocd::drivetrain::wheel_torque::States::StateEnum;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
 
 public:
@@ -59,6 +59,6 @@ private:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::interfaces::concepts::DrivetrainModel<DrivetrainWheelTorqueModel>,
+  tam::ocd::interfaces::concepts::DrivetrainModel<DrivetrainWheelTorqueModel>,
   "DrivetrainWheelTorqueModel does not fulfill the DrivetrainModel concept");
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

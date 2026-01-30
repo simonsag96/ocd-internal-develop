@@ -14,12 +14,12 @@
 #include "tum_ros_helpers_cpp/qos.hpp"
 #include "tum_type_conversions_ros_cpp/tum_type_conversions.hpp"
 #include "ocd_vehicle_model_node_cpp/helpers.hpp"
-namespace tam::sim::communication_handlers
+namespace tam::ocd::communication_handlers
 {
 class DrivetrainWheelTorqueCommunicationHandler
-: public tam::interfaces::CommunicationHandlerBase<
-    tam::sim::drivetrain::DrivetrainWheelTorqueModel::DriverInputType,
-    tam::sim::drivetrain::DrivetrainWheelTorqueModel::FeedbackType>
+: public tam::ocd::interfaces::CommunicationHandlerBase<
+    tam::ocd::drivetrain::DrivetrainWheelTorqueModel::DriverInputType,
+    tam::ocd::drivetrain::DrivetrainWheelTorqueModel::FeedbackType>
 {
 public:
   explicit DrivetrainWheelTorqueCommunicationHandler(rclcpp::Node * node);
@@ -60,4 +60,4 @@ public:
   void update_delay_timer(std::chrono::duration<double>) {}
   void reset_input_delay() {}
 };
-}  // namespace tam::sim::communication_handlers
+}  // namespace tam::ocd::communication_handlers

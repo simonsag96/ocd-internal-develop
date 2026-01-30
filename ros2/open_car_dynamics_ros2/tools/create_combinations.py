@@ -74,17 +74,17 @@ def main():
                         else:
                             print(f"OCD_NODE_COMPONENT(")
                             print(f"  {cleaned_name},")
-                            print(f"  tam::sim::drivetrain::{drivetrain},")
+                            print(f"  tam::ocd::drivetrain::{drivetrain},")
                             print(
-                                f"  tam::sim::communication_handlers::{drivetrain_comm},"
+                                f"  tam::ocd::communication_handlers::{drivetrain_comm},"
                             )
-                            print(f"  tam::sim::steering_actuator::{steering},")
+                            print(f"  tam::ocd::steering_actuator::{steering},")
                             print(
-                                f"  tam::sim::communication_handlers::{steering_comm},"
+                                f"  tam::ocd::communication_handlers::{steering_comm},"
                             )
-                            print(f"  tam::sim::vehicle_dynamics::{vdm},")
+                            print(f"  tam::ocd::vehicle_dynamics::{vdm},")
                             print(
-                                f"  tam::sim::aerodynamics::{aero}, tam::sim::tire_models::{tire})\n"
+                                f"  tam::ocd::aerodynamics::{aero}, tam::ocd::tire_models::{tire})\n"
                             )
 
 

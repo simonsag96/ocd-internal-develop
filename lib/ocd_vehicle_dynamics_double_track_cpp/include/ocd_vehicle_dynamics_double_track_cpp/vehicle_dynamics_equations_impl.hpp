@@ -11,11 +11,11 @@
   x(front_right);               \
   x(rear_left);                 \
   x(rear_right)
-namespace tam::sim::vehicle_dynamics
+namespace tam::ocd::vehicle_dynamics
 {
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_dependent_parameters()
 {
   p_dep_.l_r = p_.l - p_.l_f;
@@ -33,8 +33,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_dependent
 }
 
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_effective_steering_angle(){
     double_per_wheel_t toe_addition = p_.toe_out_rad;
     // Toe out means steering to right on the right side -> Therefore negate the sign.
@@ -45,8 +45,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_effective
 }
 
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calc_dynamic_tire_radius()
 {
   // Interpolation function
@@ -56,8 +56,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calc_dynamic_tire_r
       x_vec_[x::v_x_mps], p_.rr_vel_scale_vel_points_mps, p_.rr_vel_scale_scale_factors);
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_tire_spring_initial_compression_m()
 {
@@ -72,8 +72,8 @@ void VehicleDynamicsDoubleTrackEqns<
     imr_.tire_spring_initial_compression_m.rear_left;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_spring_force_N()
 {  // Tire spring forces
   // Clamp to Fz = 0.001 in order to avoid numeric problems in the tire model.
@@ -91,8 +91,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_spri
     std::numeric_limits<double>::lowest(), -0.001);
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_vertical_tire_force_N()
 {
   imr_.vertical_tire_force_N.front_left = -imr_.tire_spring_force_N.front_left;
@@ -101,8 +101,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_vertical_
   imr_.vertical_tire_force_N.rear_right = -imr_.tire_spring_force_N.rear_right;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_velocity_wheel_over_ground_mps()
 {  // Tire Velocity Vector @ x - y axis
@@ -120,8 +120,8 @@ void VehicleDynamicsDoubleTrackEqns<
     x_vec_[x::v_y_mps] - p_dep_.l_r * x_vec_[x::psi_dot_radps]};
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_velocity_wheel_over_ground_tire_frame_mps()
 {
@@ -149,8 +149,8 @@ void VehicleDynamicsDoubleTrackEqns<
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_velocity_tire_rotation_mps()
 {
   // Velocity due to tire roll @ x - y axis:
@@ -164,8 +164,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_velocity_
     imr_.dynamic_tire_radius_m.rear_right * wheel_speeds_radps_.rear_right;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_longitudinal_slip()
 {
   // TODO(Simon S) verify slip definition
@@ -185,8 +185,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_long
 #undef CALC_LONG_SLIP
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_slip_angle_rad()
 {
   auto slip_angle_def = [this](double vy, double vx) { return -atan2(vy, std::max(1.0, vx)); };
@@ -202,8 +202,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_slip
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forces_tire_frame_N()
 {
   // Zero out tire forces when at rest
@@ -263,8 +263,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forc
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forces_N()
 {
   // Tire Forces @ x - y axis of the vehicle
@@ -283,8 +283,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forc
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_suspension_spring_initial_compression_m()
 {
@@ -299,8 +299,8 @@ void VehicleDynamicsDoubleTrackEqns<
     imr_.suspension_spring_initial_compression_m.rear_left;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_suspension_spring_compression_m()
 {
@@ -322,8 +322,8 @@ void VehicleDynamicsDoubleTrackEqns<
     x_vec_[x::z_w_RR_m];
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_suspension_damper_compression_speed_mps()
 {
@@ -342,8 +342,8 @@ void VehicleDynamicsDoubleTrackEqns<
     x_vec_[x::theta_dot_radps] * p_dep_.l_r_sprung - x_vec_[x::v_z_w_RR_mps];
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_suspension_spring_force_N()
 {
   // Suspension spring forces
@@ -357,8 +357,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_suspensio
     p_.c_r * imr_.suspension_spring_compression_m.rear_right;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_suspension_damper_force_N()
 {
   // Suspension damper forces
@@ -372,8 +372,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_suspensio
     p_.d_r * imr_.suspension_damper_compression_speed_mps.rear_right;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_antiroll_bar_force_N()
 {
   // Anti-Roll bar forces
@@ -387,8 +387,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_antiroll_
   imr_.antiroll_bar_force_N.rear_right = -imr_.antiroll_bar_force_N.rear_left;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_rolling_resistance_N()
 {
 // Always positive since always going forward
@@ -398,8 +398,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_roll
 #undef CALC_TIRE_RR
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_axle_vertical_force_N()
 {  // Total Axle Forces
   // See page A-30
@@ -424,8 +424,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_axle_vert
     p_dep_.sadr_deceleration, p_dep_.sadr_acceleration);
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_resulting_suspension_force_N()
 {
@@ -443,8 +443,8 @@ void VehicleDynamicsDoubleTrackEqns<
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_resulting_vertical_force_on_wheel_N()
 {
@@ -464,24 +464,24 @@ void VehicleDynamicsDoubleTrackEqns<
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_aerodynamics()
 {
   // Aerodynamic forces
-  tam::types::AeroModelInput input;
+  types::AeroModelInput input;
   input.vx_mps = x_vec_[x::v_x_mps];
   input.vy_mps = x_vec_[x::v_y_mps];
   input.pitch_angle_rad = x_vec_[x::theta_rad];
   input.z_m = x_vec_[x::z_m];
 
-  tam::types::AeroModelOutput aero_model_out = aero_model_.evaluate(input);
+  types::AeroModelOutput aero_model_out = aero_model_.evaluate(input);
   imr_.aero_force_N = aero_model_out.force_cog_N;
   imr_.aero_torque_Nm = aero_model_out.torque_Nm;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_resulting_force_N()
 {
   // Scale external influences at low speed
@@ -511,8 +511,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_resulting
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_resulting_torque_Nm()
 {
   // Sum of tire moments @ z axis
@@ -553,8 +553,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_resulting
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_drivetrain_load_torque_Nm()
 {
   // clang-format off
@@ -568,8 +568,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_drivetrai
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_steering_load_torque_Nm()
 {
   // clang-format off
@@ -583,8 +583,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_steering_
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_intermediate_results()
 {
   calculate_dependent_parameters();
@@ -616,8 +616,8 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_intermedi
   // clang-format on
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::evaluate()
 {
   // Calc the required forces and moments
@@ -703,5 +703,5 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::evaluate()
     x_dot_vec_[x::v_y_mps] + x_vec_[x::psi_dot_radps] * x_vec_[x::v_x_mps];
   vd_output_.acceleration_mps2.z = tam::constants::g_earth;
 };
-}  // namespace tam::sim::vehicle_dynamics
+}  // namespace tam::ocd::vehicle_dynamics
 #undef EVAL_MACRO_PER_WHEEL

@@ -10,12 +10,12 @@
 #include "tum_ros_helpers_cpp/qos.hpp"
 #include "ocd_vehicle_model_node_cpp/helpers.hpp"
 #include "std_msgs/msg/float64.hpp"
-namespace tam::sim::communication_handlers
+namespace tam::ocd::communication_handlers
 {
 class DrivetrainFxCommunicationHandler
-: public tam::interfaces::CommunicationHandlerBase<
-    tam::sim::drivetrain::DrivetrainFxModel::DriverInputType,
-    tam::sim::drivetrain::DrivetrainFxModel::FeedbackType>
+: public tam::ocd::interfaces::CommunicationHandlerBase<
+    tam::ocd::drivetrain::DrivetrainFxModel::DriverInputType,
+    tam::ocd::drivetrain::DrivetrainFxModel::FeedbackType>
 {
 public:
   explicit DrivetrainFxCommunicationHandler(rclcpp::Node * node);
@@ -51,4 +51,4 @@ public:
   void update_delay_timer(std::chrono::duration<double>) override {};
   void reset_input_delay() override {};
 };
-}  // namespace tam::sim::communication_handlers
+}  // namespace tam::ocd::communication_handlers

@@ -2,7 +2,7 @@
 
 #include "ocd_drivetrain_fx_communication_handler_cpp/comm_handler.hpp"
 using std::placeholders::_1;
-namespace tam::sim::communication_handlers
+namespace tam::ocd::communication_handlers
 {
 DrivetrainFxCommunicationHandler::DrivetrainFxCommunicationHandler(
   rclcpp::Node * node)
@@ -25,4 +25,4 @@ DrivetrainFxCommunicationHandler::get_driver_input()
 {
   return dt_input_;
 }
-}  // namespace tam::sim::communication_handlers
+}  // namespace tam::ocd::communication_handlers

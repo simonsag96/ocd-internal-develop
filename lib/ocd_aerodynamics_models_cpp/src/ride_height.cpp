@@ -8,7 +8,7 @@
 #include <utility>
 
 #include "tum_helpers_cpp/numerical.hpp"
-namespace tam::sim::aerodynamics
+namespace tam::ocd::aerodynamics
 {
 types::AeroModelOutput RideHeightAerodynamicsModel::evaluate(types::AeroModelInput const & u)
 {
@@ -144,4 +144,4 @@ void RideHeightAerodynamicsModel::declare_parameters(
   param_manager->declare_parameter(
     name_prefix + "a6", &(p_.a6), 0.0, tam::pmg::ParameterType::DOUBLE, "");
 }
-}  // namespace tam::sim::aerodynamics
+}  // namespace tam::ocd::aerodynamics

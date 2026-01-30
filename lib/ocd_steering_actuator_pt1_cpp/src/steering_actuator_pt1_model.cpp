@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_steering_actuator_pt1_cpp/steering_actuator_pt1_model.hpp"
-namespace tam::sim::steering_actuator
+namespace tam::ocd::steering_actuator
 {
 PT1SteeringActuatorModel::PT1SteeringActuatorModel()
 {
@@ -80,4 +80,4 @@ void PT1SteeringActuatorModel::register_log_signals()
   logger_->log("actual_steering_angle_rad", &actual_steering_angle_rad_);
   logger_->log("steering_angle_rate_radps", &x_dot_vec_[x::position_rad]);
 }
-}  // namespace tam::sim::steering_actuator
+}  // namespace tam::ocd::steering_actuator

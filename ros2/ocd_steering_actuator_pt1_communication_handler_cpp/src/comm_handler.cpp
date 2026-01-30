@@ -3,7 +3,7 @@
 #include "ocd_steering_actuator_pt1_communication_handler_cpp/comm_handler.hpp"
 
 using std::placeholders::_1;
-namespace tam::sim::communication_handlers
+namespace tam::ocd::communication_handlers
 {
 SteeringActuatorPT1CommunicationHandler::SteeringActuatorPT1CommunicationHandler(
   rclcpp::Node * node)
@@ -77,4 +77,4 @@ bool SteeringActuatorPT1CommunicationHandler::get_new_input_flag()
   get_driver_input();
   return has_new_input_;
 }
-}  // namespace tam::sim::communication_handlers
+}  // namespace tam::ocd::communication_handlers

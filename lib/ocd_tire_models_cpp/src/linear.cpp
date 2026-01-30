@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_tire_models_cpp/linear.hpp"
-namespace tam::sim::tire_models
+namespace tam::ocd::tire_models
 {
 types::TireModelOutput Linear::evaluate(types::TireModelInput const & input)
 {
@@ -20,4 +20,4 @@ void Linear::declare_parameters(
   param_manager->declare_parameter(name_prefix + "C_alpha", &(p_.C_alpha), -0.1, tam::pmg::ParameterType::DOUBLE, ""); // NOLINT
   // clang-format on
 }
-}  // namespace tam::sim::tire_models
+}  // namespace tam::ocd::tire_models

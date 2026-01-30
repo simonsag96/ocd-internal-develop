@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_tire_models_cpp/mf_52.hpp"
-namespace tam::sim::tire_models
+namespace tam::ocd::tire_models
 {
 types::TireModelOutput MF52::evaluate(types::TireModelInput const & input)
 {
@@ -229,4 +229,4 @@ void MF52::declare_parameters(
     name_prefix + "FNOMIN", &(p_.FNOMIN), 3000.0, tam::pmg::ParameterType::DOUBLE,
     "Nominal wheel load");  // NOLINT
 }
-}  // namespace tam::sim::tire_models
+}  // namespace tam::ocd::tire_models

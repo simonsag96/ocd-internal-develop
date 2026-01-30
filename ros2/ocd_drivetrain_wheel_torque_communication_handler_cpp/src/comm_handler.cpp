@@ -2,7 +2,7 @@
 
 #include "ocd_drivetrain_wheel_torque_communication_handler_cpp/comm_handler.hpp"
 using std::placeholders::_1;
-namespace tam::sim::communication_handlers
+namespace tam::ocd::communication_handlers
 {
 DrivetrainWheelTorqueCommunicationHandler::DrivetrainWheelTorqueCommunicationHandler(
   rclcpp::Node * node)
@@ -36,7 +36,7 @@ void DrivetrainWheelTorqueCommunicationHandler::publish_feedback(
   tum_msgs::msg::TUMFloat64PerWheelStamped fb_input_torque;
   fb_input_torque.stamp = timestamp;
   fb_input_torque.data =
-    tam::helpers::type_conversion::toMsg(feedback.drivetrain_input_torque_per_wheel_Nm);
+    tam::ocd::helpers::type_conversion::toMsg(feedback.drivetrain_input_torque_per_wheel_Nm);
   pub_fb_input_torque_->publish(fb_input_torque);
 }
 DrivetrainWheelTorqueCommunicationHandler::DriverInputType
@@ -50,4 +50,4 @@ void DrivetrainWheelTorqueCommunicationHandler::assign_debug_outputs()
   debug_container_->log(
     "driver_input/input_torque_per_wheel_Nm", dt_input_.drivetrain_input_torque_per_wheel_Nm);
 }
-}  // namespace tam::sim::communication_handlers
+}  // namespace tam::ocd::communication_handlers

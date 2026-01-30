@@ -10,7 +10,7 @@
 #include "tsl_logger_cpp/reference_logger.hpp"
 #include "ocd_types_cpp/types.hpp"
 #include "tum_types_cpp/common.hpp"
-namespace tam::interfaces
+namespace tam::ocd::interfaces
 {
 /// Base class for an aerodynamics model. Should be stateless
 class AerodynamicsModelBase
@@ -28,4 +28,4 @@ public:
   virtual void register_log_signals(
     tam::tsl::ReferenceLogger * logger, std::string name_prefix) const = 0;
 };
-}  // namespace tam::interfaces
+}  // namespace tam::ocd::interfaces

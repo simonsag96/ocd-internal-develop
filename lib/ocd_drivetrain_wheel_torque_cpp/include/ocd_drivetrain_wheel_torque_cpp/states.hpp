@@ -8,7 +8,7 @@
 #include <string>
 
 #include "tum_types_cpp/common.hpp"
-namespace tam::sim::drivetrain::wheel_torque::States
+namespace tam::ocd::drivetrain::wheel_torque::States
 {
 // Input to the steering actuator model
 #define STATE_LIST(X) \
@@ -35,4 +35,4 @@ struct StateNames
   };
 };
 #undef STATE_LIST
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

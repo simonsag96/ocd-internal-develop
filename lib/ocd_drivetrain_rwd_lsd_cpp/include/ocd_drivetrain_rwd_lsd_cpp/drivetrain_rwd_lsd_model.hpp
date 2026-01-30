@@ -18,17 +18,17 @@
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "tsl_logger_cpp/reference_logger.hpp"
 #include "tum_types_cpp/common.hpp"
-namespace tam::sim::drivetrain
+namespace tam::ocd::drivetrain
 {
 // Wrapping class around the equations
 class DrivetrainModel_RWD_LSD
-: public tam::interfaces::DrivetrainModelBase<
+: public tam::ocd::interfaces::DrivetrainModelBase<
     drivetrain::DrivetrainEquations_RWD_LSD::DriverInput,
     drivetrain::DrivetrainEquations_RWD_LSD::Feedback,
     drivetrain::rwd_lsd::States::CNT_LENGTH_STATE_VECTOR, drivetrain::rwd_lsd::States::StateNames>
 {
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
-  using x = tam::sim::drivetrain::rwd_lsd::States::StateEnum;
+  using x = tam::ocd::drivetrain::rwd_lsd::States::StateEnum;
 
   friend class DrivetrainFxModel;  // allow access to private members
 
@@ -60,6 +60,6 @@ private:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::interfaces::concepts::DrivetrainModel<DrivetrainModel_RWD_LSD>,
+  tam::ocd::interfaces::concepts::DrivetrainModel<DrivetrainModel_RWD_LSD>,
   "DrivetrainModel_RWD_LSD does not fulfill the DrivetrainModel concept");
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

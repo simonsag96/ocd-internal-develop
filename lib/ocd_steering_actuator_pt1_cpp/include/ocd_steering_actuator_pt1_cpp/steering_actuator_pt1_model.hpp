@@ -16,14 +16,14 @@
 #include "ocd_steering_actuator_pt1_cpp/states.hpp"
 #include "tsl_logger_cpp/reference_logger.hpp"
 #include "tum_types_cpp/common.hpp"
-namespace tam::sim::steering_actuator
+namespace tam::ocd::steering_actuator
 {
 class PT1SteeringActuatorModel
-: public tam::interfaces::SteeringActuatorModelBase<
+: public tam::ocd::interfaces::SteeringActuatorModelBase<
     PT1::DriverInput, PT1::Feedback, PT1::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
     PT1::States::StateNames>
 {
-  using x = tam::sim::steering_actuator::PT1::States::StateEnum;
+  using x = tam::ocd::steering_actuator::PT1::States::StateEnum;
   using DoublePerWheelType = tam::types::common::DataPerWheel<double>;
 
 public:
@@ -65,7 +65,7 @@ private:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::interfaces::concepts::SteeringActuatorModel<PT1SteeringActuatorModel>,
+  tam::ocd::interfaces::concepts::SteeringActuatorModel<PT1SteeringActuatorModel>,
   "PT1SteeringActuatorModel does not fulfill the SteeringActuatorModel concept");
 
-}  // namespace tam::sim::steering_actuator
+}  // namespace tam::ocd::steering_actuator

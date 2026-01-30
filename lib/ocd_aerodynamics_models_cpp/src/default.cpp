@@ -8,7 +8,7 @@
 #include <utility>
 
 #include "tum_helpers_cpp/numerical.hpp"
-namespace tam::sim::aerodynamics
+namespace tam::ocd::aerodynamics
 {
 types::AeroModelOutput DefaultAerodynamicsModel::evaluate(types::AeroModelInput const & u)
 {
@@ -87,4 +87,4 @@ void DefaultAerodynamicsModel::declare_parameters(
     &(p_.pitch_aero_center_translation__aero_center_translation_m), std::vector<double>{0, 0},
     tam::pmg::ParameterType::DOUBLE_ARRAY, "");
 }
-}  // namespace tam::sim::aerodynamics
+}  // namespace tam::ocd::aerodynamics

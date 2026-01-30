@@ -6,10 +6,10 @@
 #include "ocd_drivetrain_model_base_cpp/base_class.hpp"
 #include "ocd_drivetrain_model_base_cpp/concept.hpp"
 #include "ocd_drivetrain_rwd_lsd_cpp/drivetrain_rwd_lsd_model.hpp"
-namespace tam::sim::drivetrain
+namespace tam::ocd::drivetrain
 {
 // Wrapping class around the equations
-class DrivetrainFxModel : public tam::interfaces::DrivetrainModelBase<
+class DrivetrainFxModel : public tam::ocd::interfaces::DrivetrainModelBase<
                             double, void, DrivetrainModel_RWD_LSD::k_state_vector_length,
                             DrivetrainModel_RWD_LSD::StateNamesTrait>
 {
@@ -79,6 +79,6 @@ private:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::interfaces::concepts::DrivetrainModel<DrivetrainFxModel>,
+  tam::ocd::interfaces::concepts::DrivetrainModel<DrivetrainFxModel>,
   "DrivetrainFxModel does not fulfill the DrivetrainModel concept");
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

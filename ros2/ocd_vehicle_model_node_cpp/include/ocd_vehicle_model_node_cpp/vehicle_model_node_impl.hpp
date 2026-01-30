@@ -12,7 +12,7 @@
 #include "tum_types_cpp/coordinate_frames.hpp"
 #include "ocd_vehicle_model_node_cpp/helpers.hpp"
 #include "ocd_vehicle_model_node_cpp/vehicle_model_node.hpp"
-namespace tam::sim
+namespace tam::ocd
 {
 template <
   interfaces::concepts::VehicleModel VEHICLE_T,
@@ -138,10 +138,10 @@ template <
 void VehicleModelNode<VEHICLE_T, DT_COMM_HANDLER_T, SA_COMM_HANDLER_T>::output_callback()
 {
   if (initial_cycle_) return;
-  typename tam::types::VehicleModelOutput vehicle_model_output =
+  typename types::VehicleModelOutput vehicle_model_output =
     veh_model_->get_vehicle_model_output();
   nav_msgs::msg::Odometry odom =
-    tam::helpers::type_conversion::toMsg(vehicle_model_output.vehicle_dynamics_output);
+    tam::ocd::helpers::type_conversion::toMsg(vehicle_model_output.vehicle_dynamics_output);
   rclcpp::Time stamp = get_clock()->now();
 
   odom.header.stamp = stamp;
@@ -151,45 +151,45 @@ void VehicleModelNode<VEHICLE_T, DT_COMM_HANDLER_T, SA_COMM_HANDLER_T>::output_c
 
   tum_msgs::msg::TUMFloat64PerWheelStamped wheel_speed;
   wheel_speed.stamp = stamp;
-  wheel_speed.data = tam::helpers::type_conversion::toMsg(vehicle_model_output.wheel_speeds_radps);
+  wheel_speed.data = tam::ocd::helpers::type_conversion::toMsg(vehicle_model_output.wheel_speeds_radps);
   wheel_speed_pub_->publish(wheel_speed);
 
   geometry_msgs::msg::AccelWithCovarianceStamped accel;
   accel.header.stamp = stamp;
   accel.header.frame_id = CoordinateFrames::vehicle_cg;
-  accel.accel.accel.linear = tam::helpers::type_conversion::toMsg(
+  accel.accel.accel.linear = tam::ocd::helpers::type_conversion::toMsg(
     vehicle_model_output.vehicle_dynamics_output.acceleration_mps2);
-  accel.accel.accel.angular = tam::helpers::type_conversion::toMsg(
+  accel.accel.accel.angular = tam::ocd::helpers::type_conversion::toMsg(
     vehicle_model_output.vehicle_dynamics_output.angular_acceleration_radps2);
   accel_pub_->publish(accel);
 
   tum_msgs::msg::TUMFloat64PerWheelStamped tire_force_long;
   tire_force_long.stamp = stamp;
-  tire_force_long.data = tam::helpers::type_conversion::toMsg(
+  tire_force_long.data = tam::ocd::helpers::type_conversion::toMsg(
     vehicle_model_output.vehicle_dynamics_output.longitudinal_tire_force_tire_frame_per_wheel_N);
   tire_force_long_pub_->publish(tire_force_long);
 
   tum_msgs::msg::TUMFloat64PerWheelStamped tire_force_lat;
   tire_force_lat.stamp = stamp;
-  tire_force_lat.data = tam::helpers::type_conversion::toMsg(
+  tire_force_lat.data = tam::ocd::helpers::type_conversion::toMsg(
     vehicle_model_output.vehicle_dynamics_output.lateral_tire_force_tire_frame_per_wheel_N);
   tire_force_lat_pub_->publish(tire_force_lat);
 
   tum_msgs::msg::TUMFloat64PerWheelStamped tire_force_vert;
   tire_force_vert.stamp = stamp;
-  tire_force_vert.data = tam::helpers::type_conversion::toMsg(
+  tire_force_vert.data = tam::ocd::helpers::type_conversion::toMsg(
     vehicle_model_output.vehicle_dynamics_output.vertical_tire_force_per_wheel_N);
   tire_force_vert_pub_->publish(tire_force_vert);
 
   tum_msgs::msg::TUMFloat64PerWheelStamped long_slip;
   long_slip.stamp = stamp;
-  long_slip.data = tam::helpers::type_conversion::toMsg(
+  long_slip.data = tam::ocd::helpers::type_conversion::toMsg(
     vehicle_model_output.vehicle_dynamics_output.tire_longitudinal_slip_per_wheel);
   long_slip_pub_->publish(long_slip);
 
   tum_msgs::msg::TUMFloat64PerWheelStamped slip_angle;
   slip_angle.stamp = stamp;
-  slip_angle.data = tam::helpers::type_conversion::toMsg(
+  slip_angle.data = tam::ocd::helpers::type_conversion::toMsg(
     vehicle_model_output.vehicle_dynamics_output.tire_slip_angle_per_wheel_rad);
   slip_angle_pub_->publish(slip_angle);
 
@@ -289,7 +289,7 @@ void VehicleModelNode<VEHICLE_T, DT_COMM_HANDLER_T, SA_COMM_HANDLER_T>::
   external_influences_callback(const tum_msgs::msg::TUMExternalVehicleInfluences::SharedPtr msg)
 {
   has_new_external_influence_ = true;
-  external_input_ = tam::helpers::type_conversion::external_influences_type_from_msg(*msg);
+  external_input_ = tam::ocd::helpers::type_conversion::external_influences_type_from_msg(*msg);
 }
 template <
   interfaces::concepts::VehicleModel VEHICLE_T,
@@ -301,4 +301,4 @@ void VehicleModelNode<VEHICLE_T, DT_COMM_HANDLER_T, SA_COMM_HANDLER_T>::reset()
   dt_comm_handler_->reset_input_delay();
   sa_comm_handler_->reset_input_delay();
 }
-}  // namespace tam::sim
+}  // namespace tam::ocd

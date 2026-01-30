@@ -19,17 +19,17 @@
 #include "ocd_types_cpp/types.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/logging.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_equations.hpp"
-namespace tam::sim::vehicle_dynamics
+namespace tam::ocd::vehicle_dynamics
 {
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 class VehicleDynamicsDoubleTrackModel
-: public tam::interfaces::VehicleDynamicsModelBase<
+: public tam::ocd::interfaces::VehicleDynamicsModelBase<
     double_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
     double_track::States::StateNames>
 {
-  using x = tam::sim::vehicle_dynamics::double_track::States::StateEnum;
+  using x = tam::ocd::vehicle_dynamics::double_track::States::StateEnum;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
 
 public:
@@ -44,7 +44,7 @@ public:
   // Getting outputs
   double_per_wheel_t get_wheel_load() const override;
   double_per_wheel_t get_steering_load() const override;
-  tam::types::VehicleDynamicsModelOutput get_vehicle_dynamics_output() const override;
+  types::VehicleDynamicsModelOutput get_vehicle_dynamics_output() const override;
   StateVectorType get_x_vec() const override;
   StateVectorType get_x_dot_vec() const override;
 
@@ -62,5 +62,5 @@ private:
   void declare_parameters();
   void register_log_signals();
 };
-}  // namespace tam::sim::vehicle_dynamics
+}  // namespace tam::ocd::vehicle_dynamics
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_model_impl.hpp"

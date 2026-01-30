@@ -8,9 +8,9 @@
 #include "param_management_cpp/param_reference_manager.hpp"
 #include "ocd_tire_model_base_cpp/base_class.hpp"
 #include "ocd_tire_model_base_cpp/concept.hpp"
-namespace tam::sim::tire_models
+namespace tam::ocd::tire_models
 {
-class MF52 : public tam::interfaces::TireModelBase
+class MF52 : public tam::ocd::interfaces::TireModelBase
 {
   struct Parameters
   {
@@ -45,6 +45,6 @@ private:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::interfaces::concepts::TireModel<MF52>,
+  tam::ocd::interfaces::concepts::TireModel<MF52>,
   "MF52 does not fulfill the TireModel concept");
-}  // namespace tam::sim::tire_models
+}  // namespace tam::ocd::tire_models

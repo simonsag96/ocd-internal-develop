@@ -11,7 +11,7 @@
 #include "tsl_logger_cpp/base.hpp"
 #include "ocd_types_cpp/types.hpp"
 #include "tum_types_cpp/common.hpp"
-namespace tam::interfaces
+namespace tam::ocd::interfaces
 {
 template <std::size_t state_vector_length, typename StateNamesT>
 class VehicleDynamicsModelBase
@@ -41,7 +41,7 @@ public:
   // getters
   virtual tam::types::common::DataPerWheel<double> get_steering_load() const = 0;
   virtual tam::types::common::DataPerWheel<double> get_wheel_load() const = 0;
-  virtual tam::types::VehicleDynamicsModelOutput get_vehicle_dynamics_output() const = 0;
+  virtual types::VehicleDynamicsModelOutput get_vehicle_dynamics_output() const = 0;
   virtual StateVectorType get_x_vec() const = 0;
   virtual StateVectorType get_x_dot_vec() const = 0;
 
@@ -49,4 +49,4 @@ public:
   virtual tam::pmg::MgmtInterface::SharedPtr get_param_manager() const = 0;
   // Function to convert state enum to string
 };
-}  // namespace tam::interfaces
+}  // namespace tam::ocd::interfaces

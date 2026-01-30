@@ -21,7 +21,7 @@
 #include "ocd_vehicle_dynamics_model_base_cpp/concept.hpp"
 #include "ocd_vehicle_model_base_cpp/base_class.hpp"
 #include "ocd_vehicle_model_cpp/conditional_auxiliary_input.hpp"
-namespace tam::sim
+namespace tam::ocd
 {
 template <
   interfaces::concepts::DrivetrainModel DT_MODEL_T,
@@ -78,11 +78,11 @@ private:
   double_per_wheel_t steering_angle_per_wheel_rad_;
   double_per_wheel_t drivetrain_load_torque_per_wheel_Nm_;
   double_per_wheel_t steering_load_torque_per_wheel_Nm_;
-  tam::types::VehicleDynamicsModelOutput vehicle_dynamics_output_;
+  types::VehicleDynamicsModelOutput vehicle_dynamics_output_;
 
-  tam::types::ExternalInfluences external_influences_;
+  types::ExternalInfluences external_influences_;
 
-  typename tam::types::VehicleModelOutput model_output_;
+  typename types::VehicleModelOutput model_output_;
 
   // debugging
   tam::tsl::ValueLogger::SharedPtr debug_container_ = std::make_shared<tam::tsl::ValueLogger>();
@@ -125,13 +125,13 @@ public:
     }
   };
   // vehicle dynamics block
-  void set_external_influences(const tam::types::ExternalInfluences & input) override
+  void set_external_influences(const types::ExternalInfluences & input) override
   {
     external_influences_ = input;
   };
   // Conditionally enable auxiliary input functions
   // Cannot be marked with override since it is a template function
-  typename tam::types::VehicleModelOutput get_vehicle_model_output() const override
+  typename types::VehicleModelOutput get_vehicle_model_output() const override
   {
     return model_output_;
   };
@@ -147,5 +147,5 @@ public:
   };
   void reset();
 };
-}  // namespace tam::sim
+}  // namespace tam::ocd
 #include "vehicle_model_impl.hpp"

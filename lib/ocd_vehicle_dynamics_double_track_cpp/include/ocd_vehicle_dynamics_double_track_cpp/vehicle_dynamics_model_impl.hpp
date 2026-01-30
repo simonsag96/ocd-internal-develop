@@ -6,19 +6,19 @@
 
 #include "tsl_logger_cpp/type_support.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_model.hpp"
-namespace tam::sim::vehicle_dynamics
+namespace tam::ocd::vehicle_dynamics
 {
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 tam::tsl::LoggerAccessInterface::SharedPtr
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_logger() const
 {
   return logger_;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 tam::pmg::MgmtInterface::SharedPtr
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_param_manager() const
 {
@@ -26,32 +26,32 @@ VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_param_manager() con
 }
 // Settings inputs
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::set_wheel_speeds(
   const double_per_wheel_t & wheel_speeds_radps)
 {
   eqns_.set_wheel_speeds(wheel_speeds_radps);
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::set_steering_angles(
   const double_per_wheel_t & steering_angle_per_wheel_rad)
 {
   eqns_.set_steering_angles(steering_angle_per_wheel_rad);
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::set_external_influences(
   const types::ExternalInfluences & external_influences)
 {
   eqns_.set_external_influences(external_influences);
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::set_x_vec(
   const StateVectorType & x_vec)
 {
@@ -59,32 +59,32 @@ void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::set_x_vec(
 }
 // Getting outputs
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::double_per_wheel_t
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_wheel_load() const
 {
   return eqns_.drivetrain_load_torque_per_wheel_Nm_;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::double_per_wheel_t
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_steering_load() const
 {
   return eqns_.steering_load_torque_per_wheel_Nm_;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
-tam::types::VehicleDynamicsModelOutput
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
+types::VehicleDynamicsModelOutput
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_vehicle_dynamics_output() const
 {
   return eqns_.vd_output_;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::StateVectorType
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_x_vec() const
@@ -92,31 +92,31 @@ VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_x_vec() const
   return eqns_.x_vec_;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::StateVectorType
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::get_x_dot_vec() const
 {
   return eqns_.x_dot_vec_;
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::VehicleDynamicsDoubleTrackModel()
 {
   declare_parameters();
   register_log_signals();
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::evaluate()
 {
   eqns_.evaluate();
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::register_log_signals()
 {
   // Assign the debug outputs correctly
@@ -166,8 +166,8 @@ void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::register_log_signa
   eqns_.tire_models_.rear_right.register_log_signals(logger_.get(), "imr/tire_model/rear_right/");
 }
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::declare_parameters()
 {
   auto p_def_d = [this](
@@ -270,4 +270,4 @@ void VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>::declare_parameters
   eqns_.aero_model_.declare_parameters(
     param_manager_.get(), "vehicle_dynamics_double_track.aerodynamics.");
 }
-}  // namespace tam::sim::vehicle_dynamics
+}  // namespace tam::ocd::vehicle_dynamics

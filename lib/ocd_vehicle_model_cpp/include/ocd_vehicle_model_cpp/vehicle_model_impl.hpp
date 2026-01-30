@@ -6,7 +6,7 @@
 
 #include "vehicle_model.hpp"
 #include "ocd_vehicle_model_base_cpp/base_class.hpp"
-namespace tam::sim
+namespace tam::ocd
 {
 #define VEHICLE_T VehicleModel<DT_MODEL_T, SA_MODEL_T, VD_MODEL_T>
 template <typename DT_MODEL_T, typename SA_MODEL_T, typename VD_MODEL_T>
@@ -175,4 +175,4 @@ void VEHICLE_T::declare_parameters()
   }
 }
 #undef VEHICLE_T
-}  // namespace tam::sim
+}  // namespace tam::ocd

@@ -9,7 +9,7 @@
 #include "ocd_types_cpp/types.hpp"
 #include "tum_types_cpp/common.hpp"
 #include "ocd_vehicle_model_base_cpp/conditional_auxiliary_input.hpp"
-namespace tam::interfaces
+namespace tam::ocd::interfaces
 {
 template <
   typename DrivetrainDriverInputT, typename DrivetrainFeedbackT,
@@ -45,7 +45,7 @@ public:
   virtual void set_steering_input(const SteeringActuatorDriverInputT & input) = 0;
   virtual SteeringActuatorFeedbackT get_steering_actuator_feedback() const = 0;
   // vehicle dynamics block
-  virtual void set_external_influences(const tam::types::ExternalInfluences & input) = 0;
+  virtual void set_external_influences(const types::ExternalInfluences & input) = 0;
   // clang-format off
   // virtual void set_auxiliary_input_steering_actuator(const SteeringActuatorAuxiliaryInputT & value) = 0; | INHERITED FROM HELPER // NOLINT
   // virtual void set_auxiliary_input_drivetrain(const DrivetrainAuxiliaryInputT & value) = 0; | INHERITED FROM HELPER  // NOLINT
@@ -53,7 +53,7 @@ public:
 
 
   // output block
-  virtual tam::types::VehicleModelOutput get_vehicle_model_output() const = 0;
+  virtual types::VehicleModelOutput get_vehicle_model_output() const = 0;
 
   // Debug Output
   virtual tam::tsl::LoggerAccessInterface::SharedPtr get_logger() const = 0;
@@ -66,4 +66,4 @@ public:
   // Functions to set auxiliary inputs are inherited from the respective base classes
   // if the input types are not void.
 };
-}  // namespace tam::interfaces
+}  // namespace tam::ocd::interfaces

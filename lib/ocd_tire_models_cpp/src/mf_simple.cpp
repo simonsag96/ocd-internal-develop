@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_tire_models_cpp/mf_simple.hpp"
-namespace tam::sim::tire_models
+namespace tam::ocd::tire_models
 {
 types::TireModelOutput MF_Simple::evaluate_static(
   types::TireModelInput const & input, Parameters const & parameters)
@@ -54,4 +54,4 @@ void MF_Simple::declare_parameters(
   param_manager->declare_parameter(name_prefix + "lateral.E", &(p_.lateral.E), -1.9, tam::pmg::ParameterType::DOUBLE, ""); // NOLINT
   // clang-format on
 }
-}  // namespace tam::sim::tire_models
+}  // namespace tam::ocd::tire_models

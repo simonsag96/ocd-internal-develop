@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_drivetrain_wheel_torque_cpp/drivetrain_direct_torque_eqns.hpp"
-namespace tam::sim::drivetrain
+namespace tam::ocd::drivetrain
 {
 void DrivetrainEquationsDirectTorque::calc_I_wheel_low_speed_kgm2()
 {
@@ -36,4 +36,4 @@ void DrivetrainEquationsDirectTorque::evaluate()
     }
   }
 }
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

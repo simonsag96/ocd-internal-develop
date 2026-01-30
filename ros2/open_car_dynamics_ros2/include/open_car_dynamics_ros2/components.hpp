@@ -24,16 +24,16 @@
   ClassName, DT_T, DT_COMM_HANDLER_T, SA_T, SA_COMM_HANDLER_T, VD_T, AERO_T, TIRE_T)               \
   namespace open_car_dynamics                                                                      \
   {                                                                                                \
-  class ClassName : public tam::sim::VehicleModelNode<                                             \
-                      tam::sim::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>, DT_COMM_HANDLER_T, \
+  class ClassName : public tam::ocd::VehicleModelNode<                                             \
+                      tam::ocd::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>, DT_COMM_HANDLER_T, \
                       SA_COMM_HANDLER_T>                                                           \
   {                                                                                                \
   public:                                                                                          \
     explicit ClassName(const rclcpp::NodeOptions & options)                                        \
-    : tam::sim::VehicleModelNode<                                                                  \
-        tam::sim::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>, DT_COMM_HANDLER_T,               \
+    : tam::ocd::VehicleModelNode<                                                                  \
+        tam::ocd::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>, DT_COMM_HANDLER_T,               \
         SA_COMM_HANDLER_T>(                                                                        \
-        std::make_unique<tam::sim::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>>(), options)     \
+        std::make_unique<tam::ocd::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>>(), options)     \
     {                                                                                              \
       this->reset();                                                                               \
     }                                                                                              \

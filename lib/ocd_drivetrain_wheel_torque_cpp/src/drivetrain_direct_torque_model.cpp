@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_drivetrain_wheel_torque_cpp/drivetrain_direct_torque_model.hpp"
-namespace tam::sim::drivetrain
+namespace tam::ocd::drivetrain
 {
 void DrivetrainWheelTorqueModel::set_x_vec(const StateVectorType & x_vec)
 {
@@ -87,4 +87,4 @@ void DrivetrainWheelTorqueModel::register_log_signals()
   }
 }
 void DrivetrainWheelTorqueModel::evaluate() { eqns_.evaluate(); }
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

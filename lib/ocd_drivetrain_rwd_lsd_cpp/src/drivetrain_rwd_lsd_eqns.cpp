@@ -1,7 +1,7 @@
 // Copyright 2026 Simon Sagmeister
 
 #include "ocd_drivetrain_rwd_lsd_cpp/drivetrain_rwd_lsd_eqns.hpp"
-namespace tam::sim::drivetrain
+namespace tam::ocd::drivetrain
 {
 void DrivetrainEquations_RWD_LSD::calc_I_wheel_low_speed_kgm2()
 {
@@ -63,4 +63,4 @@ void DrivetrainEquations_RWD_LSD::evaluate()
     x_dot_vec_[x::omega_diff_rear_radps] = std::min(0.0, x_dot_vec_[x::omega_diff_rear_radps]);
   }
 }
-}  // namespace tam::sim::drivetrain
+}  // namespace tam::ocd::drivetrain

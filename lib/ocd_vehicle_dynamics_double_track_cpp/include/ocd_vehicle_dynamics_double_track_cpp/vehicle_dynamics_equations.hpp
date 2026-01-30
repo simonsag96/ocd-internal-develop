@@ -19,21 +19,21 @@
 #include "tum_types_cpp/common.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/states.hpp"
 #include "ocd_vehicle_dynamics_model_base_cpp/base_class.hpp"
-namespace tam::sim::vehicle_dynamics
+namespace tam::ocd::vehicle_dynamics
 {
 // Forward declaration of the friend class
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 class VehicleDynamicsDoubleTrackModel;
 template <
-  tam::interfaces::concepts::TireModel TireModelT,
-  tam::interfaces::concepts::AerodynamicsModel AeroModelT>
+  tam::ocd::interfaces::concepts::TireModel TireModelT,
+  tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 class VehicleDynamicsDoubleTrackEqns
 {
   friend class VehicleDynamicsDoubleTrackModel<TireModelT, AeroModelT>;
   // Types
-  using x = tam::sim::vehicle_dynamics::double_track::States::StateEnum;
+  using x = tam::ocd::vehicle_dynamics::double_track::States::StateEnum;
   using StateVectorType = Eigen::Matrix<double, x::CNT_LENGTH_STATE_VECTOR, 1>;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
   using vector2d_per_wheel_t = tam::types::common::DataPerWheel<Eigen::Vector2d>;
@@ -162,7 +162,7 @@ class VehicleDynamicsDoubleTrackEqns
   //
   double_per_wheel_t drivetrain_load_torque_per_wheel_Nm_;
   double_per_wheel_t steering_load_torque_per_wheel_Nm_;
-  tam::types::VehicleDynamicsModelOutput vd_output_;
+  types::VehicleDynamicsModelOutput vd_output_;
   //
   IntermediateResults imr_;
   //
@@ -225,5 +225,5 @@ public:
   // Evaluate the ODE
   void evaluate();
 };
-}  // namespace tam::sim::vehicle_dynamics
+}  // namespace tam::ocd::vehicle_dynamics
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_equations_impl.hpp"
