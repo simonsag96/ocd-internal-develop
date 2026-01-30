@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.18)
-project(open_car_dynamics LANGUAGES CXX)
+
+# Force local install directory inside the repository (overrides any cached value)
+
+project(open_car_dynamics_cpp VERSION 1.0 LANGUAGES CXX)
 
 
 find_package(Eigen3 REQUIRED)
@@ -11,28 +14,25 @@ find_package(Eigen3 REQUIRED)
 add_library(${PROJECT_NAME} SHARED)
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-# ------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # List of packages
-# Can be obtained with colcon list -p --packages-up-to <your_package>
+# Packages directly inside `lib/` are discovered automatically. Additional
+# dependency packages located elsewhere are appended below.
 # ------------------------------------------------------------------------------
-set(PKG_DIRS
-    lib/ocd_aerodynamics_model_base_cpp
-    lib/ocd_aerodynamics_models_cpp
-    lib/ocd_drivetrain_model_base_cpp
-    lib/ocd_drivetrain_rwd_lsd_cpp
-    lib/ocd_drivetrain_wheel_torque_cpp
-    lib/ocd_steering_actuator_model_base_cpp
-    lib/ocd_steering_actuator_pt1_cpp
-    lib/ocd_tire_model_base_cpp
-    lib/ocd_tire_models_cpp
-    lib/ocd_types_cpp
-    lib/ocd_vehicle_dynamics_double_track_cpp
-    lib/ocd_vehicle_dynamics_model_base_cpp
-    lib/ocd_vehicle_model_base_cpp
-    lib/ocd_vehicle_model_cpp
+
+# Find direct children of lib/ (e.g. lib/ocd_...)
+file(GLOB LIB_PKGS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "lib/*")
+set(PKG_DIRS "")
+foreach(PKG ${LIB_PKGS})
+    if(IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${PKG}")
+        list(APPEND PKG_DIRS ${PKG})
+    endif()
+endforeach()
+
+# Additional packages not located directly under lib/
+list(APPEND PKG_DIRS
     dependencies/iac_common/submodules/parameter_management/param_management_cpp
     dependencies/iac_common/submodules/time_series_logging/tsl_logger_cpp
-    dependencies/iac_common/submodules/time_series_logging/tsl_msgs
     dependencies/iac_common/tum_helpers_cpp
     dependencies/iac_common/tum_types_cpp
     dependencies/iac_common/vendor_pkgs/matplotlib_cpp
@@ -75,9 +75,50 @@ target_compile_definitions(${PROJECT_NAME}
   PRIVATE BUILDING_CURVILINEAR_COSY
 )
 
+# ----------------------------------------------------------------------------
+# Project Settings
+# ----------------------------------------------------------------------------
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VERSION ${PROJECT_VERSION}
+    SOVERSION 1
+    EXPORT_NAME ${PROJECT_NAME}
+)
+
 
 if(MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE /W4)
 else()
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+
+
+# ------------------------------------------------------------------------------
+# Installation
+# ------------------------------------------------------------------------------
+# This makes `cmake --install` write into <repo>/install by default.
+set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install" CACHE PATH "Install path" FORCE)
+
+install(
+    TARGETS ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}Targets
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin
+)
+# Install all the headers
+foreach(PKG ${PKG_DIRS})  
+    install(
+        DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${PKG}/include/
+        DESTINATION include
+    )
+endforeach()
+
+# Install the setup file 
+install(FILES cmake/setup.sh.in
+        DESTINATION .
+        RENAME setup.sh
+        PERMISSIONS
+            OWNER_READ OWNER_WRITE OWNER_EXECUTE
+            GROUP_READ GROUP_EXECUTE
+            WORLD_READ WORLD_EXECUTE)
