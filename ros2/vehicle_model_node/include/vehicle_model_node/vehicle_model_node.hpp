@@ -20,7 +20,7 @@
 #include "tum_msgs/msg/tum_external_vehicle_influences.hpp"
 #include "tum_msgs/msg/tum_float32_stamped.hpp"
 #include "tum_msgs/msg/tum_float64_per_wheel_stamped.hpp"
-#include "vehicle_model_base_cpp/concept.hpp"
+#include "ocd_vehicle_model_base_cpp/concept.hpp"
 /// @brief VehicleModelNode class implementing a vehicle model node
 namespace tam::sim
 {

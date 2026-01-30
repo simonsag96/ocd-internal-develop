@@ -15,7 +15,7 @@
 
   <!-- Content dependencies -->
   <depend>tum_types_cpp</depend>
-  <depend>tum_sim_types_cpp</depend>
+  <depend>ocd_types_cpp</depend>
   <exec_depend>tum_types_py</exec_depend>
   <exec_depend>param_management_py</exec_depend>
 

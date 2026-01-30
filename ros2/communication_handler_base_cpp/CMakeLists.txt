@@ -11,7 +11,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(tum_types_cpp REQUIRED)
 find_package(param_management_cpp REQUIRED)
-find_package(tum_sim_types_cpp REQUIRED)
+find_package(ocd_types_cpp REQUIRED)
 find_package(tsl_logger_cpp REQUIRED)
 
 add_library(${PROJECT_NAME} INTERFACE)
@@ -39,9 +39,9 @@ install(
   INCLUDES DESTINATION include
 )
 
-ament_target_dependencies(${PROJECT_NAME} INTERFACE tum_types_cpp param_management_cpp tum_sim_types_cpp tsl_logger_cpp)
+ament_target_dependencies(${PROJECT_NAME} INTERFACE tum_types_cpp param_management_cpp ocd_types_cpp tsl_logger_cpp)
 
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET) # so client can also call target_link_libraries(tod_core::tod_core)
-ament_export_dependencies(tum_types_cpp param_management_cpp tum_sim_types_cpp tsl_logger_cpp) # other dependencies so client does not need to call find_package on them
+ament_export_dependencies(tum_types_cpp param_management_cpp ocd_types_cpp tsl_logger_cpp) # other dependencies so client does not need to call find_package on them
 
 ament_package()

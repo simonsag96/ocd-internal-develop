@@ -13,16 +13,16 @@ find_package(ament_cmake REQUIRED)
 set(DEPENDENCIES
     rclcpp  
     communication_handler_base_cpp
-    tum_sim_helpers_cpp
+    ocd_helpers_cpp
     vehicle_model_node
     param_management_cpp
     param_management_ros2_integration_cpp
     tum_msgs
     tum_types_cpp
-    tum_sim_types_cpp
+    ocd_types_cpp
     tum_ros_helpers_cpp
     tum_type_conversions_ros_cpp
-    drivetrain_wheel_torque_cpp
+    ocd_drivetrain_wheel_torque_cpp
     )
 
 foreach(pkg_name ${DEPENDENCIES})

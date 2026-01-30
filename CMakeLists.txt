@@ -16,20 +16,20 @@ add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 # Can be obtained with colcon list -p --packages-up-to <your_package>
 # ------------------------------------------------------------------------------
 set(PKG_DIRS
-    lib/aerodynamics_model_base_cpp
-    lib/aerodynamics_models_cpp
-    lib/drivetrain_model_base_cpp
-    lib/drivetrain_rwd_lsd
-    lib/drivetrain_wheel_torque_cpp
-    lib/steering_actuator_model_base_cpp
-    lib/steering_actuator_pt1_cpp
-    lib/tire_model_base_cpp
-    lib/tire_models_cpp
-    lib/tum_sim_types_cpp
-    lib/vehicle_dynamics_double_track_cpp
-    lib/vehicle_dynamics_model_base_cpp
-    lib/vehicle_model_base_cpp
-    lib/vehicle_model_cpp
+    lib/ocd_aerodynamics_model_base_cpp
+    lib/ocd_aerodynamics_models_cpp
+    lib/ocd_drivetrain_model_base_cpp
+    lib/ocd_drivetrain_rwd_lsd_cpp
+    lib/ocd_drivetrain_wheel_torque_cpp
+    lib/ocd_steering_actuator_model_base_cpp
+    lib/ocd_steering_actuator_pt1_cpp
+    lib/ocd_tire_model_base_cpp
+    lib/ocd_tire_models_cpp
+    lib/ocd_types_cpp
+    lib/ocd_vehicle_dynamics_double_track_cpp
+    lib/ocd_vehicle_dynamics_model_base_cpp
+    lib/ocd_vehicle_model_base_cpp
+    lib/ocd_vehicle_model_cpp
     lib/vehicle_models_cpp
     dependencies/iac_common/submodules/parameter_management/param_management_cpp
     dependencies/iac_common/submodules/time_series_logging/tsl_logger_cpp

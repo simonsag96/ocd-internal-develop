@@ -5,7 +5,7 @@
 #include <rclcpp/rclcpp.hpp>
 
 #include "communication_handler_base_cpp/base_class.hpp"
-#include "drivetrain_fx_cpp/drivetrain_fx_model.hpp"
+#include "ocd_drivetrain_fx_cpp/drivetrain_fx_model.hpp"
 #include "param_management_cpp/param_value_manager.hpp"
 #include "tum_ros_helpers_cpp/qos.hpp"
 #include "vehicle_model_node/helpers.hpp"

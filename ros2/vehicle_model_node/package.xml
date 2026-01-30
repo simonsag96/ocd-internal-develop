@@ -15,11 +15,11 @@
   <depend>tsl_ros2_publisher_cpp</depend>
   <depend>nav_msgs</depend>
   <depend>tum_msgs</depend>
-  <depend>tum_sim_types_cpp</depend>
+  <depend>ocd_types_cpp</depend>
   <depend>tum_type_conversions_ros_cpp</depend>
   <depend>tum_ros_helpers_cpp</depend>
   
-  <depend>vehicle_model_base_cpp</depend>
+  <depend>ocd_vehicle_model_base_cpp</depend>
   <depend>communication_handler_base_cpp</depend>
   
   <test_depend>ament_lint_auto</test_depend>

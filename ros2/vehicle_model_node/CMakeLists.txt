@@ -19,11 +19,11 @@ set(NODE_DEPENDENCIES
     tsl_ros2_publisher_cpp
     nav_msgs
     tum_msgs
-    tum_sim_types_cpp
-    tum_sim_types_cpp
+    ocd_types_cpp
+    ocd_types_cpp
     tum_ros_helpers_cpp
     tum_type_conversions_ros_cpp
-    vehicle_model_base_cpp
+    ocd_vehicle_model_base_cpp
     communication_handler_base_cpp
 )
 

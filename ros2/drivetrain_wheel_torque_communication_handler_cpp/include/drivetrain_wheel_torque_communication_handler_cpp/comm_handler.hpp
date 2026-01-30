@@ -5,7 +5,7 @@
 #include <rclcpp/rclcpp.hpp>
 
 #include "communication_handler_base_cpp/base_class.hpp"
-#include "drivetrain_wheel_torque_cpp/drivetrain_direct_torque_model.hpp"
+#include "ocd_drivetrain_wheel_torque_cpp/drivetrain_direct_torque_model.hpp"
 #include "param_management_cpp/param_value_manager.hpp"
 #include "tum_msgs/msg/tum_float32_stamped.hpp"
 #include "tum_msgs/msg/tum_float64_per_wheel_stamped.hpp"

@@ -37,7 +37,7 @@ find_package(pybind11_vendor REQUIRED)
 find_package(pybind11 REQUIRED)
 
 find_package(tum_types_cpp REQUIRED)
-find_package(tum_sim_types_cpp REQUIRED)
+find_package(ocd_types_cpp REQUIRED)
 
 # region target cpp bindings
 ament_python_install_package(${PROJECT_NAME})
@@ -49,9 +49,9 @@ pybind11_add_module(_cpp_binding SHARED
 
 ament_target_dependencies(_cpp_binding PUBLIC
   tum_types_cpp
-  tum_sim_types_cpp
+  ocd_types_cpp
 )
-ament_export_dependencies(tum_types_cpp tum_sim_types_cpp)
+ament_export_dependencies(tum_types_cpp ocd_types_cpp)
 
  # Install cython modules as sub-modules of the project
 install(

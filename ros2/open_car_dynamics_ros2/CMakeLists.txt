@@ -13,16 +13,16 @@ find_package(ament_cmake REQUIRED)
 set(NODE_DEPENDENCIES
   vehicle_model_node 
   rclcpp_components
-  vehicle_model_cpp
-  drivetrain_wheel_torque_cpp
+  ocd_vehicle_model_cpp
+  ocd_drivetrain_wheel_torque_cpp
   drivetrain_wheel_torque_communication_handler_cpp
-  drivetrain_fx_cpp
+  ocd_drivetrain_fx_cpp
   drivetrain_fx_communication_handler_cpp
-  steering_actuator_pt1_cpp
+  ocd_steering_actuator_pt1_cpp
   steering_actuator_pt1_communication_handler_cpp
-  vehicle_dynamics_double_track_cpp
-  tire_models_cpp
-  aerodynamics_models_cpp
+  ocd_vehicle_dynamics_double_track_cpp
+  ocd_tire_models_cpp
+  ocd_aerodynamics_models_cpp
 )
 # Generate those automatically using the script in tools/create_combinations.py
 set(VEHICLE_MODELS 
