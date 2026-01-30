@@ -44,7 +44,8 @@ list(APPEND PKG_DIRS
 foreach(PKG ${PKG_DIRS})
     target_include_directories(${PROJECT_NAME}
         PUBLIC
-            ${CMAKE_CURRENT_SOURCE_DIR}/${PKG}/include
+            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${PKG}/include>
+            $<INSTALL_INTERFACE:include>
     )
 endforeach()
 
@@ -103,8 +104,12 @@ install(
     TARGETS ${PROJECT_NAME}
     EXPORT ${PROJECT_NAME}Targets
     LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    RUNTIME DESTINATION bin
+)
+# Install the targets for find_package to work downstream
+install(
+    EXPORT ${PROJECT_NAME}Targets
+    NAMESPACE ${PROJECT_NAME}::
+    DESTINATION lib/cmake/${PROJECT_NAME}
 )
 # Install all the headers
 foreach(PKG ${PKG_DIRS})  
@@ -114,7 +119,37 @@ foreach(PKG ${PKG_DIRS})
     )
 endforeach()
 
-# Install the setup file 
+# ------------------------------------------------------------------------------
+# Optional: Generate and install Config and Version files for find_package
+# ------------------------------------------------------------------------------
+
+include(CMakePackageConfigHelpers)
+
+# ConfigVersion file
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion
+)
+
+# Config file template (create cmake/Config.cmake.in)
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+    INSTALL_DESTINATION lib/cmake/${PROJECT_NAME}
+)
+
+# Install the Config and Version files
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+    DESTINATION lib/cmake/${PROJECT_NAME}
+)
+
+# ------------------------------------------------------------------------------
+# Install the setup.sh
+# ------------------------------------------------------------------------------
+
 install(FILES cmake/setup.sh.in
         DESTINATION .
         RENAME setup.sh
