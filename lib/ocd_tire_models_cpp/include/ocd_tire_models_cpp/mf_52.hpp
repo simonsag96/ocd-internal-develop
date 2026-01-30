@@ -5,9 +5,9 @@
 #include <string>
 #include <tum_types_cpp/common.hpp>
 
-#include "param_management_cpp/param_reference_manager.hpp"
 #include "ocd_tire_model_base_cpp/base_class.hpp"
 #include "ocd_tire_model_base_cpp/concept.hpp"
+#include "param_management_cpp/param_reference_manager.hpp"
 namespace tam::ocd::tire_models
 {
 class MF52 : public tam::ocd::interfaces::TireModelBase
@@ -45,6 +45,5 @@ private:
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(
-  tam::ocd::interfaces::concepts::TireModel<MF52>,
-  "MF52 does not fulfill the TireModel concept");
+  tam::ocd::interfaces::concepts::TireModel<MF52>, "MF52 does not fulfill the TireModel concept");
 }  // namespace tam::ocd::tire_models

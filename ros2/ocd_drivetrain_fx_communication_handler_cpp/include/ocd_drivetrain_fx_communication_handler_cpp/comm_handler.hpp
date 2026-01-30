@@ -6,16 +6,15 @@
 
 #include "ocd_communication_handler_base_cpp/base_class.hpp"
 #include "ocd_drivetrain_fx_cpp/drivetrain_fx_model.hpp"
-#include "param_management_cpp/param_value_manager.hpp"
-#include "tum_ros_helpers_cpp/qos.hpp"
 #include "ocd_vehicle_model_node_cpp/helpers.hpp"
+#include "param_management_cpp/param_value_manager.hpp"
 #include "std_msgs/msg/float64.hpp"
+#include "tum_ros_helpers_cpp/qos.hpp"
 namespace tam::ocd::communication_handlers
 {
-class DrivetrainFxCommunicationHandler
-: public tam::ocd::interfaces::CommunicationHandlerBase<
-    tam::ocd::drivetrain::DrivetrainFxModel::DriverInputType,
-    tam::ocd::drivetrain::DrivetrainFxModel::FeedbackType>
+class DrivetrainFxCommunicationHandler : public tam::ocd::interfaces::CommunicationHandlerBase<
+                                           tam::ocd::drivetrain::DrivetrainFxModel::DriverInputType,
+                                           tam::ocd::drivetrain::DrivetrainFxModel::FeedbackType>
 {
 public:
   explicit DrivetrainFxCommunicationHandler(rclcpp::Node * node);
@@ -27,7 +26,6 @@ private:
   // Subscription
   static constexpr std::string_view topic_driver_input_ = "/simulation/actuation/longitudinal";
   rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr sub_driver_input_{};
-
 
   DriverInputType dt_input_;
   bool has_new_input_{true};
@@ -47,8 +45,7 @@ public:
   DriverInputType get_driver_input();
   tam::pmg::MgmtInterface::SharedPtr get_param_manager() { return param_manager_; }
   tam::tsl::LoggerAccessInterface::SharedPtr get_logger() { return debug_container_; }
-
-  void update_delay_timer(std::chrono::duration<double>) override {};
-  void reset_input_delay() override {};
+  void update_delay_timer(std::chrono::duration<double>) override{};
+  void reset_input_delay() override{};
 };
 }  // namespace tam::ocd::communication_handlers

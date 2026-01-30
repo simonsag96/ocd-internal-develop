@@ -5,9 +5,9 @@
 #include <string>
 #include <tum_types_cpp/common.hpp>
 
-#include "param_management_cpp/param_reference_manager.hpp"
 #include "ocd_tire_model_base_cpp/base_class.hpp"
 #include "ocd_tire_model_base_cpp/concept.hpp"
+#include "param_management_cpp/param_reference_manager.hpp"
 namespace tam::ocd::tire_models
 {
 // Linear

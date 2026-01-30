@@ -9,9 +9,9 @@
 #include <vector>
 
 #include "ocd_drivetrain_model_base_cpp/conditional_auxiliary_input.hpp"
+#include "ocd_types_cpp/types.hpp"
 #include "param_management_cpp/base.hpp"
 #include "tsl_logger_cpp/base.hpp"
-#include "ocd_types_cpp/types.hpp"
 #include "tum_types_cpp/common.hpp"
 namespace tam::ocd::interfaces
 {

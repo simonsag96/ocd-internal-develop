@@ -16,13 +16,25 @@ PYBIND11_MODULE(_cpp_binding, m)
     .def_readwrite("velocity_mps", &typ::VehicleDynamicsModelOutput::velocity_mps)
     .def_readwrite("acceleration_mps2", &typ::VehicleDynamicsModelOutput::acceleration_mps2)
     .def_readwrite("orientation_rad", &typ::VehicleDynamicsModelOutput::orientation_rad)
-    .def_readwrite("angular_velocity_radps", &typ::VehicleDynamicsModelOutput::angular_velocity_radps)
-    .def_readwrite("angular_acceleration_radps2", &typ::VehicleDynamicsModelOutput::angular_acceleration_radps2)
-    .def_readwrite("tire_longitudinal_slip_per_wheel", &typ::VehicleDynamicsModelOutput::tire_longitudinal_slip_per_wheel)
-    .def_readwrite("tire_slip_angle_per_wheel_rad", &typ::VehicleDynamicsModelOutput::tire_slip_angle_per_wheel_rad)
-    .def_readwrite("longitudinal_tire_force_tire_frame_per_wheel_N", &typ::VehicleDynamicsModelOutput::longitudinal_tire_force_tire_frame_per_wheel_N)
-    .def_readwrite("lateral_tire_force_tire_frame_per_wheel_N", &typ::VehicleDynamicsModelOutput::lateral_tire_force_tire_frame_per_wheel_N)
-    .def_readwrite("vertical_tire_force_per_wheel_N", &typ::VehicleDynamicsModelOutput::vertical_tire_force_per_wheel_N);
+    .def_readwrite(
+      "angular_velocity_radps", &typ::VehicleDynamicsModelOutput::angular_velocity_radps)
+    .def_readwrite(
+      "angular_acceleration_radps2", &typ::VehicleDynamicsModelOutput::angular_acceleration_radps2)
+    .def_readwrite(
+      "tire_longitudinal_slip_per_wheel",
+      &typ::VehicleDynamicsModelOutput::tire_longitudinal_slip_per_wheel)
+    .def_readwrite(
+      "tire_slip_angle_per_wheel_rad",
+      &typ::VehicleDynamicsModelOutput::tire_slip_angle_per_wheel_rad)
+    .def_readwrite(
+      "longitudinal_tire_force_tire_frame_per_wheel_N",
+      &typ::VehicleDynamicsModelOutput::longitudinal_tire_force_tire_frame_per_wheel_N)
+    .def_readwrite(
+      "lateral_tire_force_tire_frame_per_wheel_N",
+      &typ::VehicleDynamicsModelOutput::lateral_tire_force_tire_frame_per_wheel_N)
+    .def_readwrite(
+      "vertical_tire_force_per_wheel_N",
+      &typ::VehicleDynamicsModelOutput::vertical_tire_force_per_wheel_N);
   py::class_<typ::ExternalInfluences>(m, "ExternalInfluences")
     .def(py::init())
     .def_readwrite("external_force_N", &typ::ExternalInfluences::external_force_N)
@@ -33,7 +45,12 @@ PYBIND11_MODULE(_cpp_binding, m)
     .def(py::init())
     .def_readwrite("vehicle_dynamics_output", &typ::VehicleModelOutput::vehicle_dynamics_output)
     .def_readwrite("wheel_speeds_radps", &typ::VehicleModelOutput::wheel_speeds_radps)
-    .def_readwrite("drivetrain_load_torque_per_wheel_Nm", &typ::VehicleModelOutput::drivetrain_load_torque_per_wheel_Nm)
-    .def_readwrite("steering_angle_per_wheel_rad", &typ::VehicleModelOutput::steering_angle_per_wheel_rad)
-    .def_readwrite("steering_load_torque_per_wheel_Nm", &typ::VehicleModelOutput::steering_load_torque_per_wheel_Nm);
+    .def_readwrite(
+      "drivetrain_load_torque_per_wheel_Nm",
+      &typ::VehicleModelOutput::drivetrain_load_torque_per_wheel_Nm)
+    .def_readwrite(
+      "steering_angle_per_wheel_rad", &typ::VehicleModelOutput::steering_angle_per_wheel_rad)
+    .def_readwrite(
+      "steering_load_torque_per_wheel_Nm",
+      &typ::VehicleModelOutput::steering_load_torque_per_wheel_Nm);
 };

@@ -16,7 +16,6 @@ namespace tam::ocd::drivetrain::wheel_torque::States
   X(omega_FR_radps)   \
   X(omega_RL_radps)   \
   X(omega_RR_radps)
-
 // Generate enum and names array
 enum StateEnum {
 #define X(name) name,
@@ -35,4 +34,4 @@ struct StateNames
   };
 };
 #undef STATE_LIST
-}  // namespace tam::ocd::drivetrain
+}  // namespace tam::ocd::drivetrain::wheel_torque::States

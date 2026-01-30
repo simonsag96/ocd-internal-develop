@@ -28,11 +28,15 @@ void PT1SteeringActuatorModel::set_driver_input(const DriverInputType & input)
 {
   requested_steering_angle_rad_ = input.steering_angle_rad;
 }
-void PT1SteeringActuatorModel::set_load(const DoublePerWheelType & steering_load_torque_per_wheel_Nm)
+void PT1SteeringActuatorModel::set_load(
+  const DoublePerWheelType & steering_load_torque_per_wheel_Nm)
 {
   steering_load_torque_per_wheel_Nm_ = steering_load_torque_per_wheel_Nm;
 }
-PT1SteeringActuatorModel::StateVectorType PT1SteeringActuatorModel::get_x_vec() const { return x_vec_; }
+PT1SteeringActuatorModel::StateVectorType PT1SteeringActuatorModel::get_x_vec() const
+{
+  return x_vec_;
+}
 PT1SteeringActuatorModel::StateVectorType PT1SteeringActuatorModel::get_x_dot_vec() const
 {
   return x_dot_vec_;

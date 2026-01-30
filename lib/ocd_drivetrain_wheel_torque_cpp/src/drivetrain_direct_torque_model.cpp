@@ -38,8 +38,7 @@ DrivetrainWheelTorqueModel::DrivetrainWheelTorqueModel()
   declare_parameters();
   register_log_signals();
 }
-DrivetrainWheelTorqueModel::double_per_wheel_t DrivetrainWheelTorqueModel::get_wheel_speeds()
-  const
+DrivetrainWheelTorqueModel::double_per_wheel_t DrivetrainWheelTorqueModel::get_wheel_speeds() const
 {
   double_per_wheel_t out;
   out.front_left = eqns_.x_vec_[x::omega_FL_radps];

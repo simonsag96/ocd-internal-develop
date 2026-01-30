@@ -12,13 +12,13 @@
 #include <unordered_map>
 
 #include "ocd_aerodynamics_model_base_cpp/concept.hpp"
-#include "param_management_cpp/base.hpp"
-#include "param_management_cpp/param_reference_manager.hpp"
 #include "ocd_tire_model_base_cpp/concept.hpp"
-#include "tsl_logger_cpp/reference_logger.hpp"
 #include "ocd_types_cpp/types.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/logging.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_equations.hpp"
+#include "param_management_cpp/base.hpp"
+#include "param_management_cpp/param_reference_manager.hpp"
+#include "tsl_logger_cpp/reference_logger.hpp"
 namespace tam::ocd::vehicle_dynamics
 {
 template <
@@ -26,8 +26,7 @@ template <
   tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 class VehicleDynamicsDoubleTrackModel
 : public tam::ocd::interfaces::VehicleDynamicsModelBase<
-    double_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR,
-    double_track::States::StateNames>
+    double_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR, double_track::States::StateNames>
 {
   using x = tam::ocd::vehicle_dynamics::double_track::States::StateEnum;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;

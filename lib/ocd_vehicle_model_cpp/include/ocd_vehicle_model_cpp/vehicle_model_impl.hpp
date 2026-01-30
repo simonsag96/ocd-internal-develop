@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "vehicle_model.hpp"
 #include "ocd_vehicle_model_base_cpp/base_class.hpp"
+#include "vehicle_model.hpp"
 namespace tam::ocd
 {
 #define VEHICLE_T VehicleModel<DT_MODEL_T, SA_MODEL_T, VD_MODEL_T>

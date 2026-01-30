@@ -4,11 +4,11 @@
 #include <string>
 #include <vector>
 
+#include "ocd_types_cpp/types.hpp"
+#include "ocd_vehicle_model_base_cpp/conditional_auxiliary_input.hpp"
 #include "param_management_cpp/base.hpp"
 #include "tsl_logger_cpp/base.hpp"
-#include "ocd_types_cpp/types.hpp"
 #include "tum_types_cpp/common.hpp"
-#include "ocd_vehicle_model_base_cpp/conditional_auxiliary_input.hpp"
 namespace tam::ocd::interfaces
 {
 template <
@@ -50,7 +50,6 @@ public:
   // virtual void set_auxiliary_input_steering_actuator(const SteeringActuatorAuxiliaryInputT & value) = 0; | INHERITED FROM HELPER // NOLINT
   // virtual void set_auxiliary_input_drivetrain(const DrivetrainAuxiliaryInputT & value) = 0; | INHERITED FROM HELPER  // NOLINT
   // clang-format on
-
 
   // output block
   virtual types::VehicleModelOutput get_vehicle_model_output() const = 0;

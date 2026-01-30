@@ -13,12 +13,12 @@
 
 #include "ocd_aerodynamics_model_base_cpp/concept.hpp"
 #include "ocd_tire_model_base_cpp/concept.hpp"
-#include "tum_helpers_cpp/constants.hpp"
-#include "tum_helpers_cpp/numerical.hpp"
 #include "ocd_types_cpp/types.hpp"
-#include "tum_types_cpp/common.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/states.hpp"
 #include "ocd_vehicle_dynamics_model_base_cpp/base_class.hpp"
+#include "tum_helpers_cpp/constants.hpp"
+#include "tum_helpers_cpp/numerical.hpp"
+#include "tum_types_cpp/common.hpp"
 namespace tam::ocd::vehicle_dynamics
 {
 // Forward declaration of the friend class

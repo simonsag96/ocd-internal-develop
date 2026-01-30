@@ -34,7 +34,7 @@ public:
     std::vector<double> pitch_aero_center_translation__pitch_rad;
     std::vector<double> pitch_aero_center_translation__aero_center_translation_m;
   } p_;
-  types::AeroModelOutput evaluate(types::AeroModelInput const & input)  override;
+  types::AeroModelOutput evaluate(types::AeroModelInput const & input) override;
   void declare_parameters(
     tam::pmg::ParamReferenceManager * param_manager,
     std::string name_prefix = "aerodynamics.") override;
@@ -43,7 +43,6 @@ public:
   {
   }
 };
-
 // Check that the class fulfills the concept
 // This checks if the base class was properly implemented without having to create an instance
 static_assert(

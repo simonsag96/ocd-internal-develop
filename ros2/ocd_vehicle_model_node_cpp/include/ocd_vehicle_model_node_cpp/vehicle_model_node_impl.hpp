@@ -5,13 +5,13 @@
 #include <utility>
 #include <vector>
 
+#include "ocd_vehicle_model_node_cpp/helpers.hpp"
+#include "ocd_vehicle_model_node_cpp/vehicle_model_node.hpp"
 #include "tum_ros_helpers_cpp/qos.hpp"
 #include "tum_ros_helpers_cpp/timer.hpp"
 #include "tum_type_conversions_ros_cpp/tum_type_conversions.hpp"
 #include "tum_types_cpp/common.hpp"
 #include "tum_types_cpp/coordinate_frames.hpp"
-#include "ocd_vehicle_model_node_cpp/helpers.hpp"
-#include "ocd_vehicle_model_node_cpp/vehicle_model_node.hpp"
 namespace tam::ocd
 {
 template <
@@ -138,8 +138,7 @@ template <
 void VehicleModelNode<VEHICLE_T, DT_COMM_HANDLER_T, SA_COMM_HANDLER_T>::output_callback()
 {
   if (initial_cycle_) return;
-  typename types::VehicleModelOutput vehicle_model_output =
-    veh_model_->get_vehicle_model_output();
+  typename types::VehicleModelOutput vehicle_model_output = veh_model_->get_vehicle_model_output();
   nav_msgs::msg::Odometry odom =
     tam::ocd::helpers::type_conversion::toMsg(vehicle_model_output.vehicle_dynamics_output);
   rclcpp::Time stamp = get_clock()->now();
@@ -151,7 +150,8 @@ void VehicleModelNode<VEHICLE_T, DT_COMM_HANDLER_T, SA_COMM_HANDLER_T>::output_c
 
   tum_msgs::msg::TUMFloat64PerWheelStamped wheel_speed;
   wheel_speed.stamp = stamp;
-  wheel_speed.data = tam::ocd::helpers::type_conversion::toMsg(vehicle_model_output.wheel_speeds_radps);
+  wheel_speed.data =
+    tam::ocd::helpers::type_conversion::toMsg(vehicle_model_output.wheel_speeds_radps);
   wheel_speed_pub_->publish(wheel_speed);
 
   geometry_msgs::msg::AccelWithCovarianceStamped accel;

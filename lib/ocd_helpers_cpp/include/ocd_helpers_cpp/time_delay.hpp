@@ -40,10 +40,10 @@ public:
     while (!signal_queue_.empty()) signal_queue_.pop();
     active_signal_ = initial_value;
   }
-  bool get_new_signal_flag() 
+  bool get_new_signal_flag()
   {
     return new_signal_flag_;
-    new_signal_flag_=false;
+    new_signal_flag_ = false;
   }
 
 private:
@@ -58,7 +58,7 @@ private:
       StampedSignal element = signal_queue_.front();
       if (current_time_microseconds - element.stamp < delay_microseconds_) break;
       active_signal_ = element.value;
-      new_signal_flag_=true;
+      new_signal_flag_ = true;
       signal_queue_.pop();
     }
   }

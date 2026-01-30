@@ -4,8 +4,7 @@
 using std::placeholders::_1;
 namespace tam::ocd::communication_handlers
 {
-DrivetrainFxCommunicationHandler::DrivetrainFxCommunicationHandler(
-  rclcpp::Node * node)
+DrivetrainFxCommunicationHandler::DrivetrainFxCommunicationHandler(rclcpp::Node * node)
 : node_(node)
 {
   // define subscribers

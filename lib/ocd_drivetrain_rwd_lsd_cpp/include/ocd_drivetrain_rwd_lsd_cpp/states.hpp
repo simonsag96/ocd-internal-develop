@@ -15,7 +15,6 @@ namespace tam::ocd::drivetrain::rwd_lsd::States
   X(omega_FR_radps)        \
   X(omega_rear_axle_radps) \
   X(omega_diff_rear_radps)
-
 // Generate enum and names array
 enum StateEnum {
 #define X(name) name,

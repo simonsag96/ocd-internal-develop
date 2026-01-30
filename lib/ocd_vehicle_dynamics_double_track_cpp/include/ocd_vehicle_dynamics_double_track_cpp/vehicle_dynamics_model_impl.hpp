@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "tsl_logger_cpp/type_support.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_model.hpp"
+#include "tsl_logger_cpp/type_support.hpp"
 namespace tam::ocd::vehicle_dynamics
 {
 template <

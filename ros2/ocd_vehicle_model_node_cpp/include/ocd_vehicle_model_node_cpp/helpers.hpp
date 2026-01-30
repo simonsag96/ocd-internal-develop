@@ -3,9 +3,9 @@
 #include <geometry_msgs/msg/vector3.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 
+#include "ocd_types_cpp/types.hpp"
 #include "tum_msgs/msg/tum_external_vehicle_influences.hpp"
 #include "tum_msgs/msg/tum_float64_per_wheel.hpp"
-#include "ocd_types_cpp/types.hpp"
 #include "tum_type_conversions_ros_cpp/orientation.hpp"
 #include "tum_type_conversions_ros_cpp/tum_type_conversions.hpp"
 namespace tam::ocd::helpers::type_conversion
@@ -60,4 +60,4 @@ inline geometry_msgs::msg::Vector3 toMsg(const tam::types::common::Vector3D<doub
   msg.z = input.z;
   return msg;
 }
-}  // namespace tam::helpers::type_conversion
+}  // namespace tam::ocd::helpers::type_conversion

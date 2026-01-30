@@ -6,6 +6,7 @@
 
 #include "ocd_communication_handler_base_cpp/base_class.hpp"
 #include "ocd_drivetrain_wheel_torque_cpp/drivetrain_direct_torque_model.hpp"
+#include "ocd_vehicle_model_node_cpp/helpers.hpp"
 #include "param_management_cpp/param_value_manager.hpp"
 #include "tum_msgs/msg/tum_float32_stamped.hpp"
 #include "tum_msgs/msg/tum_float64_per_wheel_stamped.hpp"
@@ -13,7 +14,6 @@
 #include "tum_msgs/msg/tum_longitudinal_cmd.hpp"
 #include "tum_ros_helpers_cpp/qos.hpp"
 #include "tum_type_conversions_ros_cpp/tum_type_conversions.hpp"
-#include "ocd_vehicle_model_node_cpp/helpers.hpp"
 namespace tam::ocd::communication_handlers
 {
 class DrivetrainWheelTorqueCommunicationHandler
