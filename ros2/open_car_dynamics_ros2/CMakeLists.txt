@@ -11,15 +11,15 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 set(NODE_DEPENDENCIES
-  vehicle_model_node 
+  ocd_vehicle_model_node_cpp 
   rclcpp_components
   ocd_vehicle_model_cpp
   ocd_drivetrain_wheel_torque_cpp
-  drivetrain_wheel_torque_communication_handler_cpp
+  ocd_drivetrain_wheel_torque_communication_handler_cpp
   ocd_drivetrain_fx_cpp
-  drivetrain_fx_communication_handler_cpp
+  ocd_drivetrain_fx_communication_handler_cpp
   ocd_steering_actuator_pt1_cpp
-  steering_actuator_pt1_communication_handler_cpp
+  ocd_steering_actuator_pt1_communication_handler_cpp
   ocd_vehicle_dynamics_double_track_cpp
   ocd_tire_models_cpp
   ocd_aerodynamics_models_cpp

@@ -8,17 +8,17 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>vehicle_model_node</depend>
+  <depend>ocd_vehicle_model_node_cpp</depend>
   <depend>ocd_vehicle_model_cpp</depend>
   <depend>rclcpp_components</depend>
   <!-- Drivetrains -->
   <depend>ocd_drivetrain_wheel_torque_cpp</depend>
-  <depend>drivetrain_wheel_torque_communication_handler_cpp</depend>
+  <depend>ocd_drivetrain_wheel_torque_communication_handler_cpp</depend>
   <depend>ocd_drivetrain_fx_cpp</depend>
-  <depend>drivetrain_fx_communication_handler_cpp</depend>
+  <depend>ocd_drivetrain_fx_communication_handler_cpp</depend>
   <!-- Steering Actuators -->
   <depend>ocd_steering_actuator_pt1_cpp</depend>
-  <depend>steering_actuator_pt1_communication_handler_cpp</depend>
+  <depend>ocd_steering_actuator_pt1_communication_handler_cpp</depend>
   <!-- Vehicle Dynamics Models -->
   <depend>ocd_vehicle_dynamics_double_track_cpp</depend>
   <!-- Subparts for the vehicle dynamics models -->

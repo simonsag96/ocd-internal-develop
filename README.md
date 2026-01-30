@@ -32,7 +32,7 @@ The interfaces connecting the different models, are shown in the following figur
 
 The ROS2 Node running the abovementioned model subscribes and publishes the following topics:
 
-![Vehicle Model Node](doc/vehicle_model_node.svg)
+![Vehicle Model Node](doc/ocd_vehicle_model_node_cpp.svg)
 
 
 ## Compiling and Running the Model

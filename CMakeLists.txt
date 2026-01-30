@@ -30,7 +30,6 @@ set(PKG_DIRS
     lib/ocd_vehicle_dynamics_model_base_cpp
     lib/ocd_vehicle_model_base_cpp
     lib/ocd_vehicle_model_cpp
-    lib/vehicle_models_cpp
     dependencies/iac_common/submodules/parameter_management/param_management_cpp
     dependencies/iac_common/submodules/time_series_logging/tsl_logger_cpp
     dependencies/iac_common/submodules/time_series_logging/tsl_msgs

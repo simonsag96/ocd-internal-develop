@@ -7,10 +7,10 @@
 
 #include "ocd_aerodynamics_models_cpp/default.hpp"
 #include "ocd_aerodynamics_models_cpp/ride_height.hpp"
-#include "drivetrain_wheel_torque_communication_handler_cpp/comm_handler.hpp"
-#include "drivetrain_fx_communication_handler_cpp/comm_handler.hpp"
+#include "ocd_drivetrain_wheel_torque_communication_handler_cpp/comm_handler.hpp"
+#include "ocd_drivetrain_fx_communication_handler_cpp/comm_handler.hpp"
 // #include "ocd_drivetrain_fx_cpp/drivetrain_fx_model.hpp"
-#include "steering_actuator_pt1_communication_handler_cpp/comm_handler.hpp"
+#include "ocd_steering_actuator_pt1_communication_handler_cpp/comm_handler.hpp"
 #include "ocd_steering_actuator_pt1_cpp/steering_actuator_pt1_model.hpp"
 #include "ocd_tire_models_cpp/mf_52.hpp"
 #include "ocd_tire_models_cpp/mf_simple.hpp"
@@ -18,7 +18,7 @@
 #include "ocd_tire_models_cpp/linear.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_model.hpp"
 #include "ocd_vehicle_model_cpp/vehicle_model.hpp"
-#include "vehicle_model_node/vehicle_model_node.hpp"
+#include "ocd_vehicle_model_node_cpp/vehicle_model_node.hpp"
 
 #define OCD_NODE_COMPONENT(                                                                        \
   ClassName, DT_T, DT_COMM_HANDLER_T, SA_T, SA_COMM_HANDLER_T, VD_T, AERO_T, TIRE_T)               \
