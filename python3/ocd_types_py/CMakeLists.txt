@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(tum_sim_types_py)
+project(ocd_types_py)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -44,7 +44,7 @@ ament_python_install_package(${PROJECT_NAME})
 
 # region create target for cpp binding 
 pybind11_add_module(_cpp_binding SHARED
-  src/${PROJECT_NAME}/_cpp_binding.cpp
+  src/_cpp_binding.cpp
 )
 
 ament_target_dependencies(_cpp_binding PUBLIC
