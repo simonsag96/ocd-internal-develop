@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-set(PROJECT_NAME open_car_dynamics_ros2)
+set(PROJECT_NAME ocd_vehicle_nodes_cpp)
 project(${PROJECT_NAME})
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
