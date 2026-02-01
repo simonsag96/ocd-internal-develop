@@ -7,8 +7,8 @@
 #include "ocd_aerodynamics_models_cpp/default.hpp"
 #include "ocd_aerodynamics_models_cpp/ride_height.hpp"
 #include "ocd_drivetrain_fx_cpp/drivetrain_fx_model.hpp"
-#include "ocd_drivetrain_wheel_torque_cpp/drivetrain_direct_torque_model.hpp"
 #include "ocd_drivetrain_rwd_lsd_cpp/drivetrain_rwd_lsd_model.hpp"
+#include "ocd_drivetrain_wheel_torque_cpp/drivetrain_direct_torque_model.hpp"
 #include "ocd_steering_actuator_pt1_cpp/steering_actuator_pt1_model.hpp"
 #include "ocd_tire_models_cpp/linear.hpp"
 #include "ocd_tire_models_cpp/mf_52.hpp"
@@ -21,7 +21,7 @@ namespace py = pybind11;
 // Helper functions that only participate in overload resolution when the method exists
 template <typename VehicleModel, typename AuxType>
 auto bind_drivetrain_aux_if_exists(py::class_<VehicleModel> & cls)
-  -> decltype(std::declval<VehicleModel>().set_auxiliary_input_drivetrain(std::declval<AuxType>()), void()) // NOLINT
+  -> decltype(std::declval<VehicleModel>().set_auxiliary_input_drivetrain(std::declval<AuxType>()), void())  // NOLINT
 {
   cls.def("set_auxiliary_input_drivetrain", &VehicleModel::set_auxiliary_input_drivetrain);
 }
@@ -32,7 +32,7 @@ void bind_drivetrain_aux_if_exists(...)
 }
 template <typename VehicleModel, typename AuxType>
 auto bind_steering_aux_if_exists(py::class_<VehicleModel> & cls)
-  -> decltype(std::declval<VehicleModel>().set_auxiliary_input_steering_actuator(std::declval<AuxType>()), void()) // NOLINT
+  -> decltype(std::declval<VehicleModel>().set_auxiliary_input_steering_actuator(std::declval<AuxType>()), void())  // NOLINT
 {
   cls.def(
     "set_auxiliary_input_steering_actuator", &VehicleModel::set_auxiliary_input_steering_actuator);
@@ -67,5 +67,5 @@ void bind_steering_aux_if_exists(...)
   } while (0)
 
 #define BIND_OCD_VEHICLE_MODEL(m, ClassName, DT_T, SA_T, VD_T, TIRE_T, AERO_T) \
-  using ClassName = tam::ocd::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>; \
+  using ClassName = tam::ocd::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>;  \
   _BIND_VEHICLE_MODEL_CLASS(m, ClassName, #ClassName)

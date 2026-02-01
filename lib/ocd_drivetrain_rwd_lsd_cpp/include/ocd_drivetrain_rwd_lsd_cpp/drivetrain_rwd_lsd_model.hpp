@@ -23,8 +23,7 @@ namespace tam::ocd::drivetrain
 // Wrapping class around the equations
 class DrivetrainModel_RWD_LSD
 : public tam::ocd::interfaces::DrivetrainModelBase<
-    drivetrain::DrivetrainEquations_RWD_LSD::DriverInput,
-    drivetrain::DrivetrainEquations_RWD_LSD::Feedback,
+    drivetrain::DrivetrainEquations_RWD_LSD::DriverInput, void,
     drivetrain::rwd_lsd::States::CNT_LENGTH_STATE_VECTOR, drivetrain::rwd_lsd::States::StateNames>
 {
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;

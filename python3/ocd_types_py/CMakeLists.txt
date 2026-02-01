@@ -36,8 +36,13 @@ find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 find_package(pybind11_vendor REQUIRED)
 find_package(pybind11 REQUIRED)
 
-find_package(tum_types_cpp REQUIRED)
-find_package(ocd_types_cpp REQUIRED)
+set (MODEL_DEPS 
+  tum_types_cpp
+  ocd_types_cpp
+)
+foreach(pkg_name ${MODEL_DEPS})
+  find_package(${pkg_name} REQUIRED)
+endforeach()
 
 # region target cpp bindings
 ament_python_install_package(${PROJECT_NAME})
@@ -48,10 +53,9 @@ pybind11_add_module(_ocd_types_cpp_py SHARED
 )
 
 ament_target_dependencies(_ocd_types_cpp_py PUBLIC
-  tum_types_cpp
-  ocd_types_cpp
+  ${MODEL_DEPS}
 )
-ament_export_dependencies(tum_types_cpp ocd_types_cpp)
+ament_export_dependencies(${MODEL_DEPS})
 
  # Install cython modules as sub-modules of the project
 install(

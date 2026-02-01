@@ -31,10 +31,6 @@ class DrivetrainEquations_RWD_LSD
     double current_engine_inertia_at_wheels_kgm2{0};  // Intertia of the engine
     double_per_wheel_t brake_torque_per_wheel_Nm{0};  // Unit: Nm
   };
-  struct Feedback
-  {
-    // feedback
-  };
   struct Parameters
   {
     double I_wheel_front_kgm2;

@@ -43,11 +43,7 @@ DrivetrainModel_RWD_LSD::double_per_wheel_t DrivetrainModel_RWD_LSD::get_wheel_s
   out.rear_right = eqns_.x_vec_[x::omega_rear_axle_radps] - eqns_.x_vec_[x::omega_diff_rear_radps];
   return out;
 }
-DrivetrainModel_RWD_LSD::FeedbackType DrivetrainModel_RWD_LSD::get_feedback() const
-{
-  FeedbackType out;
-  return out;
-}
+DrivetrainModel_RWD_LSD::FeedbackType DrivetrainModel_RWD_LSD::get_feedback() const {}
 void DrivetrainModel_RWD_LSD::declare_parameters()
 {
   auto p_def_d =

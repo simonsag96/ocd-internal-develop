@@ -190,7 +190,7 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_slip
 {
   auto slip_angle_def = [this](double vy, double vx) { return -atan2(vy, std::max(1.0, vx)); };
 
-// clang-format off
+  // clang-format off
   #define CALC_TIRE_SLIP(x)                               \
   imr_.tire_slip_angle_rad.x = slip_angle_def(           \
     imr_.velocity_wheel_over_ground_tire_frame_mps.x[1], \
@@ -241,7 +241,7 @@ void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forc
   alpha.rear_left = x_vec_[x::alpha_tire_RL];
   alpha.rear_right = x_vec_[x::alpha_tire_RR];
 
-// clang-format off
+  // clang-format off
   #define EVAL_TIRE_MODEL(x, mirror)   \
   tire_model_eval( \
     imr_.vertical_tire_force_N.x, \
@@ -266,9 +266,9 @@ template <
   tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_tire_forces_N()
 {
-// Tire Forces @ x - y axis of the vehicle
-// Rotate the tire frame forces into the vehicle frame (passive rotation, i.e., reverse rotation)
-// clang-format off
+  // Tire Forces @ x - y axis of the vehicle
+  // Rotate the tire frame forces into the vehicle frame (passive rotation, i.e., reverse rotation)
+  // clang-format off
   #define EVAL_WHEEL_TIRE_FORCES(wheel) do {\
     Eigen::Matrix2d rot_matrix;\
     double angle = -imr_.effective_steering_angle_per_wheel_rad.wheel;\
@@ -428,7 +428,7 @@ template <
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_resulting_suspension_force_N()
 {
-// clang-format off
+  // clang-format off
   #define VERTICAL_FORCES_SUSPENSION(tire_in)                                        \
     imr_.resulting_suspension_force_N.tire_in = \
     (  imr_.suspension_spring_force_N.tire_in \
@@ -447,8 +447,8 @@ template <
 void VehicleDynamicsDoubleTrackEqns<
   TireModelT, AeroModelT>::calculate_resulting_vertical_force_on_wheel_N()
 {
-  // Heave of Tire
-  // clang-format off
+// Heave of Tire
+// clang-format off
   #define CALC_HEAVE_TIRE(tire_name, tire_mass) \
   imr_.resulting_vertical_force_on_wheel_N.tire_name = \
     + imr_.resulting_suspension_force_N.tire_name \
@@ -556,7 +556,7 @@ template <
   tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_drivetrain_load_torque_Nm()
 {
-// clang-format off
+  // clang-format off
   #define CALC_DT_LOAD_TRQ(in_tire)                                      \
     drivetrain_load_torque_per_wheel_Nm_.in_tire =                                                 \
       (imr_.tire_forces_tire_frame_N.in_tire[0] + imr_.tire_rolling_resistance_N.in_tire) * \
@@ -571,7 +571,7 @@ template <
   tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 void VehicleDynamicsDoubleTrackEqns<TireModelT, AeroModelT>::calculate_steering_load_torque_Nm()
 {
-// clang-format off
+  // clang-format off
   #define CALC_SA_LOAD_TRQ(in_tire)\
     steering_load_torque_per_wheel_Nm_.in_tire = 0
     // Some fancy equation or model for torque steer
