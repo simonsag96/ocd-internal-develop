@@ -43,11 +43,11 @@ find_package(ocd_types_cpp REQUIRED)
 ament_python_install_package(${PROJECT_NAME})
 
 # region create target for cpp binding 
-pybind11_add_module(_cpp_binding SHARED
+pybind11_add_module(_ocd_types_cpp_py SHARED
   src/_cpp_binding.cpp
 )
 
-ament_target_dependencies(_cpp_binding PUBLIC
+ament_target_dependencies(_ocd_types_cpp_py PUBLIC
   tum_types_cpp
   ocd_types_cpp
 )
@@ -56,7 +56,7 @@ ament_export_dependencies(tum_types_cpp ocd_types_cpp)
  # Install cython modules as sub-modules of the project
 install(
   TARGETS
-    _cpp_binding
+    _ocd_types_cpp_py
   DESTINATION "${PYTHON_INSTALL_DIR}/${PROJECT_NAME}"
 )
 #endregion

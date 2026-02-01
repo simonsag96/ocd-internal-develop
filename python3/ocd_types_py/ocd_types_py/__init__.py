@@ -1,6 +1,6 @@
 import tum_types_py
 
-from ocd_types_py._cpp_binding import (
+from ._ocd_types_cpp_py import (
     VehicleDynamicsModelOutput,
     ExternalInfluences,
     VehicleModelOutput,

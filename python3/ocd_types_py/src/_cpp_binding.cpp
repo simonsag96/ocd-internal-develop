@@ -8,7 +8,7 @@
 
 namespace py = pybind11;
 namespace typ = tam::ocd::types;
-PYBIND11_MODULE(_cpp_binding, m)
+PYBIND11_MODULE(_ocd_types_cpp_py, m)
 {
   py::class_<typ::VehicleDynamicsModelOutput>(m, "VehicleDynamicsModelOutput")
     .def(py::init())
