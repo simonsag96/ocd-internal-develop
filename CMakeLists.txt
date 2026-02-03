@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 
 # Force local install directory inside the repository (overrides any cached value)
 
-project(open_car_dynamics_cpp VERSION 1.0 LANGUAGES CXX)
+project(lib_open_car_dynamics_cpp VERSION 1.0 LANGUAGES CXX)
 
 
 find_package(Eigen3 REQUIRED)
