@@ -18,6 +18,8 @@ Considering this goal, the core philosophy behind this implementation is to mode
 [![Docker](https://img.shields.io/badge/Container-docker-1e83b8.svg?&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-1e83b8.svg?&logo=apache&logoColor=white)](https://www.apache.org/licenses/LICENSE-2.0)
 [![DOI](https://img.shields.io/badge/DOI-10.1109%2FIV55156.2024.10588858-1e83b8.svg?&logo=doi&logoColor=white)](https://doi.org/10.1109/IV55156.2024.10588858)
+
+
 [![Python](https://img.shields.io/badge/Python-3.12%20%7C%203.10-e3781f?logo=python&logoColor=white)](https://www.python.org/)
 [![ROS 2](https://img.shields.io/badge/ROS_2-Humble%20%7C%20Jazzy-e3781f.svg?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04%20%7C%2022.04-e3781f?logo=ubuntu&logoColor=white)
