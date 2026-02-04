@@ -1,5 +1,3 @@
-# Open Car Dynamics
-
 <div align="center">
     <img src="doc/ocd_banner_gpt52_dark.png" alt="ocd_logo" width="100%" style="margin-bottom: 30px;">
 </div>
@@ -9,6 +7,7 @@ The Open Car Dynamics library aims to provide a comprehensive, simple, and easy-
 The project's primary focus is to enable closed-loop simulation of trajectory following controllers in autonomous driving.
 Considering this goal, the core philosophy behind this implementation is to model the vehicle's behavior in as much detail as necessary but as simply as possible. Keeping the model concise and relatively simple drastically simplifies parametrization and reduces the effort of adapting the model to one's requirements.
 
+</div>
 
 [![C++](https://img.shields.io/badge/C%2B%2B-20-1e83b8?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![CMake](https://img.shields.io/badge/CMake-3.18-blue?logo=cmake&logoColor=white)](https://cmake.org/)
