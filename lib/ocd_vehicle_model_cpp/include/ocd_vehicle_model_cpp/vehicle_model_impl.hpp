@@ -9,7 +9,10 @@
 namespace tam::ocd
 {
 #define VEHICLE_T VehicleModel<DT_MODEL_T, SA_MODEL_T, VD_MODEL_T>
-template <typename DT_MODEL_T, typename SA_MODEL_T, typename VD_MODEL_T>
+template <
+  interfaces::concepts::DrivetrainModel DT_MODEL_T,
+  interfaces::concepts::SteeringActuatorModel SA_MODEL_T,
+  interfaces::concepts::VehicleDynamicsModel VD_MODEL_T>
 VEHICLE_T::VehicleModel()
 {
   param_manager_ = std::make_shared<tam::pmg::ParamValueManager>();
@@ -33,7 +36,10 @@ VEHICLE_T::VehicleModel()
     steering_actuator_model_.get_logger(), "steering_actuator/");
   debug_container_composed_->register_logger(drivetrain_model_.get_logger(), "drivetrain/");
 }
-template <typename DT_MODEL_T, typename SA_MODEL_T, typename VD_MODEL_T>
+template <
+  interfaces::concepts::DrivetrainModel DT_MODEL_T,
+  interfaces::concepts::SteeringActuatorModel SA_MODEL_T,
+  interfaces::concepts::VehicleDynamicsModel VD_MODEL_T>
 void VEHICLE_T::step()
 {
   // Init local variables
@@ -57,7 +63,10 @@ void VEHICLE_T::step()
   model_output_.steering_angle_per_wheel_rad = steering_angle_per_wheel_rad_;
   model_output_.steering_load_torque_per_wheel_Nm = steering_load_torque_per_wheel_Nm_;
 }
-template <typename DT_MODEL_T, typename SA_MODEL_T, typename VD_MODEL_T>
+template <
+  interfaces::concepts::DrivetrainModel DT_MODEL_T,
+  interfaces::concepts::SteeringActuatorModel SA_MODEL_T,
+  interfaces::concepts::VehicleDynamicsModel VD_MODEL_T>
 void VEHICLE_T::set_state_vector_of_models(state_vector_t x_)
 {
   // Set the state vectors first for all the models
@@ -66,7 +75,10 @@ void VEHICLE_T::set_state_vector_of_models(state_vector_t x_)
   drivetrain_model_.set_x_vec(x_.segment(OFFSET_DT, DT_MODEL_T::k_state_vector_length));
   steering_actuator_model_.set_x_vec(x_.segment(OFFSET_SA, SA_MODEL_T::k_state_vector_length));
 }
-template <typename DT_MODEL_T, typename SA_MODEL_T, typename VD_MODEL_T>
+template <
+  interfaces::concepts::DrivetrainModel DT_MODEL_T,
+  interfaces::concepts::SteeringActuatorModel SA_MODEL_T,
+  interfaces::concepts::VehicleDynamicsModel VD_MODEL_T>
 VEHICLE_T::state_vector_t VEHICLE_T::ode(double t, state_vector_t x_)
 {
   // Silence warning of unused param
@@ -112,7 +124,10 @@ VEHICLE_T::state_vector_t VEHICLE_T::ode(double t, state_vector_t x_)
 
   return x_dot_;
 }
-template <typename DT_MODEL_T, typename SA_MODEL_T, typename VD_MODEL_T>
+template <
+  interfaces::concepts::DrivetrainModel DT_MODEL_T,
+  interfaces::concepts::SteeringActuatorModel SA_MODEL_T,
+  interfaces::concepts::VehicleDynamicsModel VD_MODEL_T>
 void VEHICLE_T::reset()
 {
   // Reset the state vector with the parameters from the submodels
@@ -147,7 +162,10 @@ void VEHICLE_T::reset()
   external_influences_ = {};
   drivetrain_load_torque_per_wheel_Nm_ = {};
 }
-template <typename DT_MODEL_T, typename SA_MODEL_T, typename VD_MODEL_T>
+template <
+  interfaces::concepts::DrivetrainModel DT_MODEL_T,
+  interfaces::concepts::SteeringActuatorModel SA_MODEL_T,
+  interfaces::concepts::VehicleDynamicsModel VD_MODEL_T>
 void VEHICLE_T::declare_parameters()
 {
   // Declare the integration step size for the model
