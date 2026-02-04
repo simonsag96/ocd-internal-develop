@@ -3,18 +3,21 @@
 </div>
 
 <div align="center" style="margin-bottom: 30px;">
+<p>
 The Open Car Dynamics library aims to provide a comprehensive, simple, and easy-to-use implementation of a vehicle's dynamic behavior.
 The project's primary focus is to enable closed-loop simulation of trajectory following controllers in autonomous driving.
 Considering this goal, the core philosophy behind this implementation is to model the vehicle's behavior in as much detail as necessary but as simply as possible. Keeping the model concise and relatively simple drastically simplifies parametrization and reduces the effort of adapting the model to one's requirements.
-
+</p>
 </div>
+
+<div align="center" style="margin-bottom: 30px;">
 
 [![C++](https://img.shields.io/badge/C%2B%2B-20-1e83b8?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![CMake](https://img.shields.io/badge/CMake-3.18-blue?logo=cmake&logoColor=white)](https://cmake.org/)
 [![Docker](https://img.shields.io/badge/Container-docker-1e83b8.svg?&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-1e83b8.svg?&logo=apache&logoColor=white)](https://www.apache.org/licenses/LICENSE-2.0)
 [![DOI](https://img.shields.io/badge/DOI-10.1109%2FIV55156.2024.10588858-1e83b8.svg?&logo=doi&logoColor=white)](https://doi.org/10.1109/IV55156.2024.10588858)
-
+<br>
 
 [![Python](https://img.shields.io/badge/Python-3.12%20%7C%203.10-e3781f?logo=python&logoColor=white)](https://www.python.org/)
 [![ROS 2](https://img.shields.io/badge/ROS_2-Humble%20%7C%20Jazzy-e3781f.svg?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
