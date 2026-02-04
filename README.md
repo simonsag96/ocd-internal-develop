@@ -1,14 +1,30 @@
 # Open Car Dynamics
 
-[![ROS 2](https://img.shields.io/badge/ROS_2-Humble-22314E.svg?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
-[![C++](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-[![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-E95420?logo=ubuntu&logoColor=white)](https://ubuntu.com/)
-[![DOI](https://img.shields.io/badge/DOI-10.1109%2FIV55156.2024.10588858-blue)](https://doi.org/10.1109/IV55156.2024.10588858)
+<div align="center">
+    <img src="doc/ocd_banner_gpt52_dark.png" alt="ocd_logo" width="100%" style="margin-bottom: 30px;">
+</div>
 
+<div align="center" style="margin-bottom: 30px;">
 The Open Car Dynamics library aims to provide a comprehensive, simple, and easy-to-use implementation of a vehicle's dynamic behavior.
 The project's primary focus is to enable closed-loop simulation of trajectory following controllers in autonomous driving.
 Considering this goal, the core philosophy behind this implementation is to model the vehicle's behavior in as much detail as necessary but as simply as possible. Keeping the model concise and relatively simple drastically simplifies parametrization and reduces the effort of adapting the model to one's requirements.
+</div>
+
+
+<div align="center">
+
+[![C++](https://img.shields.io/badge/C%2B%2B-20-1e83b8?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
+[![CMake](https://img.shields.io/badge/CMake-3.18-blue?logo=cmake&logoColor=white)](https://cmake.org/)
+[![Docker](https://img.shields.io/badge/Container-docker-1e83b8.svg?&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-1e83b8.svg?&logo=apache&logoColor=white)](https://www.apache.org/licenses/LICENSE-2.0)
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FIV55156.2024.10588858-1e83b8.svg?&logo=doi&logoColor=white)](https://doi.org/10.1109/IV55156.2024.10588858)
+[![Python](https://img.shields.io/badge/Python-3.12%20%7C%203.10-e3781f?logo=python&logoColor=white)](https://www.python.org/)
+[![ROS 2](https://img.shields.io/badge/ROS_2-Humble%20%7C%20Jazzy-e3781f.svg?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04%20%7C%2022.04-e3781f?logo=ubuntu&logoColor=white)
+</div>
+
+
+--- 
 
 The model is designed to be an ordinary differential equation in state-space formulation. We use the Dormand Prince Scheme with a constant integration step size to solve the differential equation and to enable real-time execution.
 
@@ -81,16 +97,6 @@ Unfortunately, significant parts of the parametrization resembling the AV21 race
 Therefore, we can only provide a parametrization that resembles a generic single-seater race car equipped with a conventional on-road tire.
 
 
-## Roadmap
-
-In the next months, we aim to release the following improvements:
-
-- [ ] Adding detailed documentation of all equations contained inside the model
-- [ ] Adding a Python binding for the vehicle dynamics model. Increasing usability without ROS2. 
-- [ ] Significant code refactoring using C++20 Concepts and Templates. This allows for dynamically composing a vehicle model using various drivetrains, vehicle dynamics, and steering actuation models.
-- [ ] Improve parameter naming, especially in the vehicle dynamics model.
-- [ ] Add Matlab binding. Increasing usability without ROS2. **Hoping for community contribution.**
-
 
 ## Related Projects
 
@@ -118,6 +124,7 @@ If you use Open Car Dynamics in your work please consider citing our paper [Anal
 ### Core Developers
  - [Simon Sagmeister](mailto:simon.sagmeister@tum.de)
  - Simon Hoffmann | Implementation of parts of the ROS2 and some of the dependency functions
+ - Georg Jank | Implementation of parts of the template structure of this repo.
 
 ### Acknowledgments
 
