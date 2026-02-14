@@ -5,6 +5,7 @@ import tsl_logger_py
 # For having the import types available
 import ocd_drivetrain_wheel_torque_py
 import ocd_drivetrain_rwd_lsd_py
+import ocd_steering_actuator_pt1_py
 
 from .submodel_choices import (
     VehicleDynamicsType,
