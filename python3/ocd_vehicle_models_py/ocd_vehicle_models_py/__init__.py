@@ -14,4 +14,5 @@ from .submodel_choices import (
     TireType,
     AerodynamicsType,
 )
+from .util import print_supported_vehicle_variants
 from .get_vehicle import VehicleFactory
