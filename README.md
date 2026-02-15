@@ -97,6 +97,8 @@ Furthermore, most of the parameters are adaptable at runtime via the `ros2 param
 Unfortunately, significant parts of the parametrization resembling the AV21 racecar are confidential.
 Therefore, we can only provide a parametrization that resembles a generic single-seater race car equipped with a conventional on-road tire.
 
+For tire parameters, we provide a set of MF52 parameters taken from https://github.com/TUMFTM/sim_vehicle_dynamics.
+This parameter set resembles a sport focused road tire.
 
 
 ## Related Projects
