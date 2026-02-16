@@ -40,12 +40,12 @@ The current version of the model combines different models to accurately reprodu
 - Vehicle Dynamics
 - Drivetrain
 - Steering Actuator
-- Aerodynamics
-- Communication Delays
 
 The interfaces connecting the different models, are shown in the following figure:
 
-![Model composition](doc/Model_Composition.drawio.svg)
+<div align="center">
+    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo" style="margin-bottom: 30px;">
+</div>
 
 The ROS2 Node running the abovementioned model subscribes and publishes the following topics:
 
@@ -60,34 +60,19 @@ First clone the repository using the command:
 git clone --recursive https://github.com/TUMFTM/Open-Car-Dynamics.git
 ```
 
-### Having a ROS2 installed
- 
-If you have an existing ROS2 installation you can just build the project using colcon, in the repository root:
-```
-colcon build --packages-up-to vehicle_model_nodes
-```
+### Compile using plain CMake
 
-After building the source code, the node can be started with the ros2 run command:
-```
-source ./install/setup.bash && ros2 run vehicle_model_nodes vehicle_model_double_track_cpp_node --ros-args --params-file ./config/example_config.yml
-```
+For building the open car dynamics libary, without having `ros2`/`colcon`/`ament` installed, we provide an extra CMakeLists.txt in the 
+folder [cmake_build](./cmake_build/).
 
-### Only having Docker installed
 
-However, if you don't have an existing ROS2 installation, we provide a Dockerfile in order to build and run the model within a docker container. This is also useful for debugging if problems arise when debugging locally.
-To build the needed docker image just run the bash script:
-```
-bash build_container.sh
-```
+### Compile the ROS 2 Nodes
 
-After the container has been built, the ros2 node running the provided model can be started inside the container using the provided script:
-```
-bash run_in_container.sh
-```
-To stop the container:
-```
-bash stop_container.sh
-```
+
+
+### Compile the python Bindings
+
+
 
 ## Parameters
 
