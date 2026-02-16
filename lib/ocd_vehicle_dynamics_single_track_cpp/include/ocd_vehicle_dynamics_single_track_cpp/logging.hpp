@@ -40,3 +40,4 @@ inline void log<Eigen::Vector2d>(
 }
 }  // namespace tam::tsl::type_support
 #endif
+
