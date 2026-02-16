@@ -26,9 +26,9 @@ template <
   tam::ocd::interfaces::concepts::AerodynamicsModel AeroModelT>
 class VehicleDynamicsSingleTrackModel
 : public tam::ocd::interfaces::VehicleDynamicsModelBase<
-    double_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR, double_track::States::StateNames>
+    single_track::States::StateEnum::CNT_LENGTH_STATE_VECTOR, single_track::States::StateNames>
 {
-  using x = tam::ocd::vehicle_dynamics::double_track::States::StateEnum;
+  using x = tam::ocd::vehicle_dynamics::single_track::States::StateEnum;
   using double_per_wheel_t = tam::types::common::DataPerWheel<double>;
 
 public:
