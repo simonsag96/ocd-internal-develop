@@ -45,6 +45,7 @@ set (MODEL_DEPS
   ocd_tire_models_cpp
   ocd_drivetrain_wheel_torque_cpp
   ocd_vehicle_dynamics_double_track_cpp
+  ocd_vehicle_dynamics_single_track_cpp
   ocd_vehicle_model_cpp
 )
 

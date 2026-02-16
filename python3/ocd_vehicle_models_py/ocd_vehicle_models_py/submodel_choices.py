@@ -19,6 +19,7 @@ class SteeringActuatorType(Enum):
 class VehicleDynamicsType(Enum):
     """Available vehicle dynamics models."""
 
+    SINGLE_TRACK = "VehicleDynamicsSingleTrackModel"
     DOUBLE_TRACK = "VehicleDynamicsDoubleTrackModel"
 
 

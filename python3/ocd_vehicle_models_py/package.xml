@@ -23,6 +23,7 @@
   <depend>ocd_steering_actuator_pt1_cpp</depend>
   <depend>ocd_tire_models_cpp</depend>
   <depend>ocd_vehicle_dynamics_double_track_cpp</depend>
+  <depend>ocd_vehicle_dynamics_single_track_cpp</depend>
   <depend>ocd_vehicle_model_cpp</depend>
   <!-- Python deps -->
   <exec_depend>tum_types_py</exec_depend>
