@@ -72,11 +72,9 @@ void DrivetrainModel_RWD_LSD::register_log_signals()
   logger_->log(
     "input/transmission_output_torque_Nm", &eqns_.drivetrain_input_.transmission_output_torque_Nm);
   // Loop over state vec
-  auto x_vec_ = eqns_.x_vec_;
-  auto x_dot_vec_ = eqns_.x_dot_vec_;
   for (int i = 0; i < x::CNT_LENGTH_STATE_VECTOR; i++) {
-    logger_->log("x_vec/" + std::string(StateNamesTrait::value[i]), &x_vec_[i]);
-    logger_->log("x_dot_vec/" + std::string(StateNamesTrait::value[i]), &x_dot_vec_[i]);
+    logger_->log("x_vec/" + std::string(StateNamesTrait::value[i]), &eqns_.x_vec_[i]);
+    logger_->log("x_dot_vec/" + std::string(StateNamesTrait::value[i]), &eqns_.x_dot_vec_[i]);
   }
 }
 void DrivetrainModel_RWD_LSD::evaluate() { eqns_.evaluate(); }
