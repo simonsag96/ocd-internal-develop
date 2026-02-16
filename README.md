@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="doc/ocd_banner_gpt52_dark.png" alt="ocd_logo" width="100%" style="margin-bottom: 30px;">
+    <img src="doc/ocd_banner_gpt52_dark.png" alt="ocd_logo" width="66%" style="margin-bottom: 30px;">
 </div>
 
 <div align="center" style="margin-bottom: 30px;">
