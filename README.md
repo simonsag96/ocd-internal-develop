@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="doc/ocd_banner_gpt52_dark.png" alt="ocd_logo" width="66%" style="margin-bottom: 30px;">
+    <img src="doc/ocd_banner_gpt52_dark.png" alt="ocd_logo" width="100%" style="margin-bottom: 30px;">
 </div>
 
 <div align="center" style="margin-bottom: 30px;">
@@ -44,7 +44,7 @@ The current version of the model combines different models to accurately reprodu
 The interfaces connecting the different models, are shown in the following figure:
 
 <div align="center">
-    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo" style="margin-bottom: 30px;">
+    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo", width="66%" style="margin-bottom: 30px;">
 </div>
 
 The ROS2 Node running the abovementioned model subscribes and publishes the following topics:
