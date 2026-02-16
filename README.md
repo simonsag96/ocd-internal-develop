@@ -44,7 +44,7 @@ The current version of the model combines different models to accurately reprodu
 The interfaces connecting the different models, are shown in the following figure:
 
 <div align="center">
-    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo", width="66%" style="margin-bottom: 30px;">
+    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo", width="75%" style="margin-bottom: 30px;">
 </div>
 
 The ROS2 Node running the abovementioned model subscribes and publishes the following topics:
