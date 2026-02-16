@@ -17,6 +17,7 @@
 #include "ocd_tire_models_cpp/mf_simple.hpp"
 #include "ocd_tire_models_cpp/mf_simple_extended.hpp"
 #include "ocd_vehicle_dynamics_double_track_cpp/vehicle_dynamics_model.hpp"
+#include "ocd_vehicle_dynamics_single_track_cpp/vehicle_dynamics_model.hpp"
 #include "ocd_vehicle_model_cpp/vehicle_model.hpp"
 #include "ocd_vehicle_model_node_cpp/vehicle_model_node.hpp"
 

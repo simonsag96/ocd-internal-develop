@@ -19,7 +19,8 @@ steering_actuators = [
 ]
 
 vehicle_dynamics_models = [
-    "VehicleDynamicsDoubleTrackModel",  # Only one as per your description
+    "VehicleDynamicsSingleTrackModel",
+    "VehicleDynamicsDoubleTrackModel",
 ]
 
 aerodynamics_models = [
@@ -41,7 +42,7 @@ def clean_name(name):
     # Remove keywords 'Model', 'Drivetrain', 'SteeringActuator' from each part
     parts = name.split("__")
     cleaned_parts = [
-        re.sub(r"(Model|Drivetrain|SteeringActuator)", "", part)
+        re.sub(r"(Model|Drivetrain|SteeringActuator|VehicleDynamics)", "", part)
         for part in parts
     ]
     return "__".join(cleaned_parts)
@@ -67,7 +68,7 @@ def main():
             for vdm in vehicle_dynamics_models:
                 for aero in aerodynamics_models:
                     for tire in tire_models:
-                        name = f"{drivetrain}__{steering}__DoubleTrack__{tire}__{aero}"
+                        name = f"{drivetrain}__{steering}__{vdm}__{tire}__{aero}"
                         cleaned_name = clean_name(name)
                         if args.names_only:
                             print(cleaned_name)

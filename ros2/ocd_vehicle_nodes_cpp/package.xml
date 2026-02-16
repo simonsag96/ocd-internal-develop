@@ -21,6 +21,7 @@
   <depend>ocd_steering_actuator_pt1_communication_handler_cpp</depend>
   <!-- Vehicle Dynamics Models -->
   <depend>ocd_vehicle_dynamics_double_track_cpp</depend>
+  <depend>ocd_vehicle_dynamics_single_track_cpp</depend>
   <!-- Subparts for the vehicle dynamics models -->
   <depend>ocd_tire_models_cpp</depend>
   <depend>ocd_aerodynamics_models_cpp</depend>
