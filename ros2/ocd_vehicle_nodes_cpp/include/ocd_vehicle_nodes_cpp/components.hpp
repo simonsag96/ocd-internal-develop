@@ -23,7 +23,7 @@
 
 #define OCD_NODE_COMPONENT(                                                                        \
   ClassName, DT_T, DT_COMM_HANDLER_T, SA_T, SA_COMM_HANDLER_T, VD_T, AERO_T, TIRE_T)               \
-  namespace open_car_dynamics                                                                      \
+  namespace ocd_vehicle_nodes_cpp                                                                  \
   {                                                                                                \
   class ClassName : public tam::ocd::VehicleModelNode<                                             \
                       tam::ocd::VehicleModel<DT_T, SA_T, VD_T<TIRE_T, AERO_T>>, DT_COMM_HANDLER_T, \
@@ -39,5 +39,5 @@
       this->reset();                                                                               \
     }                                                                                              \
   };                                                                                               \
-  RCLCPP_COMPONENTS_REGISTER_NODE(open_car_dynamics::ClassName);                                   \
-  }  // namespace open_car_dynamics
+  RCLCPP_COMPONENTS_REGISTER_NODE(ocd_vehicle_nodes_cpp::ClassName);                               \
+  }  // namespace ocd_vehicle_nodes_cpp
