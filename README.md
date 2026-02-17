@@ -74,6 +74,12 @@ folder [cmake_build](./cmake_build/).
 
 
 
+### Runtime
+
+Highly efficient. Even the most complex model currently inside the repository achieves
+a full simulation time step (using ode4 integration) with an execution time below 10us on our benchmark system (AMD Ryzen 9 7950X)
+
+
 ## Parameters
 
 All vehicle parameters can be adapted via the config file `./config/example_config.yml`.
