@@ -4,9 +4,10 @@
 
 <div align="center" style="margin-bottom: 30px;">
 <p>
-The Open Car Dynamics library aims to provide a comprehensive, simple, and easy-to-use implementation of a vehicle's dynamic behavior.
-The project's primary focus is to enable closed-loop simulation of trajectory following controllers in autonomous driving.
-Considering this goal, the core philosophy behind this implementation is to model the vehicle's behavior in as much detail as necessary but as simply as possible. Keeping the model concise and relatively simple drastically simplifies parametrization and reduces the effort of adapting the model to one's requirements.
+Open Car Dynamics provides a comprehensive, modular, and highly efficient implementation of a vehicle's dynamic behavior. 
+Following the philosophy of modeling vehicle behavior "in as much detail as necessary, but as simply as possible," the library drastically simplifies parametrization and adaptation to custom requirements. 
+Written in modern <b>C++</b> for maximum performance, the library offers seamless integrations for <b>Python</b> and <b>ROS 2</b>. 
+Furthermore, the models have been rigorously validated against real-world vehicle behavior to ensure simulation accuracy and reliability.
 </p>
 </div>
 
@@ -44,7 +45,7 @@ The current version of the model combines different models to accurately reprodu
 The interfaces connecting the different models, are shown in the following figure:
 
 <div align="center">
-    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo", width="75%" style="margin-bottom: 30px;">
+    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo", width="80%" style="margin-bottom: 30px;">
 </div>
 
 The ROS2 Node running the abovementioned model subscribes and publishes the following topics:
