@@ -1,258 +1,255 @@
-<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: #0D1117; background-color: light-dark(#0D1117, #dcdfe5);" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1215px" height="560px" viewBox="-0.5 -0.5 1215 560" content="&lt;mxfile&gt;&lt;diagram name=&quot;Page-1&quot; id=&quot;vedkS36AJNxwYiXB8vUG&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: #0D1117; background-color: light-dark(#0D1117, #dcdfe5);" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1215px" height="560px" viewBox="-0.5 -0.5 1215 560" content="&lt;mxfile&gt;&lt;diagram name=&quot;Page-1&quot; id=&quot;vedkS36AJNxwYiXB8vUG&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
     <defs/>
     <rect fill="#0D1117" width="100%" height="100%" x="0" y="0" style="fill: light-dark(rgb(13, 17, 23), rgb(220, 223, 229));"/>
     <g>
         <g>
-            <rect x="260" y="4" width="950" height="550" rx="82.5" ry="82.5" fill="none" stroke="#1e6293" stroke-width="10" stroke-dasharray="30 30" pointer-events="all" style="stroke: light-dark(rgb(30, 98, 147), rgb(114, 172, 214));"/>
+            <rect x="260" y="5" width="950" height="550" rx="82.5" ry="82.5" fill="none" stroke="#1e6293" stroke-width="10" stroke-dasharray="30 30" pointer-events="all" style="stroke: light-dark(rgb(30, 98, 147), rgb(114, 172, 214));"/>
         </g>
         <g>
             <g fill="#1E6293" font-family="&quot;Helvetica&quot;" font-weight="bold" font-size="35px" style="fill: light-dark(rgb(30, 98, 147), rgb(114, 172, 214));">
-                <text x="311.5" y="536.5">
+                <text x="311.5" y="537.5">
                     Vehicle Model
                 </text>
             </g>
         </g>
         <g>
-            <rect x="320" y="44" width="200" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
+            <rect x="320" y="45" width="200" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="20px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="419.5" y="103.5">
+                <text x="419.5" y="104.5">
                     &lt;template&gt;
                 </text>
-                <text x="419.5" y="127.5">
+                <text x="419.5" y="128.5">
                     Steering Actuator
                 </text>
-                <text x="419.5" y="151.5">
+                <text x="419.5" y="152.5">
                     Model
                 </text>
             </g>
         </g>
         <g>
-            <rect x="320" y="214" width="200" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
+            <rect x="320" y="215" width="200" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="20px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="419.5" y="273.5">
+                <text x="419.5" y="274.5">
                     &lt;template&gt;
                 </text>
-                <text x="419.5" y="297.5">
+                <text x="419.5" y="298.5">
                     Drivetrain
                 </text>
-                <text x="419.5" y="321.5">
+                <text x="419.5" y="322.5">
                     Model
                 </text>
             </g>
         </g>
         <g>
-            <rect x="780" y="44" width="400" height="460" rx="60" ry="60" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
+            <rect x="780" y="45" width="400" height="460" rx="60" ry="60" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="20px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="979.5" y="168.5">
+                <text x="979.5" y="169.5">
                     &lt;template&gt;
                 </text>
-                <text x="979.5" y="192.5">
+                <text x="979.5" y="193.5">
                     Vehicle Dynamics
                 </text>
-                <text x="979.5" y="216.5">
+                <text x="979.5" y="217.5">
                     Model
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 520 81.5 L 650 81.5 L 770.96 82.13" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 778.96 82.17 L 770.94 86.13 L 770.98 78.13 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 520 82.5 L 650.04 82.52 L 770.96 83.13" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 778.96 83.17 L 770.94 87.13 L 770.98 79.13 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="652.67" y="75.5">
+                <text x="652.18" y="76.13">
                     Steering Angles [4x1]
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 520 251.5 L 650 251.5 L 769.36 251.89" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 777.36 251.91 L 769.35 255.89 L 769.38 247.89 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 520 252.5 L 650.04 252.52 L 769.36 252.89" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 777.36 252.91 L 769.35 256.89 L 769.38 248.89 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="651.33" y="245.19">
+                <text x="651.7" y="245.82">
                     Wheelspeeds [4x1]
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 778.4 326.44 L 650 326.33 L 530.24 326.49" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 522.24 326.5 L 530.23 322.49 L 530.24 330.49 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 778.4 327.44 L 650.04 327.4 L 530.24 327.49" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 522.24 327.5 L 530.23 323.49 L 530.24 331.49 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="646.57" y="321.83">
+                <text x="645.98" y="322.38">
                     Tire Rotational Torque [4x1]
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 180 401 L 479.5 401 L 768.76 401" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 776.76 401 L 768.76 405 L 768.76 397 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 180 402 L 479.48 402.04 L 768.76 402" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 776.76 402 L 768.76 406 L 768.76 398 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <path d="M 190 82 L 255 82 L 309.76 81.58" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 317.76 81.52 L 309.8 85.58 L 309.73 77.58 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 190 83 L 255 83 L 309.76 82.58" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 317.76 82.52 L 309.8 86.58 L 309.73 78.58 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <path d="M 530.24 156.5 L 650 156.5 L 780 157.16" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 522.24 156.5 L 530.24 152.5 L 530.24 160.5 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 530.24 157.5 L 650.04 157.48 L 780 158.16" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 522.24 157.5 L 530.24 153.5 L 530.24 161.5 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="652.67" y="150.5">
+                <text x="651.38" y="151.09">
                     Steering Torque [4x1]
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 220.24 156 L 265 156 L 320 156.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 212.24 156 L 220.24 152 L 220.24 160 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 220.24 157 L 265 157 L 320 157.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 212.24 157 L 220.24 153 L 220.24 161 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <rect x="20" y="62" width="170" height="40" fill="none" stroke="none" pointer-events="all"/>
+            <rect x="20" y="63" width="170" height="40" fill="none" stroke="none" pointer-events="all"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="104.5" y="79">
+                <text x="104.5" y="80">
                     &lt;template&gt;
                 </text>
-                <text x="104.5" y="98">
+                <text x="104.5" y="99">
                     Steering Actuator Input
                 </text>
             </g>
         </g>
         <g>
-            <rect x="0" y="136" width="210" height="40" fill="none" stroke="none" pointer-events="all"/>
+            <rect x="0" y="137" width="210" height="40" fill="none" stroke="none" pointer-events="all"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="104.5" y="153">
+                <text x="104.5" y="154">
                     &lt;template&gt;
                 </text>
-                <text x="104.5" y="172">
+                <text x="104.5" y="173">
                     Steering Actuator Feedback
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 170 251 L 245 251 L 309.76 251.43" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 317.76 251.49 L 309.74 255.43 L 309.79 247.43 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 170 252 L 245 252.04 L 309.76 252.44" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 317.76 252.49 L 309.74 256.44 L 309.79 248.44 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <rect x="40" y="228" width="130" height="46" fill="none" stroke="none" pointer-events="all"/>
+            <rect x="40" y="229" width="130" height="46" fill="none" stroke="none" pointer-events="all"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="104.5" y="248">
+                <text x="104.5" y="249">
                     &lt;template&gt;
                 </text>
-                <text x="104.5" y="267">
+                <text x="104.5" y="268">
                     Drivetrain Input
                 </text>
             </g>
         </g>
         <g>
-            <rect x="30" y="300" width="150" height="54" fill="none" stroke="none" pointer-events="all"/>
+            <rect x="30" y="301" width="150" height="54" fill="none" stroke="none" pointer-events="all"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="104.5" y="324">
+                <text x="104.5" y="325">
                     &lt;template&gt;
                 </text>
-                <text x="104.5" y="343">
+                <text x="104.5" y="344">
                     Drivetrain Feedback
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 180 327 L 250 327 L 309.76 326.57" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 317.76 326.52 L 309.79 330.57 L 309.74 322.57 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 180 328 L 250.04 328.04 L 309.76 327.58" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 317.76 327.52 L 309.8 331.58 L 309.73 323.58 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <rect x="30" y="374" width="150" height="54" fill="none" stroke="none" pointer-events="all"/>
+            <rect x="30" y="375" width="150" height="54" fill="none" stroke="none" pointer-events="all"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="104.5" y="388.5">
+                <text x="104.5" y="389.5">
                     External Influences
                 </text>
-                <text x="104.5" y="407.5">
+                <text x="104.5" y="408.5">
                     (Force and Torque
                 </text>
-                <text x="104.5" y="426.5">
+                <text x="104.5" y="427.5">
                     acting on Vehicle COG)
                 </text>
             </g>
         </g>
         <g>
-            <path d="M 782 466.74 L 490 466.67 L 210.24 466.99" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 202.24 467 L 210.23 462.99 L 210.24 470.99 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 782 467.74 L 490.04 467.72 L 210.24 467.99" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 202.24 468 L 210.23 463.99 L 210.24 471.99 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <rect x="10" y="440" width="190" height="54" fill="none" stroke="none" pointer-events="all"/>
+            <rect x="10" y="441" width="190" height="54" fill="none" stroke="none" pointer-events="all"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="16px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="104.5" y="473.5">
+                <text x="104.5" y="474.5">
                     Vehicle Dynamics Output
                 </text>
             </g>
         </g>
         <g>
-            <rect x="815" y="326" width="150" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
+            <rect x="815" y="327" width="150" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
         </g>
         <g>
             <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="20px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="889.5" y="385.5">
+                <text x="889.5" y="398.5">
                     &lt;template&gt;
                 </text>
-                <text x="889.5" y="409.5">
+                <text x="889.5" y="422.5">
+                    Tire Model
+                </text>
+            </g>
+        </g>
+        <g>
+            <rect x="995" y="327" width="150" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
+        </g>
+        <g>
+            <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="20px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
+                <text x="1069.5" y="386.5">
+                    &lt;template&gt;
+                </text>
+                <text x="1069.5" y="410.5">
                     Aerodynamics
                 </text>
-                <text x="889.5" y="433.5">
+                <text x="1069.5" y="434.5">
                     Model
                 </text>
             </g>
         </g>
         <g>
-            <rect x="995" y="326" width="150" height="150" rx="22.5" ry="22.5" fill="#151b23" stroke="#f0f6fc" stroke-width="4" pointer-events="all" style="fill: light-dark(rgb(21, 27, 35), rgb(210, 215, 222)); stroke: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));"/>
+            <path d="M 852.5 327 L 852.88 295.24" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 852.97 287.24 L 856.88 295.28 L 848.88 295.19 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <g fill="#F0F6FC" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="20px" style="fill: light-dark(rgb(240, 246, 252), rgb(22, 27, 33));">
-                <text x="1069.5" y="385.5">
-                    &lt;template&gt;
-                </text>
-                <text x="1069.5" y="409.5">
-                    Aerodynamics
-                </text>
-                <text x="1069.5" y="433.5">
-                    Model
-                </text>
-            </g>
+            <path d="M 927.52 318.76 L 927.6 285.12" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 927.51 324.76 L 923.52 316.75 L 927.52 318.76 L 931.52 316.77 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <path d="M 852.5 326 L 852.88 294.24" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 852.97 286.24 L 856.88 294.28 L 848.88 294.19 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 1032.5 327 L 1032.42 295.36" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 1032.41 287.36 L 1036.42 295.35 L 1028.42 295.37 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
         <g>
-            <path d="M 927.52 317.76 L 927.6 284.12" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 927.51 323.76 L 923.52 315.75 L 927.52 317.76 L 931.52 315.77 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-        </g>
-        <g>
-            <path d="M 1032.5 326 L 1032.42 294.36" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 1032.41 286.36 L 1036.42 294.35 L 1028.42 294.37 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-        </g>
-        <g>
-            <path d="M 1107.52 317.76 L 1107.6 284.12" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
-            <path d="M 1107.51 323.76 L 1103.52 315.75 L 1107.52 317.76 L 1111.52 315.77 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 1107.52 318.76 L 1107.6 285.12" fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
+            <path d="M 1107.51 324.76 L 1103.52 316.75 L 1107.52 318.76 L 1111.52 316.77 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); stroke: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));"/>
         </g>
     </g>
 </svg>
