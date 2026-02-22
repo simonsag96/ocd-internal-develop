@@ -7,7 +7,7 @@
 Open Car Dynamics provides a comprehensive, modular, and highly efficient implementation of a vehicle's dynamic behavior. 
 Following the philosophy of modeling vehicle behavior "in as much detail as necessary, but as simply as possible," the library drastically simplifies parametrization and adaptation to custom requirements. 
 Written in modern <b>C++</b> for maximum performance, the library offers seamless integrations for <b>Python</b> and <b>ROS 2</b>. 
-Furthermore, vehicle dynamics has been rigorously validated against data recorded with the AV21 autonomous racecar used in the [Indy Autonomous Challenge](https://www.indyautonomouschallenge.com/) to ensure simulation accuracy and reliability.
+Furthermore, vehicle dynamics has been rigorously validated against data recorded with the AV21 autonomous racecar used in the <a href="https://www.indyautonomouschallenge.com/">Indy Autonomous Challenge</a> to ensure simulation accuracy and reliability.
 </p>
 </div>
 
@@ -54,7 +54,7 @@ To achieve modularity, each vehicle model consists of 3 different submodels:
 The interfaces connecting the different models are shown in the following figure:
 
 <div align="center">
-    <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo", width="80%" style="margin-bottom: 30px;">
+    <img src="doc/Model_Composition.drawio.svg" alt="model_composition", width="80%" style="margin-bottom: 30px;">
 </div>
 
 

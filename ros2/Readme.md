@@ -1,9 +1,14 @@
 # Using OCD in ROS2
 
-- Just colcon build with using `--packages-up-to ocd_vehicle_nodes_cpp`
-- Source your install folder 
-- Just look up which components to exist. `ros2 component types ocd_vehicle_nodes_cpp`
-- Run the component you want. This launches the vehicle in a ros2 node.
-- Runs in realtime
-- Tip: You can dump all parameters using the command `ros2 param dump <NodeName>`
-- Settings parameters: Just load them from a parameter file (on startup) or use `ros2 param set`. All parameters are runtime settable.
+To use Open Car Dynamics Models in ROS 2, we provide a generic
+wrapper node which wraps any vehicle model. 
+Since the models differ in driver input and feedback types, we use a strategy pattern
+to create the subscriptions and feedback publishing. 
+
+These are called Strategies are named CommunicationHandlers.
+
+They connect the Open Car Dynamics Models with the corresponding topics in ROS2.
+
+<div align="center">
+    <img src="../doc/Node_Wrapper.drawio.svg" alt="node_wrapper", width="70%" style="margin-bottom: 30px;">
+</div>
