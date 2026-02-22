@@ -7,7 +7,7 @@
 Open Car Dynamics provides a comprehensive, modular, and highly efficient implementation of a vehicle's dynamic behavior. 
 Following the philosophy of modeling vehicle behavior "in as much detail as necessary, but as simply as possible," the library drastically simplifies parametrization and adaptation to custom requirements. 
 Written in modern <b>C++</b> for maximum performance, the library offers seamless integrations for <b>Python</b> and <b>ROS 2</b>. 
-Furthermore, the models have been rigorously validated against real-world vehicle behavior to ensure simulation accuracy and reliability.
+Furthermore, vehicle dynamics has been rigorously validated against data recorded with the AV21 autonomous racecar used in the [Indy Autonomous Challenge](https://www.indyautonomouschallenge.com/) to ensure simulation accuracy and reliability.
 </p>
 </div>
 
@@ -28,16 +28,12 @@ Furthermore, the models have been rigorously validated against real-world vehicl
 
 --- 
 
-The model is designed to be an ordinary differential equation in state-space formulation. We use the Dormand Prince Scheme with a constant integration step size to solve the differential equation and to enable real-time execution.
+### How it works
 
-To further simplify integration into different control-related simulation architectures, we implemented the model in C++, intending to provide a Python and Matlab binding in the following months.
-An [Autoware](https://autoware.org/) compatible ROS2 Node is offered additionally, but the **model itself is entirely independent of ROS2**.
+The model is designed to be an ordinary differential equation in state-space formulation. 
+This state space model is solved using the Dormand Prince Scheme with a constant integration step size to enable real-time execution.
 
-The model has been validated with data recorded with the AV21 autonomous racecar used in the [Indy Autonomous Challenge](https://www.indyautonomouschallenge.com/).
-
-## Overview
-
-The current version of the model combines different models to accurately reproduce the dynamic behavior of an autonomous vehicle:
+To achieve modularity, each vehicle model consists of 3 different submodels:
 - Vehicle Dynamics
 - Drivetrain
 - Steering Actuator
@@ -48,37 +44,135 @@ The interfaces connecting the different models, are shown in the following figur
     <img src="doc/Model_Composition.drawio.svg" alt="ocd_logo", width="80%" style="margin-bottom: 30px;">
 </div>
 
-The ROS2 Node running the abovementioned model subscribes and publishes the following topics:
 
-![Vehicle Model Node](doc/ocd_vehicle_model_node_cpp.svg)
+Furthermore, the vehicle dynamics models can incorporte submodels for modeling aerodynamcis and tire behavior.
+However, these models are stateless which differs them from the 3 submodels mentioned above.
+
+All of these 5 submodels components can be freely combined with each other enabling a vast number of different vehicle implementations.
+With this design, our libary is able to model a lot of different vehicles without modifyfing the source code, also enabling rapid extension and collaboration. New variations of any submodel can be created by just inheriting and implementing the corresponding base class.
+
+The submodels are automatically combined at compile time (hence the heavy templating in this library) by concatenating their
+state vectors to form one big model.
+Since combination happens at compile time, the compiler is able to heavily optimize the model makint it hihgly efficient. 
+Even the most complex model currently inside the repository achieves 
+a full simulation time step (using Dormand Prince~ode4 integration) with an execution 
+time below 10us on our benchmark system (AMD Ryzen 9 7950X)
 
 
 ## Compiling and Running the Model
 
+### Clone Repository and  dependencies
+
 First clone the repository using the command:
 
-```
+```bash
 git clone --recursive https://github.com/TUMFTM/Open-Car-Dynamics.git
 ```
 
-### Compile using plain CMake
+Then install the required dependencies:
+```bash
+sudo apt install libboost-dev libeigen3-dev build-essential cmake
+```
 
-For building the open car dynamics libary, without having `ros2`/`colcon`/`ament` installed, we provide an extra CMakeLists.txt in the 
+### Compile Using CMake
+
+Our build system is build on colcon and ament, the build tools of ROS2.
+However, for building the open car dynamics libary, without having `ros2`/`colcon`/`ament` installed, we provide an extra CMakeLists.txt in the 
 folder [cmake_build](./cmake_build/).
 
+To build the project using cmake, just paste the following commands one after another into your terminal.
 
-### Compile the ROS 2 Nodes
+```bash
+cd cmake_build
+```
+```bash
+mkdir build && cd build
+```
+```bash
+cmake ..
+```
+```bash
+cmake --build .
+```
 
+For installing the libary run the following comamnd inside the the `<RepoRoot>/cmake_build/build` folder after building.
+```bash
+cmake --install . 
+```
 
+This create a folder under `<RepoRoot>/cmake_build/install`. This folder acts as an overlay.
+To use the libary, just source the `<RepoRoot>/cmake_build/install/setup.sh` script in your shell.
+After sourcing the library can be linked correctly.
+
+To install the libary correctly, just source the file in your `.bashrc` file by running this command the **Root of your Repository**:
+```bash
+echo "source $PWD/cmake_build/install/setup.sh" >> ~/.bashrc
+```
+
+### Compile and Run the ROS 2 Nodes
+
+For using the model in a ROS 2 environemnt, we provide a generic wrapper node which wraps 
+certain vehicle model into as ROS 2 node. 
+
+The ROS 2 packages can be compiled by first installing the required dependencies for building with ROS 2 installed:
+```bash
+sudo apt install libboost-dev ros-${ROS_DISTRO}-can-msgs ros-${ROS_DISTRO}-ros2-socketcan ros-${ROS_DISTRO}-geographic-msgs
+```
+
+Afterwards, you can just compile the correct packages using:
+```bash
+colcon build --packages-up-to ocd_vehicle_nodes_cpp --cmake-args -DCMAKE_BUILD_TYPE=Release
+```
+
+Afterwards just source your compiled with install folder and check the available `rclcpp components` by using the command
+```bash
+ros2 component types ocd_vehicle_nodes_cpp
+```
+ 
+Alternatively, you can directly run the nodes by starting their executable. 
+Finding the executables can be done using the command
+```bash
+ros2 pkg executables ocd_vehicle_nodes_cpp
+```
 
 ### Compile the python Bindings
 
 
 
-### Runtime
 
-Highly efficient. Even the most complex model currently inside the repository achieves
-a full simulation time step (using ode4 integration) with an execution time below 10us on our benchmark system (AMD Ryzen 9 7950X)
+### Compile the Python bindings without ros2 installed.
+
+Make sure you have docker installed and working.
+For the following commands, it is assumed you can run docker commands without sudo (your user should be in the docker group)
+If not prepend sudo for any docker command.
+
+First compile the bindings in the docker container using the following command in the root of this repository.
+
+```bash
+docker run  \
+    --rm \
+    -v "$PWD":"$PWD" \
+    -w "$PWD" \
+    -it \
+    ros:$(if [ "$(lsb_release -rs)" = "22.04" ]; then echo humble; elif [ "$(lsb_release -rs)" = "24.04" ]; then echo jazzy; fi) \
+    bash -c "   \
+        source /opt/ros/${ROS_DISTRO}/setup.bash && \
+        apt update && \
+        apt install -y libboost-dev ros-${ROS_DISTRO}-can-msgs ros-${ROS_DISTRO}-ros2-socketcan ros-${ROS_DISTRO}-geographic-msgs && \
+        colcon build --merge-install --packages-up-to ocd_vehicle_models_py"
+```
+
+This create a new folder `<Repository Root>/install`.
+
+To use the compiled packages, just source the file `<Repository Root>/install/local_setup.sh` inside your `.bashrc` file.
+You can do this quickly by running the following command in the root of this repo.
+
+```bash
+echo "source $PWD/install/local_setup.sh" >> ~/.bashrc
+```
+
+Be sure to create a new shell after modifying your `.bashrc` file.
+
 
 
 ## Parameters
