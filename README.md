@@ -28,7 +28,7 @@ Furthermore, vehicle dynamics has been rigorously validated against data recorde
 
 --- 
 
-### How it works
+## 1. How it works
 
 The model is designed to be an ordinary differential equation in state-space formulation. 
 This state space model is solved using the Dormand Prince Scheme with a constant integration step size to enable real-time execution.
@@ -59,9 +59,9 @@ a full simulation time step (using Dormand Prince~ode4 integration) with an exec
 time below 10us on our benchmark system (AMD Ryzen 9 7950X)
 
 
-## Compiling and Running the Model
+## 2. Compiling and Running the Model
 
-### 1. Clone Repository and Install Dependencies
+### 2.1. Clone Repository and Install Dependencies
 
 First clone the repository using the command:
 
@@ -74,7 +74,7 @@ Then install the required dependencies:
 sudo apt install libboost-dev libeigen3-dev build-essential cmake
 ```
 
-### 2a. Compile Using CMake
+### 2.2a. Compile Using CMake
 
 Our build system is build on colcon and ament, the build tools of ROS2.
 However, for building the open car dynamics libary, without having `ros2`/`colcon`/`ament` installed, we provide an extra CMakeLists.txt in the 
@@ -109,7 +109,7 @@ To install the libary correctly, just source the file in your `.bashrc` file by 
 echo "source $PWD/cmake_build/install/setup.sh" >> ~/.bashrc
 ```
 
-### 2b. Compile and Run the ROS 2 Nodes
+### 2.2b. Compile and Run the ROS 2 Nodes
 
 For using the model in a ROS 2 environemnt, we provide a generic wrapper node which wraps 
 certain vehicle model into as ROS 2 node. 
@@ -135,12 +135,12 @@ Finding the executables can be done using the command
 ros2 pkg executables ocd_vehicle_nodes_cpp
 ```
 
-### 2c. Compile the python Bindings
+### 2.2c. Compile the python Bindings
 
 
 
 
-### 2d. Compile the Python bindings without ros2 installed.
+### 2.2d. Compile the Python bindings without ros2 installed.
 
 Make sure you have docker installed and working.
 For the following commands, it is assumed you can run docker commands without sudo (your user should be in the docker group)
@@ -175,7 +175,7 @@ Be sure to create a new shell after modifying your `.bashrc` file.
 
 
 
-## Parameters
+## 3. Parameters
 
 All vehicle parameters can be adapted via the config file `./config/example_config.yml`.
 Furthermore, most of the parameters are adaptable at runtime via the `ros2 param set` command.
@@ -187,13 +187,13 @@ For tire parameters, we provide a set of MF52 parameters taken from https://gith
 This parameter set resembles a sport focused road tire.
 
 
-## Related Projects
+## 4. Related Projects
 
 When building this vehicle model, we initially took inspiration from the [CommonRoad Vehicle Models](https://gitlab.lrz.de/tum-cps/commonroad-vehicle-models) Project. 
 However, we needed a real-time capable, modularized model for an autonomous race-car which is why this project was started.
 
 
-## References
+## 5. References
 
 If you use Open Car Dynamics in your work please consider citing our paper [Analyzing the Impact of Simulation Fidelity on the Evaluation of Autonomous Driving Motion Control](https://ieeexplore.ieee.org/document/10588858/).
 ```
@@ -210,12 +210,12 @@ If you use Open Car Dynamics in your work please consider citing our paper [Anal
 
 ```
 
-### Core Developers
+### 5.1 Core Developers
  - [Simon Sagmeister](mailto:simon.sagmeister@tum.de)
  - Simon Hoffmann | Implementation of parts of the ROS2 and some of the dependency functions
  - Georg Jank | Implementation of parts of the template structure of this repo.
 
-### Acknowledgments
+### 5.2 Acknowledgments
 
 Several students contributed to the success of the project during their Bachelor's, Master's or Project Thesis.
  - Panagiotis Kounatidis | *Development of an initial version of this model as well as implementation of the tire model.*
