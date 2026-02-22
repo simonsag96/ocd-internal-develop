@@ -61,7 +61,7 @@ time below 10us on our benchmark system (AMD Ryzen 9 7950X)
 
 ## Compiling and Running the Model
 
-### Clone Repository and  dependencies
+### 1. Clone Repository and Install Dependencies
 
 First clone the repository using the command:
 
@@ -74,7 +74,7 @@ Then install the required dependencies:
 sudo apt install libboost-dev libeigen3-dev build-essential cmake
 ```
 
-### Compile Using CMake
+### 2a. Compile Using CMake
 
 Our build system is build on colcon and ament, the build tools of ROS2.
 However, for building the open car dynamics libary, without having `ros2`/`colcon`/`ament` installed, we provide an extra CMakeLists.txt in the 
@@ -109,7 +109,7 @@ To install the libary correctly, just source the file in your `.bashrc` file by 
 echo "source $PWD/cmake_build/install/setup.sh" >> ~/.bashrc
 ```
 
-### Compile and Run the ROS 2 Nodes
+### 2b. Compile and Run the ROS 2 Nodes
 
 For using the model in a ROS 2 environemnt, we provide a generic wrapper node which wraps 
 certain vehicle model into as ROS 2 node. 
@@ -135,12 +135,12 @@ Finding the executables can be done using the command
 ros2 pkg executables ocd_vehicle_nodes_cpp
 ```
 
-### Compile the python Bindings
+### 2c. Compile the python Bindings
 
 
 
 
-### Compile the Python bindings without ros2 installed.
+### 2d. Compile the Python bindings without ros2 installed.
 
 Make sure you have docker installed and working.
 For the following commands, it is assumed you can run docker commands without sudo (your user should be in the docker group)
