@@ -16,8 +16,6 @@
 #include "param_management_ros2_integration_cpp/helper_functions.hpp"
 #include "tsl_logger_cpp/composer.hpp"
 #include "tsl_ros2_publisher_cpp/tsl_publisher.hpp"
-#include "tum_msgs/msg/tum_debug_signal_names.hpp"
-#include "tum_msgs/msg/tum_debug_values.hpp"
 #include "tum_msgs/msg/tum_external_vehicle_influences.hpp"
 #include "tum_msgs/msg/tum_float32_stamped.hpp"
 #include "tum_msgs/msg/tum_float64_per_wheel_stamped.hpp"
