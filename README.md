@@ -38,8 +38,9 @@ Furthermore, vehicle dynamics has been rigorously validated against data recorde
   - [2.5. Compile the Python Bindings](#25-compile-the-python-bindings)
   - [2.6. Compile the Python Bindings without ROS 2 installed](#26-compile-the-python-bindings-without-ros-2-installed)
 - [3. Parameters](#3-parameters)
-- [4. Related Projects](#4-related-projects)
-- [5. References](#5-references)
+- [4. Contributing](#4-contributing)
+- [5. Related Projects](#5-related-projects)
+- [6. References](#6-references)
 
 ## 1. How it works
 
@@ -242,13 +243,17 @@ Therefore, we can only provide a parametrization that resembles a generic single
 For tire parameters, we provide a set of MF52 parameters taken from https://github.com/TUMFTM/sim_vehicle_dynamics as default.
 This parameter set resembles a sport focused road tire.
 
-## 4. Related Projects
+## 4. Contributing
+
+We welcome contributions to Open Car Dynamics! Contributing is as simple as implementing a new submodel by inheriting and implementing a respective base class and creating a new package. Because of the modular design, your new submodel can then be seamlessly combined with existing components.
+
+## 5. Related Projects
 
 When building this vehicle model, we initially took inspiration from the [CommonRoad Vehicle Models](https://gitlab.lrz.de/tum-cps/commonroad-vehicle-models) Project. 
 However, we needed a real-time capable, modularized model for an autonomous race-car which is why this project was started.
 
 
-## 5. References
+## 6. References
 
 If you use Open Car Dynamics in your work please consider citing our paper [Analyzing the Impact of Simulation Fidelity on the Evaluation of Autonomous Driving Motion Control](https://ieeexplore.ieee.org/document/10588858/).
 ```
@@ -265,12 +270,12 @@ If you use Open Car Dynamics in your work please consider citing our paper [Anal
 
 ```
 
-### 5.1 Core Developers
+### 6.1 Core Developers
  - [Simon Sagmeister](mailto:simon.sagmeister@tum.de)
  - Simon Hoffmann | Implementation of parts of the ROS2 and some of the dependency functions
  - Georg Jank | Implementation of parts of the template structure of this repo.
 
-### 5.2 Acknowledgments
+### 6.2 Acknowledgments
 
 Several students contributed to the success of the project during their Bachelor's, Master's or Project Thesis.
  - Panagiotis Kounatidis | *Development of an initial version of this model as well as implementation of the tire model.*
