@@ -3,7 +3,7 @@
 <package format="3">
   <name>ocd_vehicle_models_py</name>
   <version>1.0.0</version>
-  <description>Python package for simulation types in C++</description>
+  <description>Python package for using OCD in Python</description>
   <maintainer email="simon.sagmeister@tum.de">Simon Sagmeister</maintainer>
   <license>Apache 2.0</license>
 
