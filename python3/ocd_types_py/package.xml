@@ -1,8 +1,7 @@
-<?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml version='1.0' encoding='utf-8'?>
 <package format="3">
   <name>ocd_types_py</name>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
   <description>Python package for simulation types in C++</description>
   <maintainer email="simon.sagmeister@tum.de">Simon Sagmeister</maintainer>
   <license>Apache 2.0</license>
@@ -13,7 +12,7 @@
 
   <depend>pybind11_vendor</depend>
 
-  <!-- Content dependencies -->
+  
   <depend>tum_types_cpp</depend>
   <depend>ocd_types_cpp</depend>
   <exec_depend>tum_types_py</exec_depend>

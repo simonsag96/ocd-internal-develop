@@ -1,7 +1,7 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='utf-8'?>
 <package format="3">
   <name>ocd_vehicle_nodes_cpp</name>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
   <description>Different vehicle models served as ROS2 nodes</description>
   <maintainer email="simon.sagmeister@tum.de">simon</maintainer>
   <license>Apache 2.0</license>
@@ -11,18 +11,18 @@
   <depend>ocd_vehicle_model_node_cpp</depend>
   <depend>ocd_vehicle_model_cpp</depend>
   <depend>rclcpp_components</depend>
-  <!-- Drivetrains -->
+  
   <depend>ocd_drivetrain_wheel_torque_cpp</depend>
   <depend>ocd_drivetrain_wheel_torque_communication_handler_cpp</depend>
   <depend>ocd_drivetrain_fx_cpp</depend>
   <depend>ocd_drivetrain_fx_communication_handler_cpp</depend>
-  <!-- Steering Actuators -->
+  
   <depend>ocd_steering_actuator_pt1_cpp</depend>
   <depend>ocd_steering_actuator_pt1_communication_handler_cpp</depend>
-  <!-- Vehicle Dynamics Models -->
+  
   <depend>ocd_vehicle_dynamics_double_track_cpp</depend>
   <depend>ocd_vehicle_dynamics_single_track_cpp</depend>
-  <!-- Subparts for the vehicle dynamics models -->
+  
   <depend>ocd_tire_models_cpp</depend>
   <depend>ocd_aerodynamics_models_cpp</depend>
 
